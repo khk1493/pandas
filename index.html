@@ -24,6 +24,9 @@
 			left: 10%;
 
 		}
+		a {
+			text-decoration: none
+		}
 
 	</style>
 </head>
@@ -68,87 +71,155 @@
 
   		<li class = "a">DataFrame I</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>intro to DataFrame</li>
+  				<li>shared methods & attributes</li>
+  				<li>differences between shared methods</li>
+  				<li>select one column from a DataFrame</li>
+  				<li>select two or more columns from a DataFrame</li>
+  				<li>add new column to DataFrame</li>
+  				<li>broadcasting operations</li>
+  				<li>.value_counts() in DataFrame</li>
+  				<li>.dropna()</li>
+  				<li>.fillna()</li>
+  				<li>.astype()</li>
+  				<li>.sort_values(), one column</li>
+  				<li>.sort_values(), two and more columns</li>
+  				<li>.sort_index in DataFrame</li>
+  				<li>.rank()</li>
+  			</ol><br>
 
   		<li class = "a">DataFrame II</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>data optimization</li>
+  				<li>filter a DataFrame based on a condition</li>
+  				<li>filter with conditions - and</li>
+  				<li>filter with conditions - or</li>
+  				<li>.isin()</li>
+  				<li>.isnull()</li>
+  				<li>.between()</li>
+  				<li>.duplicated()</li>
+  				<li>.drop_duplicates()</li>
+  				<li>.unique() & .ununique()</li>
+  			</ol><br>
 
   		<li class = "a">DataFrame III</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>.set_index() & .reset_index()</li>
+  				<li>retrieve rows with .loc[]</li>
+  				<li>retrieve rows with .iloc[]</li>
+  				<li>retrieve rows & columns[]</li>
+  				<li>put a value into a specific cell</li>
+  				<li>slice DataFrame with conditions</li>
+  				<li>rename index labels & columns</li>
+  				<li>delete rows & columns</li>
+   				<li>.sample()</li>
+  				<li>.nsmallest() & .nlargest()</li>
+  				<li>.where()</li>
+  				<li>.query()</li>
+  				<li>.apply() with lambda</li>
+  				<li>.copy()</li>
+  			</ol><br>
 
   		<li class = "a">Text Data</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>another data optimization</li>
+  				<li>.lower(), .upper(), .title(), .len()</li>
+  				<li>.str.replace()</li>
+  				<li>filter using .contain(), .startwith(), .endwith()</li>
+  				<li>.lstrip(), .rstrip(), .strip()</li>
+  				<li>use the string methods on index & columns</li>
+  				<li>.str.split()</li>
+  				<li>more practice with .str.split()</li>
+  				<li>.str.split() with expand</li>
+  			</ol><br>
 
   		<li class = "a">Multi-Index</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>intro to multi-index</li>
+  				<li>.get_level_values()</li>
+  				<li>.set_names()</li>
+  				<li>.sort_index() on multi-index</li>
+  				<li>extract rows from a multi-index</li>
+  				<li>.transpose()</li>
+  				<li>.swaplevel()</li>
+  				<li>.stack()</li>
+  				<li>.unstack() - A</li>
+  				<li>.unstack() - B</li>
+  				<li>.unstack() - C</li>
+  				<li>.pivot()</li>
+  				<li>.pivot_table()</li>
+  				<li>pd.melt()</li>
+  			</ol><br>
 
   		<li class = "a">Groupby Object</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>.groupby(1 column)</li>
+  				<li>groupby-object.nunique(), size(), .first(), .last()</li>
+  				<li>get a group using .get_group()</li>
+  				<li>groupby-object.sum(), .mean(), .max(), min()</li>
+  				<li>.groupby(2 columns)</li>
+  				<li>.agg()</li>
+  				<li>iterating through groups</li>
+  			</ol><br>
 
   		<li class = "a">Merge, Join, Concatenate</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>intro</li>
+  				<li>pd.concat() - A</li>
+  				<li>pd.concat() - B</li>
+  				<li>inner join - A</li>
+  				<li>inner join - B</li>
+  				<li>outer join</li>
+  				<li>left join</li>
+  				<li>left_on & right_on</li>
+  				<li>merge by index</li>
+  				<li>.join()</li>
+  				<li>pd.merge()</li>
+  			</ol><br>
 
   		<li class = "a">Dates, Times</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>datetime module</li>
+  				<li>Timestamp object</li>
+  				<li>DatetimeIndex object</li>
+  				<li>pd.to_datetime()</li>
+  				<li>pd.date_range() - A</li>
+  				<li>pd.date_range() - B</li>
+  				<li>pd.date_range() - C</li>
+  				<li>.dt accessor</li>
+  				<li>install pandas data-reader library</li>
+  				<li>select rows by datetimeIndex</li>
+  				<li>Timestamp object attributes & methods</li>
+  				<li>pd.DateOffset() object</li>
+  				<li>pd.tseries.offset</li>
+  				<li>pd.Timedelta() object</li>
+  				<li>Timedelta in a dataset</li>
+  			</ol><br>
 
   		<li class = "a">Read & Write Excel</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>pd.read_csv(url)</li>
+  				<li>object usage</li>
+  				<li>.to_csv()</li>
+  				<li>install xlrd & openpyxl</li>
+  				<li>import excel</li>
+  				<li>export excel</li>
+  			</ol><br>
 
   		<li class = "a">Visualization</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
-
-  		<li class = "a">Dates, Times</li>
-    		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>.plot()</li>
+  				<li>.plot() with matplotlib</li>
+  				<li>bar graph</li>
+  				<li>pie chart</li>
+  			</ol><br>
 
   		<li class = "a">Setting Options</li>
     		<ol>
-  				<li>Coffee</li>
-  				<li>Tea</li>
-  				<li>Milk</li>
-  			</ol>
+  				<li>change options with attributes & dot syntax</li>
+  				<li>change options with methods</li>
+  				<li>precision option</li>
+  			</ol><br>
 
 
 		<li class = "a"><a href="http://ami03.cafe24.com/pandas2/01_Data_Types_Variables.html">Data Types</a></li>
