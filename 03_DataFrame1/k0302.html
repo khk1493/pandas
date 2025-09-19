@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Intro to DataFrame</title>
+<title>02_Shared Methods and Attributes between Series and DataFrame</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0301.-DataFrame-&#49548;&#44060;">0301. DataFrame &#49548;&#44060;<a class="anchor-link" href="#0301.-DataFrame-&#49548;&#44060;">&#182;</a></h1>
+<h1 id="0302.-Series&#50752;-DataFrame&#50640;&#49436;-&#47700;&#49548;&#46300;&#50752;-&#49549;&#49457;">0302. Series&#50752; DataFrame&#50640;&#49436; &#47700;&#49548;&#46300;&#50752; &#49549;&#49457;<a class="anchor-link" href="#0302.-Series&#50752;-DataFrame&#50640;&#49436;-&#47700;&#49548;&#46300;&#50752;-&#49549;&#49457;">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13125,40 +13125,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>DataFrame은 Series를 여러개 표시한 것으로 엑셀 시트를 나타낸 것과 같다. 실제 데이터를 처리할 때 가장 많이 사용하는 데이터 타입으로 주요 특징은 아래와 같다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="DataFrame-&#53945;&#51669;">DataFrame &#53945;&#51669;<a class="anchor-link" href="#DataFrame-&#53945;&#51669;">&#182;</a></h3><ol>
-<li>왼쪽에 자동적으로 인덱스가 생성됨</li>
-<li>만약 결측치(NaN)이 있으면 데이터 타입은 float가 됨</li>
-<li>처음 5줄, ..., 나중 5줄로 표시됨</li>
-<li>index가 0부터 시작하므로 행번호(index)가 999이면 행개수는 1000임</li>
-<li>밑에 DataFrame 형태가 표시됨. (예) 1000 rows × 31 columns</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="DataFrame-&#50696;">DataFrame &#50696;<a class="anchor-link" href="#DataFrame-&#50696;">&#182;</a></h3><p>아래는 2024년 미국의 fortune지가 선정한 상위 1000개 기업의 csv파일을 읽어 DataFrame으로 가져온 것이다.</p>
+<h3 id="&#49884;&#47532;&#50612;&#51592;-&#49324;&#50857;-&#47700;&#49548;&#46300;-&#44277;&#50976;">&#49884;&#47532;&#50612;&#51592; &#49324;&#50857; &#47700;&#49548;&#46300; &#44277;&#50976;<a class="anchor-link" href="#&#49884;&#47532;&#50612;&#51592;-&#49324;&#50857;-&#47700;&#49548;&#46300;-&#44277;&#50976;">&#182;</a></h3><p>시리어즈에서 사용하던 메소드와 속성은 데이터프레임에서도 대부분 같이 사용할 수 있다. 아래는 데이터프레임에서 사용한 head(), tail()이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Fortune/fortune1000_2024.csv&quot;</span><span class="p">)</span>
-<span class="n">f1000</span>
+<span class="n">f1000</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13171,7 +13149,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13290,150 +13268,83 @@ div#notebook {
       <td>3594309.0</td>
       <td>2024-08-05</td>
     </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>UnitedHealth Group</td>
-      <td>UNH</td>
-      <td>Health Care</td>
-      <td>Health Care: Insurance and Managed Care</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>...</td>
-      <td>11.2</td>
-      <td>273720.0</td>
-      <td>Andrew P. Witty</td>
-      <td>U.S.</td>
-      <td>Minnetonka</td>
-      <td>Minnesota</td>
-      <td>https://www.unitedhealthgroup.com</td>
-      <td>Public</td>
-      <td>474339.0</td>
-      <td>2024-08-05</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>Berkshire Hathaway</td>
-      <td>BRKA</td>
-      <td>Financials</td>
-      <td>Insurance: Property and Casualty (Stock)</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>2</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>1069978.0</td>
-      <td>Warren E. Buffett</td>
-      <td>U.S.</td>
-      <td>Omaha</td>
-      <td>Nebraska</td>
-      <td>https://www.berkshirehathaway.com</td>
-      <td>Public</td>
-      <td>937028.0</td>
-      <td>2024-08-05</td>
-    </tr>
-    <tr>
+  </tbody>
+</table>
+<p>3 rows × 31 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Sector</th>
+      <th>Industry</th>
+      <th>Profitable</th>
+      <th>Founder_is_CEO</th>
+      <th>FemaleCEO</th>
+      <th>Growth_in_Jobs</th>
+      <th>Change_in_Rank</th>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>CEO</th>
+      <th>Country</th>
+      <th>HeadquartersCity</th>
+      <th>HeadquartersState</th>
+      <th>Website</th>
+      <th>CompanyType</th>
+      <th>MarketCap_Updated_M</th>
+      <th>Updated</th>
     </tr>
-    <tr>
-      <th>995</th>
-      <td>996</td>
-      <td>Allegiant Travel</td>
-      <td>ALGT</td>
-      <td>Transportation</td>
-      <td>Airlines</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>0</td>
-      <td>...</td>
-      <td>4617.0</td>
-      <td>4869.4</td>
-      <td>Maurice J. Gallagher Jr.</td>
-      <td>U.S.</td>
-      <td>Las Vegas</td>
-      <td>Nevada</td>
-      <td>https://www.allegiant.com</td>
-      <td>Public</td>
-      <td>1375.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>997</td>
-      <td>Dropbox</td>
-      <td>DBX</td>
-      <td>Technology</td>
-      <td>Computer Software</td>
-      <td>yes</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>0</td>
-      <td>...</td>
-      <td>-18.0</td>
-      <td>2983.5</td>
-      <td>Andrew W. Houston</td>
-      <td>U.S.</td>
-      <td>San Francisco</td>
-      <td>California</td>
-      <td>https://www.dropbox.com</td>
-      <td>Public</td>
-      <td>8359.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>998</td>
-      <td>Exact Sciences</td>
-      <td>EXAS</td>
-      <td>Health Care</td>
-      <td>Pharmaceuticals</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>0</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>6471.3</td>
-      <td>Kevin T. Conroy</td>
-      <td>U.S.</td>
-      <td>Madison</td>
-      <td>Wisconsin</td>
-      <td>https://www.exactsciences.com</td>
-      <td>Public</td>
-      <td>12537.0</td>
-      <td>2024-06-04</td>
-    </tr>
+  </thead>
+  <tbody>
     <tr>
       <th>998</th>
       <td>999</td>
@@ -13484,10 +13395,441 @@ div#notebook {
     </tr>
   </tbody>
 </table>
-<p>1000 rows × 31 columns</p>
+<p>2 rows × 31 columns</p>
 </div>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49549;&#49457;-&#44277;&#50976;">&#49549;&#49457; &#44277;&#50976;<a class="anchor-link" href="#&#49549;&#49457;-&#44277;&#50976;">&#182;</a></h3><p>시리어즈에서 사용하던 속성들, 예를 들면 .index; .values; .shape; .dtypes 등도 데이터프레임에서 똑같이 사용할 수 있다. f1000이라는 DataFrame에 속성 .index를 붙이면 index의 속성을 보여준다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>RangeIndex(start=0, stop=1000, step=1)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.values 속성은 아래와 같이 numpy 객체를 보여준다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># numpy object가 된다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, &#39;Walmart&#39;, &#39;WMT&#39;, ..., &#39;Public&#39;, 559911.0, &#39;2024-08-05&#39;],
+       [2, &#39;Amazon&#39;, &#39;AMZN&#39;, ..., &#39;Public&#39;, 2005565.0, &#39;2024-08-05&#39;],
+       [3, &#39;Apple&#39;, &#39;AAPL&#39;, ..., &#39;Public&#39;, 3594309.0, &#39;2024-08-05&#39;],
+       ...,
+       [998, &#39;Exact Sciences&#39;, &#39;EXAS&#39;, ..., &#39;Public&#39;, 12537.0,
+        &#39;2024-06-04&#39;],
+       [999, &#39;BWX Technologies&#39;, &#39;BWXT&#39;, ..., &#39;Public&#39;, 9380.0,
+        &#39;2024-06-04&#39;],
+       [1000, &#39;Clear Channel Outdoor Hldgs.&#39;, &#39;CCO&#39;, ..., &#39;Public&#39;,
+        798.0, &#39;2024-06-04&#39;]], dtype=object)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.shape 속성은 f1000이라는 DataFrame이 1000개의 행과 31개의 열로 이루어진 '스프레드 시트'라는 것을 튜플 형태로 보여준다. 튜플은 (  )로 표시한 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">shape</span>   <span class="c1"># 결과물은 Tuple이다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1000, 31)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.dtypes 속성은 컬럼(열)별로 데이터 타입을 보여준다. 여기서 int64는 정수를 나타내며, object는 문자열을 나타내고, float64는 소수점을 가진 숫자를 의미한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">dtypes</span>   <span class="c1"># 컬럼별로 데이터 타입을 반환한다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Rank                               int64
+Company                           object
+Ticker                            object
+Sector                            object
+Industry                          object
+Profitable                        object
+Founder_is_CEO                    object
+FemaleCEO                         object
+Growth_in_Jobs                    object
+Change_in_Rank                     int64
+Gained_in_Rank                    object
+Dropped_in_Rank                   object
+Newcomer_to_the_Fortune500        object
+Global500                         object
+Worlds_Most_Admired_Companies     object
+Best_Companies_to_Work_For        object
+Number_of_employees                int64
+MarketCap_March28_M              float64
+Revenues_M                       float64
+RevenuePercentChange             float64
+Profits_M                        float64
+ProfitsPercentChange             float64
+Assets_M                         float64
+CEO                               object
+Country                           object
+HeadquartersCity                  object
+HeadquartersState                 object
+Website                           object
+CompanyType                       object
+MarketCap_Updated_M              float64
+Updated                           object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.dtypes에 다시 .value_counts()를 붙이면 위에 나타난 데이터 타입들이 종류별로 몇개인지를 나타내는 것이다. 즉, 문자열은 21개, 소숫점 숫자가 7개, 정수가 3개이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>object     21
+float64     7
+int64       3
+Name: count, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.columns라는 속성은 각 컬럼들의 이름을 보여준다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">columns</span>   
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Index([&#39;Rank&#39;, &#39;Company&#39;, &#39;Ticker&#39;, &#39;Sector&#39;, &#39;Industry&#39;, &#39;Profitable&#39;,
+       &#39;Founder_is_CEO&#39;, &#39;FemaleCEO&#39;, &#39;Growth_in_Jobs&#39;, &#39;Change_in_Rank&#39;,
+       &#39;Gained_in_Rank&#39;, &#39;Dropped_in_Rank&#39;, &#39;Newcomer_to_the_Fortune500&#39;,
+       &#39;Global500&#39;, &#39;Worlds_Most_Admired_Companies&#39;,
+       &#39;Best_Companies_to_Work_For&#39;, &#39;Number_of_employees&#39;,
+       &#39;MarketCap_March28_M&#39;, &#39;Revenues_M&#39;, &#39;RevenuePercentChange&#39;,
+       &#39;Profits_M&#39;, &#39;ProfitsPercentChange&#39;, &#39;Assets_M&#39;, &#39;CEO&#39;, &#39;Country&#39;,
+       &#39;HeadquartersCity&#39;, &#39;HeadquartersState&#39;, &#39;Website&#39;, &#39;CompanyType&#39;,
+       &#39;MarketCap_Updated_M&#39;, &#39;Updated&#39;],
+      dtype=&#39;object&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.axes라는 속성은 행 인덱스와 열 인덱스(컬럼 제목)을 나타낸다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">axes</span>     
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[RangeIndex(start=0, stop=1000, step=1),
+ Index([&#39;Rank&#39;, &#39;Company&#39;, &#39;Ticker&#39;, &#39;Sector&#39;, &#39;Industry&#39;, &#39;Profitable&#39;,
+        &#39;Founder_is_CEO&#39;, &#39;FemaleCEO&#39;, &#39;Growth_in_Jobs&#39;, &#39;Change_in_Rank&#39;,
+        &#39;Gained_in_Rank&#39;, &#39;Dropped_in_Rank&#39;, &#39;Newcomer_to_the_Fortune500&#39;,
+        &#39;Global500&#39;, &#39;Worlds_Most_Admired_Companies&#39;,
+        &#39;Best_Companies_to_Work_For&#39;, &#39;Number_of_employees&#39;,
+        &#39;MarketCap_March28_M&#39;, &#39;Revenues_M&#39;, &#39;RevenuePercentChange&#39;,
+        &#39;Profits_M&#39;, &#39;ProfitsPercentChange&#39;, &#39;Assets_M&#39;, &#39;CEO&#39;, &#39;Country&#39;,
+        &#39;HeadquartersCity&#39;, &#39;HeadquartersState&#39;, &#39;Website&#39;, &#39;CompanyType&#39;,
+        &#39;MarketCap_Updated_M&#39;, &#39;Updated&#39;],
+       dtype=&#39;object&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47700;&#49548;&#46300;-info()&#45716;-&#49884;&#47532;&#50612;&#51592;&#50640;&#45716;-&#50630;&#45716;-&#47566;&#51008;-&#51221;&#48372;&#47484;-&#50500;&#47000;&#50752;-&#44057;&#51060;-&#51228;&#44277;&#54620;&#45796;.">&#47700;&#49548;&#46300; info()&#45716; &#49884;&#47532;&#50612;&#51592;&#50640;&#45716; &#50630;&#45716; &#47566;&#51008; &#51221;&#48372;&#47484; &#50500;&#47000;&#50752; &#44057;&#51060; &#51228;&#44277;&#54620;&#45796;.<a class="anchor-link" href="#&#47700;&#49548;&#46300;-info()&#45716;-&#49884;&#47532;&#50612;&#51592;&#50640;&#45716;-&#50630;&#45716;-&#47566;&#51008;-&#51221;&#48372;&#47484;-&#50500;&#47000;&#50752;-&#44057;&#51060;-&#51228;&#44277;&#54620;&#45796;.">&#182;</a></h3><ol>
+<li>인덱스 위치: (예) RangeIndex: 1000 entries, 0 to 999</li>
+<li>컬럼 인덱스 라벨 </li>
+<li>결측치(빈칸)가 아닌 값의 개수</li>
+<li>데이터 타입</li>
+<li>메모리 사용량</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 31 columns):
+ #   Column                         Non-Null Count  Dtype  
+---  ------                         --------------  -----  
+ 0   Rank                           1000 non-null   int64  
+ 1   Company                        1000 non-null   object 
+ 2   Ticker                         959 non-null    object 
+ 3   Sector                         1000 non-null   object 
+ 4   Industry                       1000 non-null   object 
+ 5   Profitable                     1000 non-null   object 
+ 6   Founder_is_CEO                 1000 non-null   object 
+ 7   FemaleCEO                      1000 non-null   object 
+ 8   Growth_in_Jobs                 1000 non-null   object 
+ 9   Change_in_Rank                 1000 non-null   int64  
+ 10  Gained_in_Rank                 1000 non-null   object 
+ 11  Dropped_in_Rank                1000 non-null   object 
+ 12  Newcomer_to_the_Fortune500     500 non-null    object 
+ 13  Global500                      1000 non-null   object 
+ 14  Worlds_Most_Admired_Companies  1000 non-null   object 
+ 15  Best_Companies_to_Work_For     1000 non-null   object 
+ 16  Number_of_employees            1000 non-null   int64  
+ 17  MarketCap_March28_M            959 non-null    float64
+ 18  Revenues_M                     1000 non-null   float64
+ 19  RevenuePercentChange           994 non-null    float64
+ 20  Profits_M                      998 non-null    float64
+ 21  ProfitsPercentChange           850 non-null    float64
+ 22  Assets_M                       1000 non-null   float64
+ 23  CEO                            1000 non-null   object 
+ 24  Country                        1000 non-null   object 
+ 25  HeadquartersCity               1000 non-null   object 
+ 26  HeadquartersState              1000 non-null   object 
+ 27  Website                        1000 non-null   object 
+ 28  CompanyType                    1000 non-null   object 
+ 29  MarketCap_Updated_M            963 non-null    float64
+ 30  Updated                        1000 non-null   object 
+dtypes: float64(7), int64(3), object(21)
+memory usage: 242.3+ KB
+</pre>
+</div>
 </div>
 
 </div>
