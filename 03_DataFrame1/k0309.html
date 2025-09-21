@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>08_A Review of the .value_counts() Method</title>
+<title>09_Drop Rows with Null Values</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,18 +13105,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0308.-.value_counts()-&#47700;&#49548;&#46300;-&#47532;&#48624;">0308. .value_counts() &#47700;&#49548;&#46300; &#47532;&#48624;<a class="anchor-link" href="#0308.-.value_counts()-&#47700;&#49548;&#46300;-&#47532;&#48624;">&#182;</a></h1>
+<h1 id="0309.-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;&#50640;&#49436;-null&#44050;&#51012;-&#44032;&#51652;-&#54665;&#51012;-&#51228;&#44144;">0309. &#45936;&#51060;&#53552;&#54532;&#47112;&#51076;&#50640;&#49436; null&#44050;&#51012; &#44032;&#51652; &#54665;&#51012; &#51228;&#44144;<a class="anchor-link" href="#0309.-&#45936;&#51060;&#53552;&#54532;&#47112;&#51076;&#50640;&#49436;-null&#44050;&#51012;-&#44032;&#51652;-&#54665;&#51012;-&#51228;&#44144;">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
     </div>
@@ -13126,11 +13124,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">olympics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Paris_Olympics_2024/athletes.csv&quot;</span><span class="p">)</span>
-<span class="n">olympics</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/성적/성적_null.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;성명&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span>
 </pre></div>
 
     </div>
@@ -13140,6 +13139,606 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>도옥</th>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>조소접</th>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>신원통</th>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>이창란</th>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+    <tr>
+      <th>이요홍</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h3>.dropna()</h3>
+.dropna()는 데이터프레임(df)에 붙이는 메소드로 행(row)에 결측치가 하나라도 포함되어 있으면 그 결측치가 있는 행 전체를 제거하는 것이다. 위 n이라는 df는 1번째 행, 3번째 행, 마지막 행에 결측치가 하나씩 있다. 아래와 같이 여기에 .dropna()를 붙이면 1번째 행, 3번째 행, 마지막 행이 제거된다. 따라서 행 개수가 9이던 것이 .dropna() 사용하여 결측치를 제거함으로써 6으로 줄었다. 단, 제거된 것이 그대로 유지되려면 inplace=True를 넣어줘야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 결측치가 행전체에 있는 경우에만 그 행을 제거하려고 하면 ()안에 매개변수와 값을 how='all'와 같이 넣어 줘야 한다. 다시 csv 파일을 읽어 n이라는 df를 만들고 이 옵션을 넣어주면 행전체가 결측치인 마지막 행만 제거되었고 결측치가 1개 있는 것은 제거되지 않은 것을 알 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/성적/성적_null.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;성명&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>도옥</th>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>조소접</th>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>신원통</th>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>이창란</th>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+    <tr>
+      <th>이요홍</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>도옥</th>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>조소접</th>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>신원통</th>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>이창란</th>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이렇게 결측치가 있는 행이 제거되는 것은 매개변수 axis=0이 default로 되었기 때문이다. 이 매개변수를 axis=1 또는 axis=columns으로 하면 결측치가 있는 컬럼이 제거된다. 마찬가지로 how='any'로 하거나 아무 것도 쓰지 않으면 결측치가 하나만 있어도 열이 제거되고 how='all'이 되면 결측치가 열 전체에 있을 때 제거된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/성적/성적_null.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;성명&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -13166,81 +13765,96 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>code</th>
-      <th>current</th>
-      <th>name</th>
-      <th>gender</th>
-      <th>function</th>
-      <th>country</th>
-      <th>nationality</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>disciplines</th>
-      <th>...</th>
-      <th>birth_date</th>
-      <th>birth_place</th>
-      <th>birth_country</th>
-      <th>residence_place</th>
-      <th>residence_country</th>
-      <th>nickname</th>
-      <th>hobbies</th>
-      <th>occupation</th>
-      <th>education</th>
-      <th>lang</th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1532872</td>
-      <td>True</td>
-      <td>ALEKSANYAN Artur</td>
-      <td>Male</td>
-      <td>Athlete</td>
-      <td>Armenia</td>
-      <td>Armenia</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>['Wrestling']</td>
-      <td>...</td>
-      <td>1991-10-21</td>
-      <td>GYUMRI</td>
-      <td>Armenia</td>
-      <td>GYUMRI</td>
-      <td>Armenia</td>
-      <td>White Bear</td>
-      <td>Playing and watching football</td>
-      <td>Athlete</td>
-      <td>Graduated from Shirak State University (Gyumri...</td>
-      <td>Armenian, English, Russian</td>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1532873</td>
-      <td>True</td>
-      <td>AMOYAN Malkhas</td>
-      <td>Male</td>
-      <td>Athlete</td>
-      <td>Armenia</td>
-      <td>Armenia</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>['Wrestling']</td>
-      <td>...</td>
-      <td>1999-01-22</td>
-      <td>YEREVAN</td>
-      <td>Armenia</td>
-      <td>YEREVAN</td>
-      <td>Armenia</td>
+      <th>도옥</th>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>조소접</th>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>신원통</th>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>이창란</th>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+    <tr>
+      <th>이요홍</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Armenian</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>2 rows × 21 columns</p>
 </div>
 </div>
 
@@ -13253,7 +13867,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>.value_counts() 메소드는 데이터프레임의 특정 컬럼에서 중복된 값이 몇개인지를 보여준다. 따라서 특정 컬럼을 반드시 써줘야 한다. 만약 데이터에 결측치가 있다면 결측치는 제외하고 값을 카운트한다. counts에 있는 's'자를 잊지말자.</p>
+<p>아래는 axis=1로 했을 때 컬럼 전체가 제거되는 것이다. 마지막행은 행전체가 결측치이므로 옵션을 axis=1로 줬을 때 모든 컬럼값이 제거되었다. 물론 inplace=True를 쓰지 않았으므로 n값은 항상 원위치 된다.</p>
 
 </div>
 </div>
@@ -13263,7 +13877,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">olympics</span><span class="p">[</span><span class="s1">&#39;nationality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># n.dropna(axis = &#39;columns&#39;)</span>
 </pre></div>
 
     </div>
@@ -13280,21 +13895,61 @@ div#notebook {
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>nationality
-United States    694
-France           607
-Australia        476
-Germany          457
-Japan            429
-                ... 
-Nauru              1
-Belize             1
-Somalia            1
-Liechtenstein      1
-Haiti              1
-Name: count, Length: 197, dtype: int64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+    </tr>
+    <tr>
+      <th>성명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+    </tr>
+    <tr>
+      <th>도옥</th>
+    </tr>
+    <tr>
+      <th>주약란</th>
+    </tr>
+    <tr>
+      <th>조소접</th>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+    </tr>
+    <tr>
+      <th>신원통</th>
+    </tr>
+    <tr>
+      <th>이창란</th>
+    </tr>
+    <tr>
+      <th>이요홍</th>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13306,18 +13961,17 @@ Name: count, Length: 197, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>아래는 value_counts() 메소드의 또다른 기능을 보여준다. 숫자만 있는 컬럼에 이 메소드를 사용하고 매개변수 bins에 값을 숫자로 넣어주면 그 숫자만큼 구간을 만들고 그 구간 안에 들어가는 숫자들을 카운트하여 보여준다.</p>
+<p>다음은 매개변수 subset=['국어']라고 하면 '국어' 컬럼에 결측치가 있을 때만 행이 제거된다. 당초 '국어' 컬럼에 도옥과 이요홍의 국어 점수가 빈칸이었기 때문에 그 행이 제거되었다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Fortune/fortune1000_2024.csv&quot;</span><span class="p">)</span>
-<span class="n">f1000</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;국어&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13330,16 +13984,104 @@ Name: count, Length: 197, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>0    648125.0
-1    574785.0
-2    383285.0
-Name: Revenues_M, dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+    <tr>
+      <th>성명</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>황지영</th>
+      <td>92.0</td>
+      <td>49.0</td>
+      <td>40.0</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>주약란</th>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>조소접</th>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>왕산악</th>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>38.0</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>양몽환</th>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>신원통</th>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>이창란</th>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13347,96 +14089,16 @@ Name: Revenues_M, dtype: float64</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>아래는 fortune지 선정 1000대 기업의 매출액을 균등하게 5개 구간으로 나누고 거기에 해당하는 기업수를 보여주는 것이다. 순서는 카운트한 갯수가 많은 순부터 보여준다. 그리고 "("는 초과를 의미하고 "]"는 이하를 의미한다.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1000</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Revenues_M
-(1843.363, 94722.714]       958
-(94722.714, 186956.429]      26
-(186956.429, 279190.143]      8
-(279190.143, 371423.857]      4
-(371423.857, 463657.571]      2
-(555891.286, 648125.0]        2
-(463657.571, 555891.286]      0
-Name: count, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>참고로 히스토그램을 그리면 아래와 같다. 히스토그램 그리는 방법은 다음에 자세하게 설명한다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">f1000</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
 </div>
 </div>
 
