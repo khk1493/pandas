@@ -1,0 +1,1001 @@
+Rank,Company,Sector,Employees,Revenues,Profits,Assets_M,CEO,Country,HeadquartersCity,HeadquartersState,Website,CompanyType,MarketCap
+1,Walmart,Retailing,,,15511,252399,C. Douglas McMillon,U.S.,Bentonville,Arkansas,https://www.stock.walmart.com,Public,559911
+2,Amazon,,1525000,574785,,527854,Andrew R. Jassy,U.S.,Seattle,Washington,https://www.amazon.com,Public,-
+3,Apple,Technology,,383285,96995,352583,Timothy D. Cook,U.S.,Cupertino,California,https://www.apple.com,Public,3594309
+4,UnitedHealth Group,,440000,371622,22381,273720,Andrew P. Witty,U.S.,Minnetonka,Minnesota,https://www.unitedhealthgroup.com,Public,474339
+5,Berkshire Hathaway,Financials,396500,364482,96223,1069978,Warren E. Buffett,U.S.,Omaha,Nebraska,https://www.berkshirehathaway.com,Public,937028
+6,CVS Health,Health Care,259500,357776,8344,249728,Karen S. Lynch,U.S.,Woonsocket,Rhode Island,https://www.cvshealth.com,Public,73653
+7,Exxon Mobil,Energy,61500,344582,36010,376317,Darren W. Woods,U.S.,Spring,Texas,https://www.exxonmobil.com,Public,516824
+8,Alphabet,Technology,182502,307394,73795,402392,Sundar Pichai,U.S.,Mountain View,California,https://www.abc.xyz,Public,2315182
+9,McKesson,Health Care,48000,276711,3560,62320,Brian S. Tyler,U.S.,Irving,Texas,https://www.mckesson.com,Public,75007
+10,Cencora,Health Care,44000,262173.4,1745.3,62558.7,Steven H. Collis,U.S.,Conshohocken,Pennsylvania,https://www.cencora.com,Public,43758
+11,Costco Wholesale,Retailing,316000,242290,6292,68994,Ron M. Vachris,U.S.,Issaquah,Washington,https://www.costco.com,Public,376272
+12,JPMorgan Chase,Financials,309926,239425,49552,3875393,James Dimon,U.S.,New York,New York,https://www.jpmorganchase.com,Public,603194
+13,Microsoft,Technology,221000,211915,72361,411976,Satya Nadella,U.S.,Redmond,Washington,https://www.microsoft.com,Public,3373970
+14,Cardinal Health,Health Care,47520,205012,261,43417,Jason M. Hollar,U.S.,Dublin,Ohio,https://www.cardinalhealth.com,Public,22832
+15,Chevron,Energy,45600,200949,21369,261632,Michael K. Wirth,U.S.,San Ramon,California,https://www.chevron.com,Public,291950
+16,Cigna,Health Care,71413,195265,5164,152761,David M. Cordani,U.S.,Bloomfield,Connecticut,https://www.thecignagroup.com,Public,94148
+17,Ford Motor,Motor Vehicles & Parts,177000,176191,4347,273310,James D. Farley Jr.,U.S.,Dearborn,Michigan,https://www.ford.com,Public,56811
+18,Bank of America,Financials,212985,171912,26515,3180151,Brian T. Moynihan,U.S.,Charlotte,North Carolina,https://www.bankofamerica.com,Public,327595
+19,General Motors,Motor Vehicles & Parts,163000,171842,10127,273064,Mary T. Barra,U.S.,Detroit,Michigan,https://www.gm.com,Public,56222
+20,Elevance Health,Health Care,104900,171340,5987,108928,Gail K. Boudreaux,U.S.,Indianapolis,Indiana,https://www.elevancehealth.com,Public,123335
+21,Citigroup,Financials,237925,156820,9228,2411834,Jane Fraser,U.S.,New York,New York,https://www.citigroup.com,Public,124251
+22,Centene,Health Care,67700,153999,2702,84641,Sarah M. London,U.S.,St. Louis,Missouri,https://www.centene.com,Public,35221
+23,Home Depot,Retailing,463100,152669,15143,76530,Edward P. Decker,U.S.,Atlanta,Georgia,https://www.homedepot.com,Public,355454
+24,Marathon Petroleum,Energy,18200,150307,9681,85987,Maryann T. Mannen,U.S.,Findlay,Ohio,https://www.marathonpetroleum.com,Public,58737
+25,Kroger,Food & Drug Stores,414000,150039,2164,50505,W. Rodney McMullen,U.S.,Cincinnati,Ohio,https://www.thekrogerco.com,Public,37620
+26,Phillips 66,Energy,14000,149890,7015,75501,Mark E. Lashier,U.S.,Houston,Texas,https://www.phillips66.com,Public,59383
+27,Fannie Mae,Financials,8100,141240,17408,4325437,Priscilla Almodovar,U.S.,Washington,District Of Columbia,https://www.fanniemae.com,Public,8585
+28,Walgreens Boots Alliance,Food & Drug Stores,268500,139081,-3080,96628,Timothy Wentworth,U.S.,Deerfield,Illinois,https://www.walgreensbootsalliance.com,Public,10100
+29,Valero Energy,Energy,9897,139001,8835,63056,R. Lane Riggs,U.S.,San Antonio,Texas,https://www.valero.com,Public,48641
+30,Meta Platforms,Technology,67317,134902,39098,229623,Mark Zuckerberg,U.S.,Menlo Park,California,https://investor.fb.com,Public,1258678
+31,Verizon Communications,Telecommunications,105400,133974,11614,380255,Hans E. Vestberg,U.S.,New York,New York,https://www.verizon.com,Public,171696
+32,AT&T,Telecommunications,150470,122428,14400,407060,John T. Stankey,U.S.,Dallas,Texas,https://www.att.com,Public,133222
+33,Comcast,Telecommunications,186000,121572,15388,264811,Brian L. Roberts,U.S.,Philadelphia,Pennsylvania,https://www.comcastcorporation.com,Public,152786
+34,Wells Fargo,Financials,226000,115340,19142,1932468,Charles W. Scharf,U.S.,San Francisco,California,https://www.wellsfargo.com,Public,201265
+35,Goldman Sachs Group,Financials,45300,108418,8516,1641594,David M. Solomon,U.S.,New York,New York,https://www.goldmansachs.com,Public,164412
+36,Freddie Mac,Financials,8020,108050,10538,3280976,Michael T. Hutchins,U.S.,McLean,Virginia,https://www.freddiemac.com,Public,4528
+37,Target,Retailing,415000,107412,4138,55356,Brian C. Cornell,U.S.,Minneapolis,Minnesota,https://www.target.com,Public,69997
+38,Humana,Health Care,67600,106374,2489,47065,James A. Rechtin,U.S.,Louisville,Kentucky,https://www.humana.com,Public,46298
+39,State Farm Insurance,Financials,65054,104198.6,-6272.3,339484.7,Michael L. Tipsord,U.S.,Bloomington,Illinois,https://www.statefarm.com,Private,
+40,Tesla,Motor Vehicles & Parts,140473,96773,14997,106618,Elon Musk,U.S.,Austin,Texas,https://www.tesla.com,Public,805719
+41,Morgan Stanley,Financials,80006,96194,9087,1193693,Edward N. Pick,U.S.,New York,New York,https://www.morganstanley.com,Public,171065
+42,Johnson & Johnson,Health Care,131900,95195,35153,167558,Joaquin Duato,U.S.,New Brunswick,New Jersey,https://www.jnj.com,Public,359173
+43,Archer Daniels Midland,"Food, Beverages & Tobacco",41008,93935,3483,54631,Juan R. Luciano,U.S.,Chicago,Illinois,https://www.adm.com,Public,31347
+44,PepsiCo,"Food, Beverages & Tobacco",318000,91471,9074,100495,Ramon L. Laguarta,U.S.,Purchase,New York,https://www.pepsico.com,Public,225074
+45,United Parcel Service,Transportation,382550,90958,6708,70857,Carol B. Tom?,U.S.,Atlanta,Georgia,https://www.ups.com,Public,123329
+46,FedEx,Transportation,446400,90155,3972,87143,Rajesh Subramaniam,U.S.,Memphis,Tennessee,https://www.fedex.com,Public,74517
+47,Walt Disney,Media,199125,88898,2354,205579,Robert A. Iger,U.S.,Burbank,California,https://www.thewaltdisneycompany.com,Public,176598
+48,Dell Technologies,Technology,120000,88425,3211,82089,Michael S. Dell,U.S.,Round Rock,Texas,https://www.delltechnologies.com/,Public,97331
+49,Lowe's,Retailing,226000,86377,7726,41795,Marvin R. Ellison,U.S.,Mooresville,North Carolina,https://www.lowes.com,Public,132299
+50,Procter & Gamble,Household Products,107000,82006,14653,120829,Jon R. Moeller,U.S.,Cincinnati,Ohio,https://www.pginvestor.com,Public,388431
+51,Energy Transfer,Energy,13786,78586,3935,113698,Thomas E. Long/Marshall S. McCrea III,U.S.,Dallas,Texas,https://www.energytransfer.com,Public,55235
+52,Boeing,Aerospace & Defense,171000,77794,-2222,137012,Kelly K. Ortberg,U.S.,Arlington,Virginia,https://www.boeing.com,Public,109953
+53,Albertsons,Food & Drug Stores,198650,77649.7,1513.5,26168.2,Vivek Sankaran,U.S.,Boise,Idaho,https://www.albertsonscompanies.com,Public,11333
+54,Sysco,Wholesalers,71750,76324.7,1770.1,22821.1,Kevin P. Hourican,U.S.,Houston,Texas,https://www.sysco.com,Public,35755
+55,RTX,Aerospace & Defense,185000,68920,3195,161869,Christopher T. Calio,U.S.,Arlington,Virginia,https://www.rtx.com,Public,135104
+56,General Electric,Industrials,125000,67954,9481,163045,H. Lawrence Culp Jr.,U.S.,Boston,Massachusetts,https://www.ge.com,Public,174655
+57,Lockheed Martin,Aerospace & Defense,122000,67571,6920,52456,James D. Taiclet Jr.,U.S.,Bethesda,Maryland,https://www.lockheedmartin.com,Public,111303
+58,American Express,Financials,74600,67364,8374,261108,Stephen J. Squeri,U.S.,New York,New York,https://www.americanexpress.com,Public,175510
+59,Caterpillar,Industrials,113200,67060,10335,87476,D. James Umpleby III,U.S.,Irving,Texas,https://www.caterpillar.com,Public,169100
+60,MetLife,Financials,45000,66905,1578,687584,Michel A. Khalaf,U.S.,New York,New York,https://www.metlife.com,Public,52929
+61,HCA Healthcare,Health Care,265000,64968,5242,56211,Samuel N. Hazen,U.S.,Nashville,Tennessee,https://www.hcahealthcare.com,Public,83022
+62,Progressive,Financials,61432,62108.5,3902.4,88690.8,Susan Patricia  Griffith,U.S.,Mayfield Village,Ohio,https://www.progressive.com,Public,127155
+63,IBM,Technology,296600,61860,7502,135241,Arvind Krishna,U.S.,Armonk,New York,https://www.ibm.com,Public,167994
+64,Deere,Industrials,82956,61251,10166,104087,John C. May,U.S.,Moline,Illinois,https://www.deere.com,Public,102421
+65,Nvidia,Technology,29600,60922,29760,65728,Jensen Huang,U.S.,Santa Clara,California,https://www.nvidia.com,Public,3159624
+66,StoneX Group,Financials,4137,60856.1,238.5,21938.7,Sean M. O'Connor,U.S.,New York,New York,https://www.stonex.com,Public,2516
+67,Merck,Health Care,71000,60115,365,106675,Robert M. Davis,U.S.,Rahway,New Jersey,https://www.merck.com,Public,324503
+68,ConocoPhillips,Energy,9900,58574,10957,95924,Ryan M. Lance,U.S.,Houston,Texas,https://www.conocophillips.com,Public,133994
+69,Pfizer,Health Care,88000,58496,2119,226501,Albert Bourla,U.S.,New York,New York,https://www.pfizer.com,Public,164898
+70,Delta Air Lines,Transportation,103000,58048,4609,73644,Edward H. Bastian,U.S.,Atlanta,Georgia,https://www.delta.com,Public,27753
+71,TD Synnex,Wholesalers,28000,57555.4,626.9,29412.8,Patrick  Zammit/Richard T. Hume,U.S.,Fremont,California,https://www.tdsynnex.com,Public,9836
+72,Publix Super Markets,Food & Drug Stores,253000,57534,4349,34384,Kevin S. Murphy,U.S.,Lakeland,Florida,https://www.publix.com,Private,
+73,Allstate,Financials,53200,57094,-188,103362,Thomas J. Wilson,U.S.,Northbrook,Illinois,https://www.allstate.com,Public,44050
+74,Cisco Systems,Technology,84900,56998,12613,101852,Charles H. Robbins,U.S.,San Jose,California,https://www.cisco.com,Public,191932
+75,Nationwide,Financials,24118,54609.4,-45.2,290615,Kirt A. Walker,U.S.,Columbus,Ohio,https://www.nationwide.com,Private,
+76,Charter Communications,Telecommunications,101100,54607,4557,147193,Christopher L. Winfrey,U.S.,Stamford,Connecticut,https://www.charter.com,Public,52350
+77,AbbVie,Health Care,50000,54318,4863,134711,Robert A. Michael,U.S.,North Chicago,Illinois,https://www.abbvie.com,Public,296719
+78,New York Life Insurance,Financials,15384,54317.2,804.6,408904.9,Craig DeSanto,U.S.,New York,New York,https://www.newyorklife.com,Private,
+79,Intel,Technology,124800,54228,1689,191572,Patrick P. Gelsinger,U.S.,Santa Clara,California,https://www.intel.com,Public,146692
+80,TJX,Retailing,349000,54217,4474,29747,Ernie L. Herrman,U.S.,Framingham,Massachusetts,https://www.tjx.com,Public,128622
+81,Prudential Financial,Financials,40366,53979,2488,721123,Charles F. Lowrey,U.S.,Newark,New Jersey,https://www.prudential.com,Public,45069
+82,HP,Technology,58000,53718,3263,37004,Enrique J. Lores,U.S.,Palo Alto,California,https://www.hp.com,Public,36539
+83,United Airlines Holdings,Transportation,103300,53717,2618,71104,J. Scott Kirby,U.S.,Chicago,Illinois,https://www.united.com,Public,14573
+84,Performance Food Group,Wholesalers,34825,53354.7,397.2,12499,George L. Holm,U.S.,Richmond,Virginia,https://www.pfgc.com,Public,9951
+85,Tyson Foods,"Food, Beverages & Tobacco",139000,52881,-648,36251,Donnie D. King,U.S.,Springdale,Arkansas,https://www.tysonfoods.com,Public,20461
+86,American Airlines Group,Transportation,132100,52788,822,63058,Robert D. Isom,U.S.,Fort Worth,Texas,https://www.aa.com,Public,6947
+87,Liberty Mutual Insurance Group,Financials,45000,52612,213,165208,Timothy M. Sweeney,U.S.,Boston,Massachusetts,https://www.libertymutual.com,Private,
+88,Nike,Apparel,83700,51217,5070,37531,John J. Donahoe II,U.S.,Beaverton,Oregon,https://investors.nike.com,Public,107632
+89,Oracle,Technology,164000,49954,8503,134384,Safra A. Catz,U.S.,Austin,Texas,https://www.oracle.com,Public,394281
+90,Enterprise Products Partners,Energy,7500,49715,5532,70982,A. James Teague/W. Randall Fowler,U.S.,Houston,Texas,https://www.enterpriseproducts.com,Public,64278
+91,Capital One Financial,Financials,51987,49484,4887,478464,Richard D. Fairbank,U.S.,McLean,Virginia,https://www.capitalone.com,Public,55230
+92,Plains GP Holdings,Energy,4200,48712,198,28597,Wilfred C.W. Chiang,U.S.,Houston,Texas,https://www.plains.com,Public,3862
+93,World Kinect,Energy,5289,47710.6,52.9,7375.3,Michael J. Kasbar,U.S.,Miami,Florida,https://www.world-kinect.com,Public,1579
+94,AIG,Financials,25200,46802,3643,539306,Peter S. Zaffino,U.S.,New York,New York,https://www.aig.com,Public,51514
+95,Coca-Cola,"Food, Beverages & Tobacco",79100,45754,10714,97703,James R. Quincey,U.S.,Atlanta,Georgia,https://www.coca-colacompany.com,Public,273167
+96,TIAA,Financials,16023,45734.8,-1408.9,629369.9,Thasunda Brown Duckett,U.S.,New York,New York,https://www.tiaa.org,Private,
+97,CHS,"Food, Beverages & Tobacco",10609,45590,1900.4,18957.4,Jay D. Debertin,U.S.,Inver Grove Heights,Minnesota,https://www.chsinc.com,Private,
+98,Bristol-Myers Squibb,Health Care,34100,45006,8025,95159,Christopher S. Boerner,U.S.,Princeton,New Jersey,https://www.bms.com,Public,81388
+99,Dow,Chemicals,35900,44622,589,57967,James R. Fitterling,U.S.,Midland,Michigan,https://www.dow.com,Public,37463
+100,Best Buy,Retailing,85000,43452,1241,14967,Corie S. Barry,U.S.,Richfield,Minnesota,https://www.investors.bestbuy.com,Public,18444
+101,Thermo Fisher Scientific,Technology,122000,42857,5995,98726,Marc N. Casper,U.S.,Waltham,Massachusetts,https://www.thermofisher.com,Public,207913
+102,Massachusetts Mutual Life Insurance,Financials,11323,42641.4,-771.6,397895,Roger W. Crandall,U.S.,Springfield,Massachusetts,https://www.massmutual.com,Private,
+103,USAA,Financials,37376,42493.4,1213.5,211637.6,Wayne Peacock,U.S.,San Antonio,Texas,https://www.usaa.com,Private,
+104,General Dynamics,Aerospace & Defense,111600,42272,3315,54810,Phebe N. Novakovic,U.S.,Reston,Virginia,https://www.gd.com,Public,78309
+105,Travelers,Financials,33133,41364,2991,125978,Alan D. Schnitzer,U.S.,New York,New York,https://www.travelers.com,Public,48867
+106,Warner Bros. Discovery,Media,35300,41321,-3126,122757,David M. Zaslav,U.S.,New York,New York,https://wbd.com,Public,18181
+107,U.S. Bancorp,Financials,75465,40624,5429,663491,Andrew J. Cecere,U.S.,Minneapolis,Minnesota,https://www.usbank.com,Public,66086
+108,Abbott Laboratories,Health Care,114000,40109,5723,73214,Robert B. Ford,U.S.,Abbott Park,Illinois,https://www.abbott.com,Public,179113
+109,Northrop Grumman,Aerospace & Defense,101000,39290,2056,46544,Kathy J. Warden,U.S.,Falls Church,Virginia,https://www.northropgrumman.com,Public,63920
+110,Northwestern Mutual,Financials,8239,38788.1,711.4,358828.6,John E. Schlifske,U.S.,Milwaukee,Wisconsin,https://www.northwesternmutual.com,Private,
+111,Dollar General,Retailing,185800,38691.6,1661.3,30795.6,Todd J. Vasos,U.S.,Goodlettsville,Tennessee,https://www.dollargeneral.com,Public,27918
+112,PBF Energy,Energy,3776,38324.8,2140.5,14387.8,Matthew C. Lucey,U.S.,Parsippany,New Jersey,https://www.pbfenergy.com,Public,4790
+113,Uber Technologies,Technology,30400,37281,1887,38699,Dara Khosrowshahi,U.S.,San Francisco,California,https://www.uber.com,Public,151051
+114,Honeywell International,Industrials,95000,36662,5658,61525,Vimal Kapur,U.S.,Charlotte,North Carolina,https://www.honeywell.com,Public,140474
+115,Mondelez International,"Food, Beverages & Tobacco",91000,36016,4959,71391,Dirk Van de Put,U.S.,Chicago,Illinois,https://www.mondelezinternational.com,Public,86317
+116,Starbucks,"Hotels, Restaurants & Leisure",381000,35975.6,4124.5,29445.5,Rachel Ruggeri,U.S.,Seattle,Washington,https://www.starbucks.com,Public,82404
+117,Qualcomm,Technology,50000,35820,7232,51040,Cristiano R. Amon,U.S.,San Diego,California,https://www.qualcomm.com,Public,232329
+118,Broadcom,Technology,20000,35819,14082,72861,Hock E. Tan,U.S.,Palo Alto,California,https://www.broadcom.com,Public,797940
+119,US Foods Holding,Wholesalers,30000,35597,506,13187,David E. Flitman,U.S.,Rosemont,Illinois,https://www.usfoods.com,Public,12829
+120,D.R. Horton,Engineering & Construction,13450,35460.4,4745.7,32582.4,Paul J. Romanowski,U.S.,Arlington,Texas,https://www.drhorton.com,Public,50108
+121,Philip Morris International,"Food, Beverages & Tobacco",82700,35174,7813,65304,Jacek Olczak,U.S.,Stamford,Connecticut,https://www.pmi.com,Public,163337
+122,Paccar,Motor Vehicles & Parts,32400,35127.4,4600.8,40823.4,R. Preston Feight,U.S.,Bellevue,Washington,https://www.paccar.com,Public,54799
+123,Salesforce,Technology,72682,34857,4136,99823,Marc R. Benioff,U.S.,San Francisco,California,https://www.salesforce.com,Public,245021
+124,Nucor,Materials,32000,34713.5,4524.8,35340.5,Leon J. Topalian,U.S.,Charlotte,North Carolina,https://www.nucor.com,Public,39530
+125,Jabil,Technology,236000,34702,818,19424,Michael K. Dastoor,U.S.,St. Petersburg,Florida,https://www.jabil.com,Public,13080
+126,Lennar,Engineering & Construction,12284,34233.4,3938.5,39234.3,Jonathan M. Jaffe/Stuart A. Miller,U.S.,Miami,Florida,https://www.lennar.com,Public,43389
+127,Eli Lilly,Health Care,43000,34124.1,5240.4,64006.3,David A. Ricks,U.S.,Indianapolis,Indiana,https://www.lilly.com,Public,903322
+128,Molina Healthcare,Health Care,18000,34072,1091,14892,Joseph M. Zubretsky,U.S.,Long Beach,California,https://www.molinahealthcare.com,Public,16755
+129,Cummins,Industrials,75500,34065,735,32005,Jennifer Rumsey,U.S.,Columbus,Indiana,https://www.cummins.com,Public,39520
+130,Bank of New York Mellon,Financials,53400,33805,3286,409953,Robin Vince,U.S.,New York,New York,https://www.bnymellon.com,Public,49139
+131,Netflix,Media,13000,33723.3,5408,48732,Ted Sarandos/Gregory K. Peters,U.S.,Los Gatos,California,https://www.netflix.com,Public,282865
+132,Truist Financial,Financials,49935,33246,-1091,535349,William H. Rogers Jr.,U.S.,Charlotte,North Carolina,https://www.truist.com,Public,55397
+133,Arrow Electronics,Wholesalers,22100,33107.1,903.5,21726.2,Sean J. Kerins,U.S.,Centennial,Colorado,https://www.arrow.com,Public,6525
+134,3M,Chemicals,85000,32681,-6995,50580,William M. Brown,U.S.,St. Paul,Minnesota,https://www.3m.com,Public,56841
+135,Visa,Business Services,28800,32653,17273,90499,Ryan McInerney,U.S.,San Francisco,California,https://www.visa.com,Public,551134
+136,Apollo Global Management,Financials,6855,32644,5047,313488,Marc Rowan,U.S.,New York,New York,https://www.apollo.com,Public,69703
+137,HF Sinclair,Energy,5218,31964.4,1589.7,17716.3,Tim Go,U.S.,Dallas,Texas,https://www.hfsinclair.com,Public,11988
+138,CBRE Group,Financials,130000,31949,986,22548,Robert E. Sulentic,U.S.,Dallas,Texas,https://www.cbre.com,Public,29726
+139,PNC Financial Services Group,Financials,55612,31882,5578,561580,William S. Demchak,U.S.,Pittsburgh,Pennsylvania,https://www.pnc.com,Public,64292
+140,Lithia Motors,Retailing,25051,31310.9,1000.8,19632.5,Bryan B. DeBoer,U.S.,Medford,Oregon,https://investors.lithiadriveway.com,Public,8283
+141,CarMax,Retailing,30621,31126.4,484.8,26182.7,William D. Nash,U.S.,Richmond,Virginia,https://www.carmax.com,Public,13757
+142,Paramount Global,Media,24150,30610,-608,53543,George Cheeks/Chris McCarthy/Brian Robbins,U.S.,New York,New York,https://www.paramount.com,Public,8099
+143,Dollar Tree,Retailing,138860,30603.8,-998.4,22023.5,Richard W. Dreiling,U.S.,Chesapeake,Virginia,https://www.dollartree.com,Public,29024
+144,United Natural Foods,Wholesalers,29455,30272,24,7394,Sandy Douglas,U.S.,Providence,Rhode Island,https://www.unfi.com,Public,683
+145,PayPal Holdings,Business Services,27200,29771,4246,82166,Alex Chriss,U.S.,San Jose,California,https://www.paypal.com,Public,71796
+146,Penske Automotive Group,Retailing,28000,29527.4,1053.2,15671.5,Roger S. Penske,U.S.,Bloomfield Hills,Michigan,https://www.penskeautomotive.com,Public,10861
+147,Hewlett Packard Enterprise,Technology,62000,29135,2025,57153,Antonio F. Neri,U.S.,Spring,Texas,https://www.hpe.com,Public,23049
+148,Duke Energy,Energy,27037,28932,2841,176893,Lynn J. Good,U.S.,Charlotte,North Carolina,https://www.duke-energy.com,Public,74608
+149,Occidental Petroleum,Energy,12570,28918,4696,74008,Vicki A. Hollub,U.S.,Houston,Texas,https://www.oxy.com,Public,57611
+150,NRG Energy,Energy,18131,28823,-202,26038,Lawrence S. Coben,U.S.,Houston,Texas,https://www.nrg.com,Public,14535
+151,Amgen,Health Care,26700,28190,6717,97154,Robert A. Bradway,U.S.,Thousand Oaks,California,https://www.amgen.com,Public,152373
+152,NextEra Energy,Energy,16800,28114,7310,177489,John W. Ketchum,U.S.,Juno Beach,Florida,https://www.nexteraenergy.com,Public,131171
+153,Danaher,Health Care,62000,27602,4764,84488,Rainer M. Blair,U.S.,Washington,District Of Columbia,https://www.danaher.com,Public,184929
+154,Gilead Sciences,Health Care,18000,27116,5665,62125,Daniel P. O'Day,U.S.,Foster City,California,https://www.gilead.com,Public,91341
+155,AutoNation,Retailing,25300,26948.9,1021.1,11980,Michael M. Manley,U.S.,Fort Lauderdale,Florida,https://www.autonation.com,Public,6902
+156,Kraft Heinz,"Food, Beverages & Tobacco",36000,26640,2855,90339,Carlos Abrams-Rivera,U.S.,Chicago,Illinois,https://www.kraftheinzcompany.com,Public,44857
+157,Avnet,Wholesalers,15800,26536.9,770.8,12477.2,Philip R. Gallagher,U.S.,Phoenix,Arizona,https://www.avnet.com,Public,4480
+158,Applied Materials,Technology,34000,26517,6856,30729,Gary E. Dickerson,U.S.,Santa Clara,California,https://www.appliedmaterials.com,Public,171356
+159,Southwest Airlines,Transportation,74806,26091,465,36487,Robert E. Jordan,U.S.,Dallas,Texas,https://www.southwest.com,Public,17417
+160,Charles Schwab,Financials,33000,25521,5067,493178,Walter W. Bettinger II,U.S.,Westlake,Texas,https://www.aboutschwab.com,Public,131975
+161,Baker Hughes,Energy,58000,25506,1943,36945,Lorenzo Simonelli,U.S.,Houston,Texas,https://www.bakerhughes.com,Public,33530
+162,McDonald's,"Hotels, Restaurants & Leisure",150000,25493.7,8468.8,56146.8,Christopher J. Kempczinski,U.S.,Chicago,Illinois,https://www.investor.mcdonalds.com,Public,203582
+163,Southern Company,Energy,27960,25253,3976,139331,Christopher C. Womack,U.S.,Atlanta,Georgia,https://www.southerncompany.com,Public,78269
+164,Mastercard,Business Services,33400,25098,11195,42448,Michael Miebach,U.S.,Purchase,New York,https://www.mastercard.com,Public,449253
+165,Constellation Energy,Energy,13842,24918,1623,50758,Joseph Dominguez,U.S.,Baltimore,Maryland,https://www.constellationenergy.com,Public,58250
+166,Hartford Financial Services Group,Financials,18700,24527,2504,76780,Christopher J. Swift,U.S.,Hartford,Connecticut,https://www.thehartford.com,Public,30637
+167,PG&E,Energy,28010,24428,2242,125698,Patricia K. Poppe,U.S.,Oakland,California,https://www.pgecorp.com,Public,35760
+168,Coupang,Retailing,78000,24383,1360,13346,Bom Kim,U.S.,Seattle,Washington,https://www.aboutcoupang.com,Public,31903
+169,EOG Resources,Energy,3050,24186,7594,43857,Ezra Y. Yacob,U.S.,Houston,Texas,https://www.eogresources.com,Public,73536
+170,Union Pacific,Transportation,32973,24119,6379,67132,Jim Vena,U.S.,Omaha,Nebraska,https://www.up.com,Public,150041
+171,Rite Aid,Food & Drug Stores,47000,24091.9,-749.9,7527.4,Jeffrey S. Stein,U.S.,Philadelphia,Pennsylvania,https://www.riteaid.com,Public,9
+172,Macy's,Retailing,85581,23866,105,16246,Tony Spring,U.S.,New York,New York,https://www.macysinc.com,Public,5483
+173,Marriott International,"Hotels, Restaurants & Leisure",148000,23713,3083,25674,Anthony G. Capuano,U.S.,Bethesda,Maryland,https://www.marriott.com,Public,72731
+174,Lear,Motor Vehicles & Parts,186600,23466.9,572.5,14695.5,Raymond E. Scott,U.S.,Southfield,Michigan,https://www.lear.com,Public,8263
+175,Genuine Parts,Wholesalers,60000,23090.6,1316.5,17968.5,William P. Stengel II,U.S.,Atlanta,Georgia,https://www.genpt.com,Public,21601
+176,Sherwin-Williams,Chemicals,64088,23051.9,2388.8,22954.4,Heidi G. Petz,U.S.,Cleveland,Ohio,https://www.sherwin.com,Public,88255
+177,Halliburton,Energy,48000,23018,2638,24683,Jeffrey A. Miller,U.S.,Houston,Texas,https://www.halliburton.com,Public,35088
+178,Freeport-McMoRan,Energy,27200,22855,1848,52506,Kathleen L. Quirk,U.S.,Phoenix,Arizona,https://www.fcx.com,Public,67446
+179,Live Nation Entertainment,Media,23200,22749.1,563.3,19074,Michael Rapino,U.S.,Beverly Hills,California,https://www.livenationentertainment.com,Public,24412
+180,Marsh & McLennan,Financials,85000,22736,3756,48030,John Q. Doyle,U.S.,New York,New York,https://www.marshmclennan.com,Public,101658
+181,Advanced Micro Devices,Technology,26000,22680,854,67885,Lisa T. Su,U.S.,Santa Clara,California,https://www.amd.com,Public,291697
+182,First Citizens BancShares,Financials,15868,22466,11466,213758,Frank B. Holding Jr.,U.S.,Raleigh,North Carolina,https://www.firstcitizens.com,Public,23620
+183,WESCO International,Wholesalers,20000,22385.2,765.5,15060.9,John J. Engel,U.S.,Pittsburgh,Pennsylvania,https://www.wesco.com,Public,8727
+184,Carrier Global,Industrials,53000,22098,1349,32822,David L. Gitlin,U.S.,Palm Beach Gardens,Florida,https://www.corporate.carrier.com,Public,52323
+185,Cleveland-Cliffs,Materials,28000,21996,399,17537,Lourenco Goncalves,U.S.,Cleveland,Ohio,https://www.clevelandcliffs.com,Public,11331
+186,Block,Business Services,12985,21915.6,9.8,34069.9,Jack Dorsey,U.S.,Oakland,California,https://www.block.xyz,Public,52075
+187,Exelon,Energy,19962,21727,2328,101546,Calvin G. Butler Jr.,U.S.,Chicago,Illinois,https://www.exeloncorp.com,Public,37560
+188,KKR,Financials,4490,21685.3,3732.3,317294.2,Joseph Y. Bae/Scott C. Nuttall,U.S.,New York,New York,https://www.kkr.com,Public,89014
+189,CDW,Technology,15100,21376,1104.3,13284.6,Christine A. Leahy,U.S.,Vernon Hills,Illinois,https://www.cdw.com,Public,34330
+190,Booking Holdings,Technology,23482,21365,4289,24342,Glenn D. Fogel,U.S.,Norwalk,Connecticut,https://www.bookingholdings.com,Public,123968
+191,Synchrony,Financials,20000,20999,2238,117479,Brian D. Doubles,U.S.,Stamford,Connecticut,https://www.synchrony.com,Public,17543
+192,Quanta Services,Engineering & Construction,52500,20882.2,744.7,16237.2,Earl C. Austin Jr.,U.S.,Houston,Texas,https://www.quantaservices.com,Public,37866
+193,Jones Lang LaSalle,Financials,106100,20760.8,225.4,16064.8,Christian Ulbrich,U.S.,Chicago,Illinois,https://www.jll.com,Public,9256
+194,Discover Financial Services,Financials,21100,20606,2940,151522,J. Michael  Shepherd,U.S.,Riverwoods,Illinois,https://www.discover.com,Public,32847
+195,Tenet Healthcare,Health Care,95905,20548,611,28312,Saumya Sutaria,U.S.,Dallas,Texas,https://www.tenethealth.com,Public,10511
+196,Altria Group,"Food, Beverages & Tobacco",6400,20502,8130,38570,William F. Gifford Jr.,U.S.,Richmond,Virginia,https://www.altria.com,Public,76922
+197,Stryker,Health Care,52000,20498,3165,39912,Kevin A. Lobo,U.S.,Portage,Michigan,https://www.stryker.com,Public,136159
+198,Kimberly-Clark,Household Products,41000,20431,1764,17344,Michael D. Hsu,U.S.,Irving,Texas,https://www.kimberly-clark.com,Public,43580
+199,Waste Management,Business Services,48000,20426,2304,32823,James C. Fish Jr.,U.S.,Houston,Texas,https://www.wm.com,Public,85601
+200,Cheniere Energy,Energy,1605,20394,9881,43076,Jack A. Fusco,U.S.,Houston,Texas,https://www.cheniere.com,Public,37851
+201,Ross Stores,Retailing,108000,20376.9,1874.5,14300.1,Barbara Rentler,U.S.,Dublin,California,https://www.rossstores.com,Public,49409
+202,WestRock,Materials,56100,20310,-1649,27443.7,David B. Sewell,U.S.,Atlanta,Georgia,https://www.westrock.com,Private,12707
+203,General Mills,"Food, Beverages & Tobacco",34000,20094.2,2593.9,31451.7,Jeffrey L. Harmening,U.S.,Minneapolis,Minnesota,https://www.generalmills.com,Public,39502
+204,Goodyear Tire & Rubber,Motor Vehicles & Parts,71000,20066,-689,21582,Mark W. Stewart,U.S.,Akron,Ohio,https://www.goodyear.com,Public,3901
+205,BJ's Wholesale Club,Retailing,34000,19968.7,523.7,6677.6,Robert W. Eddy,U.S.,Marlborough,Massachusetts,https://www.bjs.com,Public,10059
+206,GE HealthCare Technologies,Health Care,51000,19552,1568,32454,Peter J. Arduini,U.S.,Chicago,Illinois,https://www.gehealthcare.com,Public,41397
+207,Colgate-Palmolive,Household Products,34000,19457,2300,16393,Noel R. Wallace,U.S.,New York,New York,https://www.colgatepalmolive.com,Public,74020
+208,Whirlpool,Industrials,59000,19455,481,17312,Marc R. Bitzer,U.S.,Benton Harbor,Michigan,https://www.whirlpoolcorp.com,Public,6515
+209,L3Harris Technologies,Aerospace & Defense,50000,19419,1227,41687,Christopher E. Kubasik,U.S.,Melbourne,Florida,https://www.l3harris.com,Public,40508
+210,Adobe,Technology,29945,19409,5428,29779,Shantanu Narayen,U.S.,San Jose,California,https://www.adobe.com,Public,226061
+211,Becton Dickinson,Health Care,73000,19372,1484,52780,Thomas E. Polen,U.S.,Franklin Lakes,New Jersey,https://www.bd.com,Public,71489
+212,Pioneer Natural Resources,Energy,2213,19362,4894,36613,Richard P. Dealy,U.S.,Irving,Texas,https://www.pxd.com,Private,61326
+213,Cognizant Technology Solutions,Technology,347700,19353,2126,18483,Ravi Kumar S,U.S.,Teaneck,New Jersey,https://www.cognizant.com,Public,36487
+214,Murphy USA,Retailing,10750,19238.2,556.8,4340.1,R. Andrew Clyde,U.S.,El Dorado,Arkansas,https://www.murphyusa.com,Public,8727
+215,Fiserv,Business Services,42000,19093,3068,90890,Frank J. Bisignano,U.S.,Milwaukee,Wisconsin,https://www.fiserv.com,Public,94358
+216,Parker-Hannifin,Industrials,62730,19065.2,2082.9,29964.5,Jennifer A. Parmentier,U.S.,Cleveland,Ohio,https://www.phstock.com,Public,71370
+217,American Electric Power,Energy,17250,18982.3,2208.1,96684,William J. Fehrman,U.S.,Columbus,Ohio,https://www.aep.com,Public,45339
+218,International Paper,Materials,39000,18916,288,23261,Andrew K. Silvernail,U.S.,Memphis,Tennessee,https://www.internationalpaper.com,Public,13515
+219,ManpowerGroup,Business Services,27900,18914.5,88.8,8830.2,Jonas Prising,U.S.,Milwaukee,Wisconsin,https://www.manpowergroup.com,Public,3756
+220,Aramark,Business Services,262550,18853.9,674.1,16871.2,John J. Zillmer,U.S.,Philadelphia,Pennsylvania,https://www.aramark.com,Public,8535
+221,Steel Dynamics,Materials,12600,18795.3,2450.9,14908.4,Mark D. Millett,U.S.,Fort Wayne,Indiana,https://www.steeldynamics.com,Public,23413
+222,Aflac,Financials,12785,18701,4659,126724,Daniel P. Amos,U.S.,Columbus,Georgia,https://www.aflac.com,Public,49405
+223,Reinsurance Group of America,Financials,3900,18567,902,97623,Tony Cheng,U.S.,Chesterfield,Missouri,https://www.rgare.com,Public,12683
+224,Emerson Electric,Industrials,67000,18370,13219,42746,S.L. Karsanbhai,U.S.,St. Louis,Missouri,https://www.emerson.com,Public,64842
+225,State Street,Financials,46451,18366,1944,297258,Ronald P. O'Hanley,U.S.,Boston,Massachusetts,https://www.statestreet.com,Public,23346
+226,PPG Industries,Chemicals,53000,18246,1270,21647,Timothy M. Knavish,U.S.,Pittsburgh,Pennsylvania,https://www.ppg.com,Public,34104
+227,United States Steel,Materials,21803,18053,895,20451,David B. Burritt,U.S.,Pittsburgh,Pennsylvania,https://www.ussteel.com,Public,9168
+228,Automatic Data Processing,Business Services,63000,18012.2,3412,50971,Maria Black,U.S.,Roseland,New Jersey,https://www.adp.com,Public,102591
+229,Group 1 Automotive,Retailing,16011,17873.7,601.6,7774.1,Daryl A. Kenningham,U.S.,Houston,Texas,https://www.group1auto.com,Public,3999
+230,Dominion Energy,Energy,17700,17867,1994,109032,Robert M. Blue,U.S.,Richmond,Virginia,https://www.dominionenergy.com,Public,41201
+231,BlackRock,Financials,19800,17859,5502,123211,Laurence D. Fink,U.S.,New York,New York,https://www.blackrock.com,Public,124173
+232,Oneok,Energy,4775,17677,2659,44266,Pierce H. Norton II,U.S.,Tulsa,Oklahoma,https://www.oneok.com,Public,46752
+233,C.H. Robinson Worldwide,Transportation,15246,17596.4,325.1,5225.3,David P. Bozeman,U.S.,Eden Prairie,Minnesota,https://www.chrobinson.com,Public,8908
+234,Texas Instruments,Technology,34000,17519,6510,32348,Haviv Ilan,U.S.,Dallas,Texas,https://www.ti.com,Public,158541
+235,Kohl's,Retailing,66000,17476,317,14009,Thomas A. Kingsbury,U.S.,Menomonee Falls,Wisconsin,https://www.kohls.com,Public,3233
+236,AutoZone,Retailing,95200,17457.2,2528.4,15985.9,Philip B. Daniele III,U.S.,Memphis,Tennessee,https://www.autozone.com,Public,54533
+237,Lam Research,Technology,17200,17428.5,4510.9,18781.6,Timothy M. Archer,U.S.,Fremont,California,https://www.lamresearch.com,Public,127376
+238,Corteva,"Food, Beverages & Tobacco",22500,17226,735,42996,Charles V. Magro,U.S.,Indianapolis,Indiana,https://www.corteva.com,Public,40304
+239,Peter Kiewit Sons',Engineering & Construction,31100,17118,1176,9724,Rick Lanoha,U.S.,Omaha,Nebraska,https://www.kiewit.com,Private,
+240,Builders FirstSource,Materials,29000,17097.3,1540.6,10499.5,Dave Rush,U.S.,Irving,Texas,https://www.bldr.com,Public,25431
+241,Kyndryl Holdings,Technology,90000,17026,-1374,11464,Martin J. Schroeter,U.S.,New York,New York,https://www.kyndryl.com,Public,5007
+242,EchoStar,Telecommunications,15300,17015.6,-1702.1,57108.9,Hamid Akhavan,U.S.,Englewood,Colorado,https://www.echostar.com,Public,3869
+243,American Family Insurance Group,Financials,12417,16999.9,-891,38023.5,William Westrate,U.S.,Madison,Wisconsin,https://www.amfam.com,Private,
+244,Delek US Holdings,Energy,3591,16917.4,19.8,7171.8,Avigal Soreq,U.S.,Brentwood,Tennessee,https://www.delekus.com,Public,1968
+245,Land O'Lakes,"Food, Beverages & Tobacco",9000,16794.9,254.2,9464.3,Beth E. Ford,U.S.,Arden Hills,Minnesota,https://www.landolakesinc.com,Private,
+246,Sempra,Energy,16835,16720,3074,87181,Jeffrey W. Martin,U.S.,San Diego,California,https://www.sempra.com,Public,45439
+247,Global Partners,Wholesalers,4273,16492.2,152.5,3446,Eric Slifka,U.S.,Waltham,Massachusetts,https://www.globalp.com,Public,1509
+248,Grainger,Wholesalers,24650,16478,1829,8147,D.G.  Macpherson,U.S.,Lake Forest,Illinois,https://www.grainger.com,Public,49983
+249,Jacobs Solutions,Business Services,58550,16352.4,665.8,14617.1,Bob Pragada,U.S.,Dallas,Texas,https://www.jacobs.com,Public,19316
+250,Edison International,Energy,14346,16338,1197,81758,Pedro J. Pizarro,U.S.,Rosemead,California,https://www.edisoninvestor.com,Public,27208
+251,MGM Resorts International,"Hotels, Restaurants & Leisure",67000,16164.2,1142.2,42368.5,William J. Hornbuckle,U.S.,Las Vegas,Nevada,https://www.mgmresorts.com,Public,14966
+252,Guardian Life Ins. Co. of America,Financials,7561,16137,375,96202,Andrew J. McMahon,U.S.,New York,New York,https://www.guardianlife.com,Private,
+253,Illinois Tool Works,Industrials,45000,16107,2957,15518,Christopher A. O'Herlihy,U.S.,Glenview,Illinois,https://www.itw.com,Public,80162
+254,Ameriprise Financial,Financials,13800,16096,2556,175191,James M. Cracchiolo,U.S.,Minneapolis,Minnesota,https://www.ameriprise.com,Public,43928
+255,PulteGroup,Engineering & Construction,6382,16061.6,2602.4,16087.1,Ryan R. Marshall,U.S.,Atlanta,Georgia,https://www.pultegroupinc.com,Public,25449
+256,Targa Resources,Energy,3182,16060.3,1345.9,20671.8,Matthew J. Meloy,U.S.,Houston,Texas,https://www.targaresources.com,Public,24922
+257,Ally Financial,Financials,11100,15971,1020,196392,Michael G. Rhodes,U.S.,Detroit,Michigan,https://www.ally.com,Public,12338
+258,BorgWarner,Motor Vehicles & Parts,39900,15921,625,14453,Frederic B. Lissalde,U.S.,Auburn Hills,Michigan,https://www.borgwarner.com,Public,8023
+259,Estée Lauder,Household Products,53010,15910,1006,23415,Fabrizio Freda,U.S.,New York,New York,https://www.elcompanies.com,Public,55259
+260,Loews,Financials,12280,15901,1434,79197,James S. Tisch,U.S.,New York,New York,https://www.loews.com,Public,17396
+261,O'Reilly Automotive,Retailing,82958,15812.3,2346.6,13873,Brad Beckham,U.S.,Springfield,Missouri,https://www.oreillyauto.com,Public,66634
+262,Markel Group,Financials,21600,15803.6,1996.1,55045.7,Thomas S. Gayner,U.S.,Glen Allen,Virginia,https://www.mklgroup.com,Public,19947
+263,Stanley Black & Decker,Household Products,50500,15781.1,-310.5,23663.8,Donald Allan Jr.,U.S.,New Britain,Connecticut,https://www.stanleyblackanddecker.com,Public,15062
+264,Micron Technology,Technology,43000,15540,-5833,64254,Sanjay Mehrotra,U.S.,Boise,Idaho,https://www.micron.com,Public,130548
+265,Fluor,Engineering & Construction,30187,15474,139,6973,David E. Constable,U.S.,Irving,Texas,https://www.fluor.com,Public,7192
+266,Leidos Holdings,Technology,47000,15438,199,12695,Thomas A. Bell,U.S.,Reston,Virginia,https://www.leidos.com,Public,17701
+267,Viatris,Health Care,38000,15426.9,54.7,47685.5,Scott A. Smith,U.S.,Canonsburg,Pennsylvania,https://www.viatris.com,Public,14180
+268,Kinder Morgan,Energy,10891,15334,2391,71020,Kimberly A. Dang,U.S.,Houston,Texas,https://www.kindermorgan.com,Public,40703
+269,Ecolab,Chemicals,48000,15320.2,1372.3,21846.6,Christophe Beck,U.S.,St. Paul,Minnesota,https://www.ecolab.com,Public,66017
+270,Baxter International,Health Care,60000,15282,2656,28276,Jos? E. Almeida,U.S.,Deerfield,Illinois,https://www.baxter.com,Public,21705
+271,Devon Energy,Energy,1900,15258,3747,24490,Richard E. Muncrief,U.S.,Oklahoma City,Oklahoma,https://www.devonenergy.com,Public,31864
+272,Kellanova,"Food, Beverages & Tobacco",23000,15207,951,15621,Steven A. Cahillane,U.S.,Chicago,Illinois,https://www.kellanova.com,Public,19579
+273,Farmers Insurance Exchange,Financials,9685,15194.4,-652.9,23677.7,Raul Vargas,U.S.,Woodland Hills,California,https://www.farmers.com,Private,
+274,Casey's General Stores,Retailing,31637,15094.5,446.7,5943.3,Darren M. Rebelez,U.S.,Ankeny,Iowa,https://www.caseys.com,Public,11788
+275,IQVIA Holdings,Health Care,87000,14984,1358,26681,Ari Bousbib,U.S.,Durham,North Carolina,https://www.iqvia.com,Public,46029
+276,Republic Services,Business Services,41000,14964.5,1731,31410.1,Jon Vander Ark,U.S.,Phoenix,Arizona,https://www.republicservices.com,Public,60229
+277,Fox,Media,10400,14913,1239,21866,Lachlan K. Murdoch,U.S.,New York,New York,https://www.foxcorporation.com,Public,14225
+278,Gap,Retailing,85000,14889,502,11044,Richard Dickson,U.S.,San Francisco,California,https://www.gapinc.com,Public,10290
+279,Keurig Dr Pepper,"Food, Beverages & Tobacco",28100,14814,2181,52130,Timothy P. Cofer,U.S.,Burlington,Massachusetts,https://keurig.com,Public,42557
+280,Reliance,Materials,15250,14805.9,1335.9,10480.3,Karla R. Lewis,U.S.,Scottsdale,Arizona,https://reliance.com,Public,19190
+281,Asbury Automotive Group,Retailing,15000,14802.7,602.5,10159.4,David W. Hult,U.S.,Duluth,Georgia,https://www.asburyauto.com,Public,4811
+282,Pacific Life,Financials,4181,14802,875,217386,Darryl D. Button,U.S.,Newport Beach,California,https://www.pacificlife.com,Private,
+283,Vistra,Energy,4870,14779,1493,32966,James A. Burke,U.S.,Irving,Texas,https://www.vistracorp.com,Public,24230
+284,Western & Southern Financial Group,Financials,2669,14775.1,484.8,75968.9,John F. Barrett,U.S.,Cincinnati,Ohio,https://www.westernsouthern.com,Private,
+285,Andersons,"Food, Beverages & Tobacco",2297,14750.1,101.2,3855,Patrick E. Bowe,U.S.,Maumee,Ohio,https://www.andersonsinc.com,Public,1953
+286,Nordstrom,Retailing,54000,14693,134,8444,Erik B. Nordstrom,U.S.,Seattle,Washington,https://www.nordstrom.com,Public,3309
+287,Omnicom Group,Business Services,75900,14692.2,1391.4,28044.6,John D. Wren,U.S.,New York,New York,https://www.omnicomgroup.com,Public,19081
+288,Fidelity National Information Services,Business Services,60000,14680,-6654,55105,Stephanie L. Ferris,U.S.,Jacksonville,Florida,https://www.fisglobal.com,Public,42762
+289,Consolidated Edison,Energy,14592,14663,2519,66331,Timothy P. Cawley,U.S.,New York,New York,https://www.conedison.com,Public,31376
+290,CSX,Transportation,23232,14657,3715,42408,Joseph R. Hinrichs,U.S.,Jacksonville,Florida,https://www.csx.com,Public,72568
+291,AECOM,Engineering & Construction,52000,14591.3,55.3,11233.4,W. Troy Rudd,U.S.,Dallas,Texas,https://www.aecom.com,Public,13341
+292,Lumen Technologies,Telecommunications,28000,14557,-10298,34018,Kathleen E. Johnson,U.S.,Monroe,Louisiana,https://www.lumen.com,Public,1585
+293,Tractor Supply,Retailing,37500,14555.7,1107.2,9188.2,Harry A. Lawton III,U.S.,Brentwood,Tennessee,https://www.tractorsupply.com,Public,28248
+294,DXC Technology,Technology,130000,14430,-568,15845,Raul J. Fernandez,U.S.,Ashburn,Virginia,https://www.dxc.technology,Public,3879
+295,AGCO,Industrials,27900,14412.4,1171.4,11421.2,Eric P. Hansotia,U.S.,Duluth,Georgia,https://www.agcocorp.com,Public,9180
+296,Sonic Automotive,Retailing,10500,14372.4,178.2,5364.6,David Bruton Smith,U.S.,Charlotte,North Carolina,https://www.sonicautomotive.com,Public,1942
+297,Intuit,Technology,22900,14368,2384,27780,Sasan K. Goodarzi,U.S.,Mountain View,California,https://www.intuit.com,Public,181986
+298,United Rentals,Business Services,26300,14332,2424,25589,Matthew J. Flannery,U.S.,Stamford,Connecticut,https://www.unitedrentals.com,Public,48437
+299,Universal Health Services,Health Care,85025,14282,717.8,13967.6,Marc D. Miller,U.S.,King of Prussia,Pennsylvania,https://www.uhs.com,Public,12265
+300,Boston Scientific,Health Care,48000,14240,1592,35136,Michael F. Mahoney,U.S.,Marlborough,Massachusetts,https://www.bostonscientific.com,Public,100673
+301,Otis Worldwide,Industrials,71000,14209,1406,10117,Judith F. Marks,U.S.,Farmington,Connecticut,https://www.otis.com,Public,40250
+302,Xcel Energy,Energy,11311,14206,1771,64079,Robert C. Frenzel,U.S.,Minneapolis,Minnesota,https://www.xcelenergy.com,Public,29840
+303,Edward Jones,Financials,54000,14080,1612,28003,Penny Pennington,U.S.,Des Peres,Missouri,https://www.edwardjones.com,Private,
+304,Ball,Materials,21000,14029,707,19303,Daniel W. Fisher,U.S.,Westminster,Colorado,https://www.ball.com,Public,21206
+305,LKQ,Wholesalers,49000,13866,936,15079,Justin Jude,U.S.,Chicago,Illinois,https://www.lkqcorp.com,Public,14249
+306,Mutual of Omaha,Financials,6231,13855.8,47.7,51838.6,James T. Blackledge,U.S.,Omaha,Nebraska,https://www.mutualofomaha.com,Private,
+307,Mosaic,Chemicals,14049,13696.1,1164.9,23032.8,Bruce M. Bodine,U.S.,Tampa,Florida,https://www.mosaicco.com,Public,10442
+308,Textron,Aerospace & Defense,35000,13683,921,16856,Scott C. Donnelly,U.S.,Providence,Rhode Island,https://www.textron.com,Public,18501
+309,Labcorp Holdings,Health Care,61975,13668.2,418,16725.1,Adam H. Schechter,U.S.,Burlington,North Carolina,https://www.labcorp.com,Public,18373
+310,Principal Financial,Financials,19800,13665.8,623.2,305046.7,Daniel J. Houston,U.S.,Des Moines,Iowa,https://www.principal.com,Public,20358
+311,Regeneron Pharmaceuticals,Health Care,13450,13117.2,3953.6,33080.2,Leonard S. Schleifer,U.S.,Tarrytown,New York,https://www.regeneron.com,Public,105645
+312,Raymond James Financial,Financials,18000,12992,1739,78360,Paul C. Reilly,U.S.,St. Petersburg,Florida,https://www.raymondjames.com,Public,26843
+313,Dick's Sporting Goods,Retailing,37200,12984.4,1046.5,9311.8,Lauren R. Hobart,U.S.,Coraopolis,Pennsylvania,https://www.dickssportinggoods.com,Public,18539
+314,Auto-Owners Insurance,Financials,6946,12937.7,-912.4,36238.2,Jamie Whisnant,U.S.,Lansing,Michigan,https://www.auto-owners.com,Private,
+315,Expedia Group,Retailing,17100,12839,797,21642,Ariane  Gorin,U.S.,Seattle,Washington,https://www.expediagroup.com,Public,18774
+316,J.B. Hunt Transport Services,Transportation,34718,12829.7,728.3,8538.3,Shelley Simpson,U.S.,Lowell,Arkansas,https://www.jbhunt.com,Public,20582
+317,M&T Bank,Financials,21980,12752,2741,208264,Ren? F. Jones,U.S.,Buffalo,New York,https://www.mtb.com,Public,24233
+318,DTE Energy,Energy,9950,12745,1397,44755,Gerardo Norcia,U.S.,Detroit,Michigan,https://www.dteenergy.com,Public,23205
+319,AES,Energy,9600,12668,249,44799,Andr?s R. Gluski,U.S.,Arlington,Virginia,https://www.aes.com,Public,12745
+320,Berry Global Group,Materials,44000,12664,609,16587,Kevin Kwilinski,U.S.,Evansville,Indiana,https://www.berryglobal.com,Public,7010
+321,Fifth Third Bancorp,Financials,18724,12641,2349,214574,Timothy N. Spence,U.S.,Cincinnati,Ohio,https://www.53.com,Public,25435
+322,Air Products & Chemicals,Chemicals,21850,12600,2300.2,32002.5,Seifi Ghasemi,U.S.,Allentown,Pennsylvania,https://www.airproducts.com,Public,53857
+323,Corning,Industrials,49800,12588,581,28500,Wendell P. Weeks,U.S.,Corning,New York,https://www.corning.com,Public,28192
+324,EMCOR Group,Engineering & Construction,38300,12582.9,633,6609.7,Anthony J. Guzzi,U.S.,Norwalk,Connecticut,https://www.emcorgroup.com,Public,16482
+325,Amphenol,Technology,95000,12554.7,1928,16526.4,R. Adam Norwitt,U.S.,Wallingford,Connecticut,https://www.amphenol.com,Public,69193
+326,Westlake,Chemicals,15520,12548,479,21035,Jean-Marc Gilson,U.S.,Houston,Texas,https://www.westlake.com,Public,19637
+327,DuPont,Chemicals,24000,12528,423,38552,Edward D. Breen,U.S.,Wilmington,Delaware,https://www.dupont.com,Public,32016
+328,Liberty Media,Media,6486,12525,761,41168,Gregory B. Maffei,U.S.,Englewood,Colorado,https://www.libertymedia.com,Public,9700
+329,S&P Global,Business Services,40450,12497,2626,60589,Douglas L. Peterson,U.S.,New York,New York,https://www.spglobal.com,Public,136253
+330,Community Health Systems,Health Care,54500,12490,-133,14455,Tim L. Hingtgen,U.S.,Franklin,Tennessee,https://www.chs.net,Public,486
+331,FirstEnergy,Energy,12042,12450,1102,48767,Brian X. Tierney,U.S.,Akron,Ohio,https://www.firstenergycorp.com,Public,22226
+332,Unum Group,Financials,10683,12385.9,1283.8,63255.2,Richard P. McKenney,U.S.,Chattanooga,Tennessee,https://www.unum.com,Public,10299
+333,Henry Schein,Health Care,25000,12339,416,10573,Stanley M. Bergman,U.S.,Melville,New York,https://www.henryschein.com,Public,9705
+334,Western Digital,Technology,53000,12318,-1706,24429,David V. Goeckeler,U.S.,San Jose,California,https://www.westerndigital.com,Public,22279
+335,Analog Devices,Technology,26000,12305.5,3314.6,48794.5,Vincent T. Roche,U.S.,Wilmington,Massachusetts,https://www.analog.com,Public,98086
+336,Conagra Brands,"Food, Beverages & Tobacco",18600,12277,683.6,22052.6,Sean M. Connolly,U.S.,Chicago,Illinois,https://www.conagrabrands.com,Public,14168
+337,Citizens Financial Group,Financials,17570,12187,1608,221964,Bruce W. Van Saun,U.S.,Providence,Rhode Island,https://www.citizensbank.com,Public,16635
+338,Norfolk Southern,Transportation,20700,12156,1827,41652,Alan H. Shaw,U.S.,Atlanta,Georgia,https://www.norfolksouthern.com,Public,57570
+339,Entergy,Energy,12177,12147.4,2356.5,59703.4,Andrew S. Marsh,U.S.,New Orleans,Louisiana,https://www.entergy.com,Public,22536
+340,W.R. Berkley,Financials,8329,12142.9,1381.4,37202,W. Robert Berkley Jr.,U.S.,Greenwich,Connecticut,https://www.berkley.com,Public,22689
+341,DaVita,Health Care,70000,12140.1,691.5,16893.6,Javier J. Rodriguez,U.S.,Denver,Colorado,https://www.davita.com,Public,12107
+342,Northern Trust,Financials,23100,12116.5,1107.3,150783.1,Michael G. O'Grady,U.S.,Chicago,Illinois,https://www.northerntrust.com,Public,18141
+343,Hormel Foods,"Food, Beverages & Tobacco",20000,12110,793.6,13448.8,James P. Snee,U.S.,Austin,Minnesota,https://www.hormelfoods.com,Public,19109
+344,Crown Holdings,Materials,25000,12010,450,15034,Timothy J. Donahue,U.S.,Tampa,Florida,https://www.crowncork.com,Public,9574
+345,Avis Budget Group,Retailing,21250,12008,1632,32569,Joseph A. Ferraro,U.S.,Parsippany,New Jersey,https://www.avisbudgetgroup.com,Public,4344
+346,Wayfair,Retailing,12800,12003,-738,3474,Niraj S. Shah,U.S.,Boston,Massachusetts,https://www.wayfair.com,Public,8175
+347,MasTec,Engineering & Construction,34000,11995.9,-49.9,9373.5,Jos? R. Mas,U.S.,Coral Gables,Florida,https://www.mastec.com,Public,7393
+348,Eversource Energy,Energy,10171,11910.7,-442.2,55612.2,Joseph R. Nolan Jr.,U.S.,Springfield,Massachusetts,https://www.eversource.com,Public,20963
+349,Newmont,Energy,21700,11812,-2494,55506,Thomas R. Palmer,U.S.,Denver,Colorado,https://www.newmont.com,Public,41316
+350,Ryder System,Transportation,47500,11783,406,15778,Robert E. Sanchez,U.S.,Coral Gables,Florida,https://www.ryder.com,Public,5321
+351,Fidelity National Financial,Financials,22293,11752,517,80614,Michael J. Nolan,U.S.,Jacksonville,Florida,https://www.fnf.com,Public,14507
+352,Molson Coors Beverage,"Food, Beverages & Tobacco",16500,11702.1,948.9,26375.1,Gavin D.K. Hattersley,U.S.,Chicago,Illinois,https://www.molsoncoors.com,Public,14298
+353,Caesars Entertainment,"Hotels, Restaurants & Leisure",51000,11673,786,33366,Thomas R. Reeg,U.S.,Reno,Nevada,https://www.caesars.com,Public,9461
+354,Lincoln National,Financials,11024,11645,-752,372413,Ellen G. Cooper,U.S.,Radnor,Pennsylvania,https://lincolnfinancial.com/,Public,5418
+355,VF,Apparel,26400,11612.5,118.6,13990.5,Bracken P. Darrell,U.S.,Denver,Colorado,https://www.vfc.com,Public,5964
+356,International Flavors & Fragrances,Chemicals,21500,11479,-2567,30978,J. Erik  Fyrwald,U.S.,New York,New York,https://www.iff.com,Public,21955
+357,Huntington Ingalls Industries,Aerospace & Defense,44000,11454,681,11215,Christopher D. Kastner,U.S.,Newport News,Virginia,https://www.hii.com,Public,11545
+358,Advance Auto Parts,Retailing,54500,11287.6,29.7,12276.3,Shane M. O'Kelly,U.S.,Raleigh,North Carolina,https://www.advanceautoparts.com,Public,5072
+359,Public Service Enterprise Group,Energy,12543,11237,2563,50741,Ralph A. LaRossa,U.S.,Newark,New Jersey,https://www.pseg.com,Public,33296
+360,Ulta Beauty,Retailing,38000,11207.3,1291,5707,David C. Kimbell,U.S.,Bolingbrook,Illinois,https://www.ulta.com,Public,25239
+361,Hershey,"Food, Beverages & Tobacco",19578,11165,1861.8,11902.9,Michele G. Buck,U.S.,Hershey,Pennsylvania,https://www.thehersheycompany.com,Public,39719
+362,Chewy,Retailing,18100,11147.7,39.6,3186.9,Sumit Singh,U.S.,Plantation,Florida,https://www.chewy.com,Public,6920
+363,American Tower,Financials,5643,11144.2,1483.3,66027.6,Steven O. Vondran,U.S.,Boston,Massachusetts,https://www.americantower.com,Public,92147
+364,Mohawk Industries,Household Products,43300,11135.1,-439.5,13559.9,Jeffrey S. Lorberbaum,U.S.,Calhoun,Georgia,https://www.mohawkind.com,Public,8337
+365,Assurant,Financials,13600,11131.6,642.5,33635.2,Keith W. Demmings,U.S.,Atlanta,Georgia,https://www.assurant.com,Public,9784
+366,Thor Industries,Motor Vehicles & Parts,24900,11121.6,374.3,7260.8,Robert W. Martin,U.S.,Elkhart,Indiana,https://www.thorindustries.com,Public,6257
+367,Graybar Electric,Wholesalers,9500,11042.4,463.4,4006.1,Kathleen M. Mazzarella,U.S.,St. Louis,Missouri,https://www.graybar.com,Private,
+368,Yum China Holdings,"Hotels, Restaurants & Leisure",293500,10978,827,12031,Joey Wat,U.S.,Plano,Texas,https://ir.yumchina.com,Public,15599
+369,Celanese,Chemicals,12410,10940,1960,26597,Lori J. Ryerkerk,U.S.,Irving,Texas,https://www.celanese.com,Public,19173
+370,Qurate Retail,Retailing,20386,10915,-145,11368,David L. Rawlinson II,U.S.,Englewood,Colorado,https://www.qurateretail.com,Public,511
+371,Williams,Energy,5601,10907,3179,52627,Alan S. Armstrong,U.S.,Tulsa,Oklahoma,https://www.williams.com,Public,47482
+372,Interpublic Group,Business Services,57400,10889.3,1098.4,19267.3,Philippe Krakowsky,U.S.,New York,New York,https://www.interpublic.com,Public,12358
+373,Ovintiv,Energy,1743,10883,2085,19987,Brendan M. McCracken,U.S.,Denver,Colorado,https://www.ovintiv.com,Public,13959
+374,Icahn Enterprises,Financials,15038,10847,-684,20858,Andrew  Teno,U.S.,Sunny Isles Beach,Florida,https://www.ielp.com,Public,7298
+375,Huntington Bancshares,Financials,19955,10837,1951,189368,Stephen D. Steinour,U.S.,Columbus,Ohio,https://www.huntington.com,Public,20309
+376,Erie Insurance Group,Financials,6510,10812.5,-526.6,27515.2,Timothy G. NeCastro,U.S.,Erie,Pennsylvania,https://www.erieinsurance.com,Private,
+377,Carvana,Retailing,13700,10771,450,7071,Ernest C. Garcia III,U.S.,Tempe,Arizona,https://www.carvana.com,Public,16944
+378,Hess,Energy,1756,10645,1382,24007,John B. Hess,U.S.,New York,New York,https://www.hess.com,Public,46884
+379,Dana,Motor Vehicles & Parts,41800,10555,38,7965,James K. Kamsickas,U.S.,Maumee,Ohio,https://www.dana.com,Public,1841
+380,Alcoa,Materials,13600,10551,-651,14155,William F. Oplinger,U.S.,Pittsburgh,Pennsylvania,https://www.alcoa.com,Public,6067
+381,Equitable Holdings,Financials,10700,10528,1302,276814,Mark Pearson,U.S.,New York,New York,https://www.equitableholdings.com,Public,12532
+382,KLA,Technology,15105,10496.1,3387.3,14072.4,Richard P. Wallace,U.S.,Milpitas,California,https://www.kla.com,Public,94470
+383,Darden Restaurants,"Hotels, Restaurants & Leisure",187384,10487.8,981.9,10241.5,Ricardo Cardenas,U.S.,Orlando,Florida,https://www.darden.com,Public,19960
+384,Autoliv,Motor Vehicles & Parts,66434,10475,488,8332,Mikael Bratt,U.S.,Auburn Hills,Michigan,https://www.autoliv.com,Public,9810
+385,Alaska Air Group,Transportation,24610,10426,235,14613,Benito Minicucci,U.S.,Seattle,Washington,https://www.alaskaair.com,Public,5408
+386,KeyCorp,Financials,17692,10397,967,188281,Christopher M. Gorman,U.S.,Cleveland,Ohio,https://www.key.com,Public,14663
+387,Las Vegas Sands,"Hotels, Restaurants & Leisure",38550,10372,1221,21778,Robert G. Goldstein,U.S.,Las Vegas,Nevada,https://www.sands.com,Public,38840
+388,Owens & Minor,Health Care,22200,10334,-41.3,5093.3,Edward A. Pesicka,U.S.,Mechanicsville,Virginia,https://www.owens-minor.com,Public,2123
+389,Hilton Worldwide Holdings,"Hotels, Restaurants & Leisure",178000,10235,1141,15401,Christopher J. Nassetta,U.S.,McLean,Virginia,https://www.hilton.com,Public,53788
+390,Ebay,Technology,12300,10112,2767,21620,Jamie Iannone,U.S.,San Jose,California,https://www.ebay.com,Public,27340
+391,Arthur J. Gallagher,Financials,52118,10071.9,969.5,51615.8,J. Patrick Gallagher Jr.,U.S.,Rolling Meadows,Illinois,https://www.ajg.com,Public,54584
+392,LPL Financial Holdings,Financials,7372,10052.8,1066.3,10385.5,Dan H. Arnold,U.S.,San Diego,California,https://www.lpl.com,Public,19736
+393,Cincinnati Financial,Financials,5426,10013.4,1843.3,32769.5,Stephen M. Spray,U.S.,Fairfield,Ohio,https://www.cinfin.com,Public,19456
+394,Toll Brothers,Engineering & Construction,4800,9994.9,1372.1,12527,Douglas C. Yearley Jr.,U.S.,Fort Washington,Pennsylvania,https://www.tollbrothers.com,Public,13477
+395,Motorola Solutions,Technology,21000,9978,1709,13336,Gregory Q. Brown,U.S.,Chicago,Illinois,https://www.motorolasolutions.com,Public,59142
+396,Airbnb,Technology,6907,9917,4792,20645,Brian Chesky,U.S.,San Francisco,California,https://www.airbnb.com,Public,106740
+397,Intercontinental Exchange,Financials,13222,9903,2368,136084,Jeffrey C. Sprecher,U.S.,Atlanta,Georgia,https://www.ice.com,Public,78695
+398,News Corp.,Media,25000,9879,149,16921,Robert J. Thomson,U.S.,New York,New York,https://www.newscorp.com,Public,15120
+399,Chipotle Mexican Grill,"Hotels, Restaurants & Leisure",116068,9871.6,1228.7,8044.4,Scott Boatwright,U.S.,Newport Beach,California,https://www.chipotle.com,Public,79707
+400,Vertex Pharmaceuticals,Health Care,5400,9869.2,3619.6,22730.2,Reshma Kewalramani,U.S.,Boston,Massachusetts,https://www.vrtx.com,Public,107975
+401,Biogen,Health Care,7570,9835.6,1161.1,26844.8,Christopher A. Viehbacher,U.S.,Cambridge,Massachusetts,https://www.biogen.com,Public,31344
+402,GXO Logistics,Transportation,109000,9778,229,9507,Malcolm Wilson,U.S.,Greenwich,Connecticut,https://www.gxo.com,Public,6412
+403,SpartanNash,Wholesalers,13500,9729.2,52.2,2355.6,Tony B. Sarsam,U.S.,Grand Rapids,Michigan,https://www.spartannash.com,Public,700
+404,Burlington Stores,Retailing,44050,9727.5,339.6,7706.8,Michael B. O?Sullivan,U.S.,Burlington,New Jersey,https://www.burlingtoninvestors.com,Public,14841
+405,Thrivent Financial for Lutherans,Financials,3810,9720.3,347.2,115628.7,Teresa J. Rasmussen,U.S.,Minneapolis,Minnesota,https://www.thrivent.com,Private,
+406,NVR,Engineering & Construction,6300,9687.3,1591.6,6601.8,Eugene J. Bredow,U.S.,Reston,Virginia,https://www.nvrinc.com,Public,25904
+407,Owens Corning,Materials,18000,9677,1196,11237,Brian D. Chambers,U.S.,Toledo,Ohio,https://www.owenscorning.com,Public,14510
+407,Westinghouse Air Brake Technologies,Industrials,29000,9677,815,18988,Rafael O. Santana,U.S.,Pittsburgh,Pennsylvania,https://www.wabteccorp.com,Public,25790
+409,Oshkosh,Industrials,17300,9657.9,598,9129.2,John C. Pfeifer,U.S.,Oshkosh,Wisconsin,https://www.oshkoshcorp.com,Public,8178
+410,Global Payments,Business Services,27000,9654.4,986.2,50570.2,Cameron M. Bready,U.S.,Atlanta,Georgia,https://www.globalpaymentsinc.com,Public,34095
+411,Lululemon athletica,Retailing,38000,9619.3,1550.2,7091.9,Calvin McDonald,U.S.,Sumner,Washington,https://www.lululemon.com,Public,49225
+412,Albemarle,Chemicals,9000,9617.2,1573.5,18270.7,J. Kent Masters,U.S.,Charlotte,North Carolina,https://www.albemarle.com,Public,15483
+413,JetBlue Airways,Transportation,21310,9615,-310,13853,Joanna  Geraghty,U.S.,Long Island City,New York,https://www.jetblue.com,Public,2524
+414,Seaboard,"Food, Beverages & Tobacco",12847,9562,226,7566,Robert L. Steer,U.S.,Merriam,Kansas,https://www.seaboardcorp.com,Public,3131
+415,Constellation Brands,"Food, Beverages & Tobacco",9400,9452.6,-71,24662.3,William A. Newlands,U.S.,Victor,New York,https://www.cbrands.com,Public,49683
+416,Graphic Packaging Holding,Materials,23500,9428,723,11175,Michael P. Doss,U.S.,Atlanta,Georgia,https://www.graphicpkg.com,Public,8931
+417,Hertz Global Holdings,Retailing,27000,9371,616,24605,Gil  West,U.S.,Estero,Florida,https://www.hertz.com,Public,2391
+418,FM Global,Financials,5667,9359,3748.5,34479,Malcolm C. Roberts,U.S.,Johnston,Rhode Island,https://www.fmglobal.com,Private,
+419,Campbell Soup,"Food, Beverages & Tobacco",14500,9357,858,12058,Mark A. Clouse,U.S.,Camden,New Jersey,https://www.campbellsoupcompany.com,Public,13251
+420,Expeditors Intl. of Washington,Transportation,18452,9300.1,752.9,4523.8,Jeffrey S. Musser,U.S.,Seattle,Washington,https://www.expeditors.com,Public,17249
+421,A-Mark Precious Metals,Wholesalers,421,9286.6,156.4,1545.6,Gregory N. Roberts,U.S.,El Segundo,California,https://www.amark.com,Public,701
+422,Booz Allen Hamilton Holding,Technology,31900,9258.9,271.8,6550.7,Horacio D. Rozanski,U.S.,McLean,Virginia,https://www.boozallen.com,Public,19260
+423,Quest Diagnostics,Health Care,44000,9252,854,14022,James E. Davis,U.S.,Secaucus,New Jersey,https://www.questdiagnostics.com,Public,14783
+424,Altice USA,Telecommunications,10600,9237.1,53.2,31923.6,Dennis Mathew,U.S.,Long Island City,New York,https://www.alticeusa.com,Public,1191
+425,PVH,Apparel,23000,9217.7,663.6,11172.9,Stefan Larsson,U.S.,New York,New York,https://www.pvh.com,Public,8386
+426,Eastman Chemical,Chemicals,14000,9210,894,14633,Mark J. Costa,U.S.,Kingsport,Tennessee,https://www.eastman.com,Public,11786
+427,Insight Enterprises,Technology,14437,9175.8,281.3,6286.4,Joyce A. Mullen,U.S.,Chandler,Arizona,https://www.insight.com,Public,6046
+428,Regions Financial,Financials,20101,9153,2074,152194,John M. Turner Jr.,U.S.,Birmingham,Alabama,https://www.regions.com,Public,19333
+429,Beacon Roofing Supply,Wholesalers,8063,9119.8,435,6207.7,Julian G. Francis,U.S.,Herndon,Virginia,https://www.becn.com,Public,6218
+430,Rockwell Automation,Industrials,29000,9058,1387.4,11304,Blake D. Moret,U.S.,Milwaukee,Wisconsin,https://www.rockwellautomation.com,Public,33384
+431,Polaris,Transportation,18500,9014.8,502.8,5516.3,Michael T. Speetzen,U.S.,Medina,Minnesota,https://www.polaris.com,Public,5655
+432,ServiceNow,Technology,22668,8971,1731,17387,William R. McDermott,U.S.,Santa Clara,California,https://www.servicenow.com,Public,156292
+433,Sanmina,Technology,36000,8935,310,4874,Jure Sola,U.S.,San Jose,California,https://www.sanmina.com,Public,3468
+434,UGI,Energy,10500,8928,-1502,15401,Mario  Longhi,U.S.,King of Prussia,Pennsylvania,https://www.ugicorp.com,Public,5142
+435,WEC Energy Group,Energy,7000,8893,1331.7,43939.7,Scott J. Lauber,U.S.,Milwaukee,Wisconsin,https://www.wecenergygroup.com,Public,25935
+436,BrightSpring Health Services,Health Care,35000,8826.2,-154.6,5532.7,Jon B. Rousseau,U.S.,Louisville,Kentucky,https://www.brightspringhealth.com,Public,1861
+437,Cintas,Business Services,44500,8815.8,1348,8546.4,Todd M. Schneider,U.S.,Cincinnati,Ohio,https://www.cintas.com,Public,69695
+438,Commercial Metals,Materials,13022,8799.5,859.8,6639.1,Peter R. Matt,U.S.,Irving,Texas,https://www.cmc.com,Public,6800
+439,Continental Resources,Energy,1457,8731.7,3095.8,22387.4,Robert D. Lawler,U.S.,Oklahoma City,Oklahoma,https://www.clr.com,Private,22342
+440,Chesapeake Energy,Energy,1000,8721,2419,14376,Domenic J. Dell'Osso Jr.,U.S.,Oklahoma City,Oklahoma,https://www.chk.com,Public,11619
+441,CenterPoint Energy,Energy,8827,8696,917,39715,Jason P. Wells,U.S.,Houston,Texas,https://www.centerpointenergy.com,Public,18035
+442,NGL Energy Partners,Energy,638,8694.9,51.4,5456.1,H. Michael Krimbill,U.S.,Tulsa,Oklahoma,https://www.nglenergypartners.com,Public,763
+443,DoorDash,Technology,19300,8635,-558,10839,Tony Xu,U.S.,San Francisco,California,https://ir.doordash.com,Public,55640
+444,NOV,Energy,33676,8583,993,11294,Clay C. Williams,U.S.,Houston,Texas,https://www.nov.com,Public,7691
+445,Zoetis,Health Care,14100,8544,2344,14286,Kristin C. Peck,U.S.,Parsippany,New Jersey,https://www.zoetis.com,Public,77476
+446,J.M. Smucker,"Food, Beverages & Tobacco",5800,8529.2,-91.3,14991.4,Mark T. Smucker,U.S.,Orrville,Ohio,https://www.jmsmucker.com,Public,13364
+447,Microchip Technology,Technology,22600,8438.7,2237.7,16370.3,Ganesh Moorthy,U.S.,Chandler,Arizona,https://www.microchip.com,Public,48478
+448,Dover,Industrials,25000,8438.1,1056.8,11348.5,Richard J. Tobin,U.S.,Downers Grove,Illinois,https://www.dovercorporation.com,Public,24342
+449,Diamondback Energy,Energy,1023,8412,3143,29001,Travis D. Stice,U.S.,Midland,Texas,https://www.diamondbackenergy.com,Public,35363
+450,Avery Dennison,Materials,35000,8364.3,503,8209.8,Dean M. Stander,U.S.,Mentor,Ohio,https://www.averydennison.com,Public,17976
+451,PPL,Energy,6629,8312,740,39236,Vincent Sorgi,U.S.,Allentown,Pennsylvania,https://www.pplweb.com,Public,20306
+452,ON Semiconductor,Technology,30050,8253,2183.7,13215.2,Hassane S. El-Khoury,U.S.,Scottsdale,Arizona,https://www.onsemi.com,Public,31430
+453,ARKO,Retailing,13481,8238.8,34.4,3650.4,Arie Kotler,U.S.,Richmond,Virginia,https://www.arkocorp.com,Public,662
+454,Par Pacific Holdings,Energy,1814,8232,728.6,3864,William  Monteleone,U.S.,Houston,Texas,https://www.parpacific.com,Public,2199
+455,APA,Energy,2271,8192,2855,15244,John J. Christmann IV,U.S.,Houston,Texas,https://www.apacorp.com,Public,10367
+456,Equinix,Financials,13151,8188.1,969.2,32650.7,Charles J. Meyers,U.S.,Redwood City,California,https://www.equinix.com,Public,78094
+457,New York Community Bancorp,Financials,8766,8178,-79,114057,Joseph M. Otting,U.S.,Hicksville,New York,https://www.mynycb.com,Public,2569
+458,Foot Locker,Retailing,30591,8168,-330,6868,Mary N. Dillon,U.S.,New York,New York,https://www.footlocker.com/corp,Public,2693
+459,Ingredion,"Food, Beverages & Tobacco",11600,8160,643,7642,James P. Zallie,U.S.,Westchester,Illinois,https://www.ingredion.com,Public,7666
+460,Newell Brands,Household Products,24600,8133,-388,12163,Christopher H. Peterson,U.S.,Atlanta,Georgia,https://www.newellbrands.com,Public,3334
+461,ABM Industries,Business Services,123000,8096.4,251.3,4933.7,Scott B. Salmirs,U.S.,New York,New York,https://www.abm.com,Public,2824
+462,Securian Financial Group,Financials,5565,8067,226.6,73457.5,Christopher M. Hilger,U.S.,St. Paul,Minnesota,https://www.securian.com,Private,
+463,Prologis,Financials,2574,8023.5,3059.2,93020.8,Hamid R. Moghadam,U.S.,San Francisco,California,https://www.prologis.com,Public,120460
+464,Blackstone,Financials,4735,8022.8,1390.9,40287.5,Stephen A. Schwarzman,U.S.,New York,New York,https://www.blackstone.com,Public,93883
+465,Skechers U.S.A.,Apparel,13550,8000.3,545.8,7547.4,Robert Greenberg,U.S.,Manhattan Beach,California,https://www.skechers.com,Public,9390
+466,Masco,Household Products,18000,7967,908,5363,Keith J. Allman,U.S.,Livonia,Michigan,https://www.masco.com,Public,17335
+467,Rush Enterprises,Retailing,8449,7925,347.1,4364.2,W.M. Rush,U.S.,New Braunfels,Texas,https://www.rushenterprises.com,Public,4164
+468,Franklin Resources,Financials,9200,7849.4,882.8,30121.2,Jennifer M. Johnson,U.S.,San Mateo,California,https://www.franklinresources.com,Public,14802
+469,ODP,Retailing,20000,7831,139,3886,Gerry P. Smith,U.S.,Boca Raton,Florida,https://www.theodpcorp.com,Public,1943
+470,American Financial Group,Financials,8500,7827,852,29787,Carl H. Lindner lll/S. Craig Lindner,U.S.,Cincinnati,Ohio,https://www.afginc.com,Public,11418
+471,Packaging Corp. of America,Materials,14900,7802.4,765.2,8681.1,Mark W. Kowlzan,U.S.,Lake Forest,Illinois,https://www.packagingcorp.com,Public,17034
+472,Vulcan Materials,Materials,10961,7781.9,933.2,14545.7,J. Thomas Hill,U.S.,Birmingham,Alabama,https://www.vulcanmaterials.com,Public,36100
+473,Interactive Brokers Group,Financials,2932,7776,600,128423,Milan Galik,U.S.,Greenwich,Connecticut,https://www.interactivebrokers.com,Public,47328
+474,Williams-Sonoma,Retailing,15000,7750.7,949.8,5273.5,Laura J. Alber,U.S.,San Francisco,California,https://www.williams-sonomainc.com,Public,20358
+475,XPO,Transportation,39450,7744,189,7492,Mario A. Harik,U.S.,Greenwich,Connecticut,https://www.xpo.com,Public,14169
+476,Weyerhaeuser,Materials,9318,7674,839,16983,Devin W. Stockfish,U.S.,Seattle,Washington,https://www.weyerhaeuser.com,Public,26201
+477,Genworth Financial,Financials,2700,7488,76,90817,Thomas J. McInerney,U.S.,Richmond,Virginia,https://www.genworth.com,Public,2826
+478,CMS Energy,Energy,8356,7462,887,33517,Garrick J. Rochow,U.S.,Jackson,Michigan,https://www.cmsenergy.com,Public,18019
+479,Science Applications International,Technology,24000,7444,477,5314,Toni Townes-Whitley,U.S.,Reston,Virginia,https://www.saic.com,Public,6734
+480,Jefferies Financial Group,Financials,7564,7441.4,277.7,57905.2,Richard B. Handler,U.S.,New York,New York,https://www.jefferies.com,Public,9348
+481,Bath & Body Works,Retailing,33069,7429,878,5463,Gina R. Boswell,U.S.,Columbus,Ohio,https://www.bbwinc.com,Public,11249
+482,Electronic Arts,Media,13400,7426,802,13459,Andrew Wilson,U.S.,Redwood City,California,https://www.ea.com,Public,35469
+483,Taylor Morrison Home,Engineering & Construction,2800,7417.8,768.9,8672.1,Sheryl D. Palmer,U.S.,Scottsdale,Arizona,https://www.taylormorrison.com,Public,6617
+484,Zimmer Biomet Holdings,Health Care,18000,7394.2,1024,21496.9,Ivan Tornos,U.S.,Warsaw,Indiana,https://www.zimmerbiomet.com,Public,27117
+485,Clorox,Household Products,8700,7389,149,5945,Linda Rendle,U.S.,Oakland,California,https://www.thecloroxcompany.com,Public,19002
+486,Xylem,Industrials,23000,7364,609,16112,Matthew F. Pine,U.S.,Washington,District Of Columbia,https://www.xylem.com,Public,31246
+487,Voya Financial,Financials,9000,7348,625,157085,Heather H. Lavallee,U.S.,New York,New York,https://www.voya.com,Public,7511
+488,Fastenal,Wholesalers,20721,7346.7,1155,4462.9,Daniel L. Florness,U.S.,Winona,Minnesota,https://www.fastenal.com,Public,44157
+489,Watsco,Wholesalers,7388,7283.8,536.3,3729.2,Albert H. Nahmad,U.S.,Miami,Florida,https://www.watsco.com,Public,17061
+490,Workday,Technology,18800,7259,1381,16452,Carl M. Eschenbach,U.S.,Pleasanton,California,https://www.workday.com,Public,72006
+491,Old Republic International,Financials,9200,7258.3,598.6,26501.4,Craig R. Smiddy,U.S.,Chicago,Illinois,https://www.oldrepublic.com,Public,8464
+492,RPM International,Chemicals,17274,7256.4,478.7,6782,Frank C. Sullivan,U.S.,Medina,Ohio,https://www.rpminc.com,Public,15329
+493,UFP Industries,Materials,15800,7218.4,514.3,4017.8,Matthew J. Missad,U.S.,Grand Rapids,Michigan,https://www.ufpi.com,Public,7569
+494,Ameren,Energy,9372,7213,1152,40830,Martin J. Lyons Jr.,U.S.,St. Louis,Missouri,https://www.ameren.com,Public,19711
+495,Knight-Swift Transportation Hldgs.,Transportation,34550,7141.8,217.1,12870.8,Adam W. Miller,U.S.,Phoenix,Arizona,https://investor.knight-swift.com,Public,8885
+496,Monster Beverage,"Food, Beverages & Tobacco",5629,7140,1631,9686.5,Rodney C. Sacks/Hilton H. Schlosberg,U.S.,Corona,California,https://www.monsterbevcorp.com,Public,61689
+497,Intuitive Surgical,Health Care,13676,7124.1,1798,15441.5,Gary S. Guthart,U.S.,Sunnyvale,California,https://www.intuitive.com,Public,141457
+498,Super Micro Computer,Technology,5126,7123.5,640,3674.7,Charles Liang,U.S.,San Jose,California,https://www.supermicro.com,Public,59138
+499,Concentrix,Technology,440000,7114.7,313.8,12491.8,Christopher A. Caldwell,U.S.,Newark,California,https://www.concentrix.com,Public,4342
+500,O-I Glass,Materials,23000,7105,-103,9669,Gordon J. Hardie,U.S.,Perrysburg,Ohio,https://www.o-i.com,Public,2549
+501,Yum Brands,"Hotels, Restaurants & Leisure",25438,7076,1597,6231,David W. Gibbs,U.S.,Louisville,Kentucky,https://www.yum.com,Public,39007
+502,Domtar,Materials,13000,7059,288,7531,Steven M. Henry,U.S.,Fort Mill,South Carolina,https://www.domtar.com,Private,1856
+503,CommScope Holding,Technology,20000,6999.4,-1450.9,9371.9,Charles L. Treadway,U.S.,Claremont,South Carolina,https://www.commscope.com,Public,278
+504,Post Holdings,"Food, Beverages & Tobacco",11430,6991,301.3,11646.7,Robert V. Vitale,U.S.,St. Louis,Missouri,https://www.postholdings.com,Public,6449
+505,Crown Castle,Financials,4700,6981,1502,38527,Steven J. Moskowitz,U.S.,Houston,Texas,https://www.crowncastle.com,Public,45953
+506,Avantor,Technology,14500,6967.2,321.1,12972.7,Michael Stubblefield,U.S.,Radnor,Pennsylvania,https://www.avantorsciences.com,Public,17367
+507,KBR,Technology,34000,6956,-265,5565,Stuart J.B. Bradie,U.S.,Houston,Texas,https://www.kbr.com,Public,8599
+508,Opendoor Technologies,Technology,1982,6946,-275,3567,Carrie A. Wheeler,U.S.,Tempe,Arizona,https://www.opendoor.com,Public,2059
+509,APi Group,Engineering & Construction,29000,6928,153,7590,Russell A. Becker,U.S.,New Brighton,Minnesota,https://www.apigroupcorp.com,Public,9588
+510,EQT,Energy,881,6908.9,1735.2,25285.1,Toby Z. Rice,U.S.,Pittsburgh,Pennsylvania,https://www.eqt.com,Public,16338
+511,EnLink Midstream,Energy,1072,6900.1,206.2,8328.6,Jesse Arenivas,U.S.,Dallas,Texas,https://www.enlink.com,Public,6181
+512,Palo Alto Networks,Technology,13948,6892.7,439.7,14501.1,Nikesh Arora,U.S.,Santa Clara,California,https://www.paloaltonetworks.com,Public,91802
+513,Xerox Holdings,Technology,20100,6886,1,10008,Steven J. Bandrowczak,U.S.,Norwalk,Connecticut,https://www.xerox.com,Public,2223
+514,Ingersoll Rand,Industrials,18000,6876.1,778.7,15563.5,Vicente Reynal,U.S.,Davidson,North Carolina,https://www.irco.com,Public,38306
+515,Dillard's,Retailing,24900,6874.4,738.8,3448.9,William T. Dillard II,U.S.,Little Rock,Arkansas,https://www.dillards.com,Public,7655
+516,Martin Marietta Materials,Materials,9400,6871.4,1168.9,15124.9,C. Howard Nye,U.S.,Raleigh,North Carolina,https://www.martinmarietta.com,Public,37955
+517,Vertiv Holdings,Industrials,27000,6863.2,460.2,7998.5,Giordano Albertazzi,U.S.,Westerville,Ohio,https://www.vertiv.com,Public,31196
+518,Moderna,Health Care,5600,6848,-4714,18426,St?phane Bancel,U.S.,Cambridge,Massachusetts,https://www.modernatx.com,Public,40800
+519,Boise Cascade,Wholesalers,7300,6838.2,483.7,3458.6,Nathan R. Jorgensen,U.S.,Boise,Idaho,https://www.bc.com,Public,6068
+520,Sprouts Farmers Market,Food & Drug Stores,32000,6837.4,258.9,3327.4,Jack L. Sinclair,U.S.,Phoenix,Arizona,https://www.sprouts.com,Public,6526
+521,Agilent Technologies,Technology,18100,6833,1240,10763,Padraig McDonnell,U.S.,Santa Clara,California,https://www.agilent.com,Public,42643
+521,Olin,Chemicals,7326,6833,460.2,7713.2,Kenneth T. Lane,U.S.,Clayton,Missouri,https://www.olin.com,Public,7035
+523,Darling Ingredients,"Food, Beverages & Tobacco",15800,6788.1,647.7,11061.1,Randall C. Stuewe,U.S.,Irving,Texas,https://www.darlingii.com,Public,7431
+524,Sonoco Products,Materials,23000,6781.3,475,7192,R. Howard Coker,U.S.,Hartsville,South Carolina,https://www.sonoco.com,Public,5666
+525,CACI International,Technology,23000,6702.5,384.7,6600.8,John S. Mengucci,U.S.,Reston,Virginia,https://www.caci.com,Public,8442
+526,Core & Main,Wholesalers,5000,6702,371,5069,Stephen O. LeClair,U.S.,St. Louis,Missouri,https://www.coreandmain.com,Public,11529
+527,Marathon Oil,Energy,1681,6697,1554,19575,Lee M. Tillman,U.S.,Houston,Texas,https://www.marathonoil.com,Public,16196
+528,Hyatt Hotels,"Hotels, Restaurants & Leisure",51000,6667,220,12833,Mark S. Hoplamazian,U.S.,Chicago,Illinois,https://www.hyatt.com,Public,16425
+529,Select Medical Holdings,Health Care,46500,6664.1,243.5,7689.6,David S. Chernow,U.S.,Mechanicsburg,Pennsylvania,https://www.selectmedicalholdings.com,Public,3870
+530,McCormick,"Food, Beverages & Tobacco",13800,6662.2,680.6,12862.3,Brendan M. Foley,U.S.,Hunt Valley,Maryland,https://www.mccormickcorporation.com,Public,20617
+531,Tapestry,Apparel,15550,6660.9,936,7116.8,Joanne C. Crevoiserat,U.S.,New York,New York,https://www.tapestry.com,Public,10890
+532,Coca-Cola Consolidated,"Food, Beverages & Tobacco",16000,6653.9,408.4,4288.9,J. Frank Harrison III,U.S.,Charlotte,North Carolina,https://www.cokeconsolidated.com,Public,7934
+533,Howmet Aerospace,Aerospace & Defense,23200,6640,765,10428,John C. Plant,U.S.,Pittsburgh,Pennsylvania,https://www.howmet.com,Public,28077
+534,Welltower,Financials,533,6638,340.1,44012.2,Shankh S. Mitra,U.S.,Toledo,Ohio,https://www.welltower.com,Public,53156
+535,CF Industries Holdings,Chemicals,2694,6631.5,1525.2,14376.2,W. Anthony Will,U.S.,Northbrook,Illinois,https://www.cfindustries.com,Public,15621
+536,Ametek,Technology,21500,6597,1313.2,15023.5,David A. Zapico,U.S.,Berwyn,Pennsylvania,https://www.ametek.com,Public,42289
+537,TransDigm Group,Aerospace & Defense,15500,6585,1298,19970,Kevin M. Stein,U.S.,Cleveland,Ohio,https://www.transdigm.com,Public,68485
+538,Wynn Resorts,"Hotels, Restaurants & Leisure",27800,6531.9,730,13996.2,Craig S. Billings,U.S.,Las Vegas,Nevada,https://www.wynnresorts.com,Public,11457
+539,Southwestern Energy,Energy,1165,6522,1557,11991,William J. Way,U.S.,Spring,Texas,https://www.swn.com,Public,8349
+540,Amkor Technology,Technology,28700,6503.1,359.8,6771.1,Guillaume Marie Jean Rutten,U.S.,Tempe,Arizona,https://www.amkor.com,Public,7928
+541,Insperity,Business Services,4400,6485.9,171.4,2119.7,Paul J. Sarvadi,U.S.,Kingwood,Texas,https://www.insperity.com,Public,4087
+542,Patterson,Health Care,7600,6471.5,207.6,2879.1,Donald J. Zurbay,U.S.,St. Paul,Minnesota,https://www.pattersoncompanies.com,Public,2477
+543,T. Rowe Price,Financials,7906,6460.5,1788.7,12278.8,Robert W. Sharps,U.S.,Baltimore,Maryland,https://www.troweprice.com,Public,27267
+544,Ralph Lauren,Apparel,19100,6443.6,522.7,6789.5,Patrice Louvet,U.S.,New York,New York,https://www.ralphlauren.com,Public,12003
+545,KB Home,Engineering & Construction,2205,6410.6,590.2,6648.4,Jeffrey T. Mezger,U.S.,Los Angeles,California,https://www.kbhome.com,Public,5362
+546,Brunswick,Transportation,18104,6401.4,420.4,6230.5,David M. Foulkes,U.S.,Mettawa,Illinois,https://www.brunswick.com,Public,6556
+547,Robert Half,Business Services,15000,6392.5,411.1,3010.8,M. Keith Waddell,U.S.,Menlo Park,California,https://www.roberthalf.com,Public,8341
+548,PENN Entertainment,"Hotels, Restaurants & Leisure",23333,6362.9,-490,16064.2,Jay A. Snowden,U.S.,Wyomissing,Pennsylvania,https://www.pennentertainment.com,Public,2776
+549,NetApp,Technology,12000,6362,1274,9818,George Kurian,U.S.,San Jose,California,https://www.netapp.com,Public,21663
+550,Organon,Health Care,10000,6263,1023,12058,Kevin Ali,U.S.,Jersey City,New Jersey,https://www.organon.com,Public,4806
+551,Petco Health and Wellness,Retailing,29000,6255.3,-1280.2,5363.2,Joel D. Anderson,U.S.,San Diego,California,https://www.petco.com,Public,698
+552,Regal Rexnord,Industrials,32100,6250.7,-57.4,15431.4,Louis V. Pinkham,U.S.,Milwaukee,Wisconsin,https://www.regalrexnord.com,Public,11977
+553,Resideo Technologies,Materials,14000,6242,210,6645,Jay L. Geldmacher,U.S.,Scottsdale,Arizona,https://www.resideo.com,Public,3258
+554,Camping World Holdings,Retailing,12459,6226.5,31,4845.7,Marcus A. Lemonis,U.S.,Lincolnshire,Illinois,https://www.campingworld.com,Public,2354
+555,Huntsman,Chemicals,6000,6199,101,7248,Peter R. Huntsman,U.S.,The Woodlands,Texas,https://www.huntsman.com,Public,4503
+556,Victoria's Secret,Retailing,21500,6181.8,109.2,4600,Hillary Super,U.S.,Reynoldsburg,Ohio,https://www.victoriassecretandco.com,Public,1503
+557,Levi Strauss,Apparel,19100,6179,249.6,6053.6,Michelle  Gass,U.S.,San Francisco,California,https://www.levistrauss.com,Public,7957
+558,Roper Technologies,Technology,16800,6177.8,1384.2,28167.5,L. Neil Hunn,U.S.,Sarasota,Florida,https://www.ropertech.com,Public,60022
+559,Academy Sports and Outdoors,Retailing,16509,6159.3,519.2,4676.7,Steven P. Lawrence,U.S.,Katy,Texas,https://www.academy.com,Public,5025
+560,Meritage Homes,Engineering & Construction,1838,6138.3,738.7,6353.1,Phillippe Lord,U.S.,Scottsdale,Arizona,https://www.meritagehomes.com,Public,6346
+561,American Axle & Manufacturing,Motor Vehicles & Parts,19000,6079.5,-33.6,5356.3,David C. Dauch,U.S.,Detroit,Michigan,https://www.aam.com,Public,865
+562,Fortive,Industrials,18000,6065.3,865.8,16911.8,James A. Lico,U.S.,Everett,Washington,https://www.fortive.com,Public,30226
+563,Nasdaq,Financials,8525,6064,1059,32294,Adena T. Friedman,U.S.,New York,New York,https://www.nasdaq.com,Public,36296
+564,Broadridge Financial Solutions,Business Services,14700,6060.9,630.6,8233.2,Timothy C. Gokey,U.S.,Lake Success,New York,https://www.broadridge.com,Public,24127
+565,Spirit AeroSystems Holdings,Aerospace & Defense,20655,6047.9,-616.2,6950.1,Patrick M. Shanahan,U.S.,Wichita,Kansas,https://www.spiritaero.com,Public,4192
+566,Warner Music Group,Media,5900,6037,430,8545,Robert Kyncl,U.S.,New York,New York,https://www.wmg.com,Public,17100
+567,Chemours,Chemicals,6200,6027,-238,8251,Denise  Dignam,U.S.,Wilmington,Delaware,https://www.chemours.com,Public,3908
+568,ADT,Business Services,14300,6017.7,463,15964.1,James D. DeVries,U.S.,Boca Raton,Florida,https://www.adt.com,Public,6118
+569,Edwards Lifesciences,Health Care,19800,6004.8,1402.4,9363.2,Bernard J. Zovighian,U.S.,Irvine,California,https://www.edwards.com,Public,57520
+570,First American Financial,Financials,19210,6003.5,216.8,16802.8,Kenneth D. DeGiorgio,U.S.,Santa Ana,California,https://www.firstam.com,Public,6294
+571,Hanover Insurance Group,Financials,4800,5993.5,35.3,14612.6,John C. Roche,U.S.,Worcester,Massachusetts,https://www.hanover.com,Public,4893
+572,Silgan Holdings,Materials,14400,5988.2,326,7611.2,Adam J. Greenlee,U.S.,Stamford,Connecticut,https://www.silganholdings.com,Public,5185
+573,Endeavor Group Holdings,Media,10000,5960.2,356.5,21544.8,Ariel Emanuel,U.S.,Beverly Hills,California,https://www.endeavorco.com,Public,17817
+574,Moody's,Business Services,15151,5916,1607,14622,Robert S. Fauber,U.S.,New York,New York,https://www.moodys.com,Public,71752
+575,Coterra Energy,Energy,1083,5914,1625,20415,Thomas E. Jorden,U.S.,Houston,Texas,https://www.coterra.com,Public,20946
+576,Gartner,Technology,20237,5907,882.5,7835.9,Eugene A. Hall,U.S.,Stamford,Connecticut,https://www.gartner.com,Public,37165
+577,Under Armour,Apparel,11078,5903.6,386.8,4857.1,Kevin A. Plank,U.S.,Baltimore,Maryland,https://about.underarmour.com,Public,3157
+578,Ingles Markets,Food & Drug Stores,19540,5892.8,210.8,2473.8,James W. Lanning,U.S.,Black Mountain,North Carolina,https://www.ingles-markets.com,Public,1457
+579,Church & Dwight,Household Products,5550,5867.9,755.6,8569.2,Matthew T. Farrell,U.S.,Ewing,New Jersey,https://www.churchdwight.com,Public,25442
+580,Old Dominion Freight Line,Transportation,22902,5866.2,1239.5,5512.4,Kevin M. Freeman,U.S.,Thomasville,North Carolina,https://www.odfl.com,Public,47738
+581,U-Haul Holding,Transportation,26501,5864.7,923,18124.6,Edward J. Shoen,U.S.,Reno,Nevada,https://www.uhaul.com,Public,13091
+582,Oscar Health,Health Care,2400,5862.9,-270.7,3601.5,Mark T. Bertolini,U.S.,New York,New York,https://www.hioscar.com,Public,3416
+583,Arista Networks,Technology,4023,5860.2,2087.3,9946.8,Jayshree V. Ullal,U.S.,Santa Clara,California,https://www.arista.com,Public,90658
+584,Synopsys,Technology,20300,5842.6,1229.9,10333.1,Sassine Ghazi,U.S.,Sunnyvale,California,https://www.synopsys.com,Public,87179
+585,Harley-Davidson,Transportation,6400,5836.5,706.6,12140.6,Jochen Zeitz,U.S.,Milwaukee,Wisconsin,https://www.harley-davidson.com,Public,5973
+586,Frontier Communications,Telecommunications,13297,5751,29,20693,Nick Jeffery,U.S.,Dallas,Texas,https://www.frontier.com,Public,6023
+587,Primoris Services,Engineering & Construction,14058,5715.3,126.1,3827.4,Thomas E. McCormick,U.S.,Dallas,Texas,https://www.prim.com,Public,2283
+588,Carlisle,Materials,11100,5700.1,767.4,6620,D. Christian Koch,U.S.,Scottsdale,Arizona,https://www.carlisle.com,Public,18732
+589,Simon Property Group,Financials,2750,5658.8,2283.1,34283.5,David E. Simon,U.S.,Indianapolis,Indiana,https://www.simon.com,Public,50980
+590,Hanesbrands,Apparel,47520,5636.5,-17.7,5640.3,Stephen B. Bratspies,U.S.,Winston-Salem,North Carolina,https://www.hanes.com,Public,2039
+591,Anywhere Real Estate,Financials,8028,5636,-97,5839,Ryan M. Schneider,U.S.,Madison,New Jersey,https://www.anywhere.re,Public,687
+592,Teledyne Technologies,Aerospace & Defense,14900,5635.5,885.7,14527.9,Edwin Roks,U.S.,Thousand Oaks,California,https://www.teledyne.com,Public,20342
+593,CME Group,Financials,3565,5578.9,3226.2,129706.1,Terrence A. Duffy,U.S.,Chicago,Illinois,https://www.cmegroup.com,Public,77511
+594,Juniper Networks,Technology,11144,5564.5,310.2,9518.5,Rami Rahim,U.S.,Sunnyvale,California,https://www.juniper.net,Public,12022
+595,Coty,Household Products,11350,5554.1,508.2,12661.6,Sue Y. Nabi,U.S.,New York,New York,https://www.coty.com,Public,10706
+596,Pool,Wholesalers,6100,5541.6,523.2,3428.1,Peter D. Arvan,U.S.,Covington,Louisiana,https://www.poolcorp.com,Public,15529
+597,Evergy,Energy,4658,5508.2,731.3,30976.1,David A. Campbell,U.S.,Kansas City,Missouri,https://investors.evergy.com,Public,12264
+598,Marvell Technology,Technology,6544,5507.7,-933.4,21228.5,Matthew J. Murphy,U.S.,Wilmington,Delaware,https://www.marvell.com,Public,61382
+599,NiSource,Energy,7388,5505.4,714.3,31077.2,Lloyd M. Yates,U.S.,Merrillville,Indiana,https://www.nisource.com,Public,12379
+600,SS&C Technologies Holdings,Technology,26600,5502.8,607.1,18102.5,William C. Stone,U.S.,Windsor,Connecticut,https://www.ssctech.com,Public,15907
+601,Schneider National,Transportation,17300,5498.9,238.5,4557.2,Mark B. Rourke,U.S.,Green Bay,Wisconsin,https://www.schneider.com,Public,3993
+602,Autodesk,Technology,13700,5497,906,9912,Andrew Anagnost,U.S.,San Francisco,California,https://www.autodesk.com,Public,55708
+603,Sealed Air,Materials,17000,5488.9,341.6,7200.6,Patrick Kivits,U.S.,Charlotte,North Carolina,https://www.sealedair.com,Public,5375
+604,Iron Mountain,Business Services,27000,5480.3,184.2,17473.8,William L. Meaney,U.S.,Portsmouth,New Hampshire,https://www.ironmountain.com,Public,23443
+605,Digital Realty Trust,Financials,3664,5477.1,948.8,44113.3,Andrew P. Power,U.S.,Austin,Texas,https://www.digitalrealty.com,Public,44983
+606,Keysight Technologies,Technology,14900,5464,1057,8683,Satish Dhanasekaran,U.S.,Santa Rosa,California,https://www.keysight.com,Public,27297
+607,Globe Life,Financials,3636,5447.5,970.8,28051.5,Frank M. Svoboda,U.S.,McKinney,Texas,https://www.globelifeinsurance.com,Public,10943
+608,Parsons,Aerospace & Defense,18500,5442.7,161.1,4804.1,Carey A. Smith,U.S.,Chantilly,Virginia,https://www.parsons.com,Public,8779
+609,Mattel,Household Products,33000,5441.2,214.4,6435.8,Ynon Kreiz,U.S.,El Segundo,California,https://www.mattel.com,Public,6815
+610,Southwest Gas Holdings,Energy,14943,5434,150.9,11869.9,Karen S. Haller,U.S.,Las Vegas,Nevada,https://www.swgasholdings.com,Public,5454
+611,CUNA Mutual Group (TruStage),Financials,4100,5425.6,139.7,44970.3,Terrance  Williams,U.S.,Madison,Wisconsin,https://www.cunamutual.com,Private,
+612,Clean Harbors,Business Services,21280,5409.2,377.9,6382.9,Eric W. Gerstenberg,U.S.,Norwell,Massachusetts,https://www.cleanharbors.com,Public,10859
+613,Cornerstone Building Brands,Materials,17600,5402.4,-75.5,6933.3,Rose Lee,U.S.,Cary,North Carolina,https://www.cornerstonebuildingbrands.com,Private,3089
+614,Hubbell,Industrials,18317,5372.9,759.8,6914,Gerben W. Bakker,U.S.,Shelton,Connecticut,https://www.hubbell.com,Public,22281
+615,Spirit Airlines,Transportation,13167,5362.5,-447.5,9417.2,Edward M. Christie III,U.S.,Miramar,Florida,https://www.spirit.com,Public,530
+616,Lamb Weston Holdings,"Food, Beverages & Tobacco",10300,5350.6,1008.9,6519.8,Thomas P. Werner,U.S.,Eagle,Idaho,https://www.lambweston.com,Public,15380
+617,Take-Two Interactive Software,Media,11580,5349.9,-1124.7,15862.1,Strauss H. Zelnick,U.S.,New York,New York,https://www.take2games.com,Public,25330
+618,GMS,Wholesalers,7007,5329.3,333,3267,John C. Turner Jr.,U.S.,Tucker,Georgia,https://www.gms.com,Public,3877
+619,Penn Mutual Life Insurance,Financials,3370,5318.9,201,46740.7,David M. O'Malley,U.S.,Horsham,Pennsylvania,https://www.pennmutual.com,Private,
+620,Landstar System,Transportation,1468,5313.5,264.4,1801.8,Frank A. Lonegro,U.S.,Jacksonville,Florida,https://www.landstar.com,Public,6894
+621,Host Hotels & Resorts,Financials,163,5311,740,12243,James F. Risoleo,U.S.,Bethesda,Maryland,https://www.hosthotels.com,Public,14551
+622,Fortinet,Technology,13568,5304.8,1147.8,7258.9,Ken Xie,U.S.,Sunnyvale,California,https://www.fortinet.com,Public,52123
+623,OneMain Holdings,Financials,9100,5299,641,24294,Douglas H. Shulman,U.S.,Evansville,Indiana,https://onemainfinancial.com,Public,6119
+624,GameStop,Retailing,15750,5272.8,6.7,2709,Ryan Cohen,U.S.,Grapevine,Texas,https://www.gamestop.com,Public,3830
+625,Equifax,Business Services,14900,5265.2,545.3,12280,Mark W. Begor,U.S.,Atlanta,Georgia,https://www.equifax.com,Public,33234
+626,American Eagle Outfitters,Retailing,26700,5261.8,170,3557.9,Jay L. Schottenstein,U.S.,Pittsburgh,Pennsylvania,https://www.aeo-inc.com,Public,5085
+627,Comerica,Financials,7701,5253,881,85834,Curtis C. Farmer,U.S.,Dallas,Texas,https://www.comerica.com,Public,7286
+628,Greif,Materials,12000,5218.6,359.2,5960.8,Ole G. Rosgaard,U.S.,Delaware,Ohio,https://www.greif.com,Public,3264
+629,Comfort Systems USA,Engineering & Construction,15800,5206.8,323.4,3305.6,Brian E. Lane,U.S.,Houston,Texas,https://www.comfortsystemsusa.com,Public,11337
+630,TopBuild,Engineering & Construction,14012,5194.7,614.3,5162.9,Robert M. Buck,U.S.,Daytona Beach,Florida,https://www.topbuild.com,Public,14022
+631,Bread Financial Holdings,Business Services,7000,5168,718,23141,Ralph J. Andretta,U.S.,Columbus,Ohio,https://www.breadfinancial.com,Public,1841
+632,Coherent,Technology,26622,5160.1,-259.5,13711.1,Vincent D. Mattera Jr.,U.S.,Saxonburg,Pennsylvania,https://www.coherent.com,Public,9203
+633,Telephone & Data Systems,Telecommunications,8800,5160,-500,13921,LeRoy T. Carlson Jr.,U.S.,Chicago,Illinois,https://www.tdsinc.com,Public,1810
+634,Stifel Financial,Financials,9000,5159.3,522.5,37727.5,Ronald J. Kruszewski,U.S.,St. Louis,Missouri,https://www.stifel.com,Public,8036
+635,Urban Outfitters,Retailing,19460,5153.2,287.7,4111.2,Richard A. Hayne,U.S.,Philadelphia,Pennsylvania,https://www.urbn.com,Public,4029
+636,Terex,Industrials,10200,5151.5,518,3615.5,Simon  Meester,U.S.,Norwalk,Connecticut,https://www.terex.com,Public,4315
+637,Ryerson Holding,Materials,4600,5108.7,145.7,2569.6,Edward J. Lehner,U.S.,Chicago,Illinois,https://www.ryerson.com,Public,1140
+638,Snap-on,Industrials,13200,5108.3,1011.1,7544.9,Nicholas T. Pinchuk,U.S.,Kenosha,Wisconsin,https://www.snapon.com,Public,15652
+639,Flowers Foods,"Food, Beverages & Tobacco",9300,5090.8,123.4,3427,A. Ryals McMullian,U.S.,Thomasville,Georgia,https://www.flowersfoods.com,Public,5001
+640,First Horizon,Financials,7314,5027,897,81661,D. Bryan Jordan,U.S.,Memphis,Tennessee,https://www.firsthorizon.com,Public,8546
+641,Paychex,Business Services,16600,5007.1,1557.3,10546.4,John B. Gibson,U.S.,Rochester,New York,https://www.paychex.com,Public,44186
+642,Hasbro,Household Products,5502,5003.3,-1489.3,6540.9,Christian P. Cocks,U.S.,Pawtucket,Rhode Island,https://www.hasbro.com,Public,7845
+643,Sentry Insurance Group,Financials,4507,4994.4,373,24980.9,Peter G. McPartland,U.S.,Stevens Point,Wisconsin,https://www.sentry.com,Private,
+644,Ares Management,Financials,2850,4991.8,474.3,24730.5,Michael J. Arougheti,U.S.,Los Angeles,California,https://www.aresmgmt.com,Public,41171
+645,Lennox International,Industrials,12600,4981.9,590.1,2798.3,Alok Maskara,U.S.,Richardson,Texas,https://lennox.com,Public,17393
+646,Peabody Energy,Energy,5400,4946.7,759.6,5962.1,James C. Grech,U.S.,St. Louis,Missouri,https://www.peabodyenergy.com,Public,3088
+647,Kemper,Financials,8100,4944.2,-272.1,12742.7,Joseph P. Lacher Jr.,U.S.,Chicago,Illinois,https://www.kemper.com,Public,3984
+648,Nexstar Media Group,Media,12586,4933,346,12078,Perry A. Sook,U.S.,Irving,Texas,https://www.nexstar.tv,Public,5759
+649,TelevisaUnivision,Media,14000,4928,-873.6,17297.8,Wade C. Davis,U.S.,New York,New York,https://corporate.televisaunivision.com,Private,
+650,Tempur Sealy International,Household Products,12000,4925.4,368.1,4553.9,Scott L. Thompson,U.S.,Lexington,Kentucky,https://www.tempursealy.com,Public,9865
+651,TriNet Group,Business Services,3600,4922,375,3693,Mike  Simonds,U.S.,Dublin,California,https://www.trinet.com,Public,6700
+652,Worthington Enterprises,Materials,8200,4916.4,256.5,3650.9,B. Andrew Rose,U.S.,Columbus,Ohio,https://www.worthingtonenterprises.com,Public,3111
+653,Maximus,Technology,39600,4904.7,161.8,3985.8,Bruce L. Caswell,U.S.,McLean,Virginia,https://www.maximus.com,Public,5121
+654,Compass,Technology,2549,4885,-321.3,1160.3,Robert L. Reffkin,U.S.,New York,New York,https://www.compass.com,Public,1769
+655,Brink's,Business Services,67100,4874.6,87.7,6601.8,Mark Eubanks,U.S.,Richmond,Virginia,https://www.brinks.com,Public,4132
+656,Kelly Services,Business Services,6200,4835.7,36.4,2581.6,Peter W. Quigley,U.S.,Troy,Michigan,https://www.kellyservices.com,Public,884
+657,Navient,Financials,4500,4828,228,61375,David L. Yowan,U.S.,Herndon,Virginia,https://www.navient.com,Public,1962
+658,Puget Energy,Energy,3340,4816.6,53.7,17732.5,Mary E. Kipp,U.S.,Bellevue,Washington,https://www.pugetenergy.com,Private,
+659,AMC Entertainment Holdings,Media,18347,4812.6,-396.6,9009.2,Adam M. Aron,U.S.,Leawood,Kansas,https://www.amctheatres.com,Public,979
+660,Encompass Health,Health Care,30059,4801.2,352,6102.4,Mark J. Tarr,U.S.,Birmingham,Alabama,https://www.encompasshealth.com,Public,8270
+661,Skyworks Solutions,Technology,9701,4772.4,982.8,8426.7,Liam K. Griffin,U.S.,Irvine,California,https://www.skyworksinc.com,Public,17379
+662,Timken,Industrials,19602,4769,394.1,6541.7,Richard G. Kyle,U.S.,North Canton,Ohio,https://www.timken.com,Public,6154
+663,Liberty Energy,Energy,5500,4747.9,556.3,3033.6,Christopher A. Wright,U.S.,Denver,Colorado,https://libertyenergy.com,Public,3441
+664,Marriott Vacations Worldwide,"Hotels, Restaurants & Leisure",22000,4727,254,9680,John E. Geller Jr.,U.S.,Orlando,Florida,https://www.marriottvacationsworldwide.com,Public,3790
+665,Leggett & Platt,Household Products,19300,4725.3,-136.8,4634.5,J. Mitchell Dolloff,U.S.,Carthage,Missouri,https://www.leggett.com,Public,2562
+666,Big Lots,Retailing,21150,4722.1,-481.9,3325.3,Bruce K. Thorn,U.S.,Columbus,Ohio,https://www.biglots.com,Public,127
+667,Weis Markets,Food & Drug Stores,23000,4697,103.8,2039.6,Jonathan H. Weis,U.S.,Sunbury,Pennsylvania,https://www.weismarkets.com,Public,1732
+668,Pinnacle West Capital,Energy,6133,4696,501.6,24661.2,Jeffrey B Guldner,U.S.,Phoenix,Arizona,https://www.pinnaclewest.com,Public,9215
+669,EPAM Systems,Technology,53150,4690.5,417.1,4352.4,Arkadiy Dobkin,U.S.,Newtown,Pennsylvania,https://www.epam.com,Public,15970
+670,Antero Resources,Energy,604,4682,242.9,13619.4,Paul M. Rady,U.S.,Denver,Colorado,https://www.anteroresources.com,Public,8804
+671,Bloomin' Brands,"Hotels, Restaurants & Leisure",87000,4671.5,247.4,3424.1,David J. Deno,U.S.,Tampa,Florida,https://www.bloominbrands.com,Public,2497
+672,MDU Resources Group,Energy,9145,4657.3,414.7,7833.2,Nicole A. Kivisto,U.S.,Bismarck,North Dakota,https://www.mdu.com,Public,5138
+673,MDC Holdings,Engineering & Construction,1760,4642.9,401,5631.1,David D. Mandarich,U.S.,Denver,Colorado,https://www.mdcholdings.com,Private,4721
+674,Texas Roadhouse,"Hotels, Restaurants & Leisure",91000,4631.7,304.9,2793.4,Gerald L. Morgan,U.S.,Louisville,Kentucky,https://www.texasroadhouse.com,Public,10323
+675,Mercury General,Financials,4100,4629.6,96.3,7103.4,Gabriel Tirador,U.S.,Los Angeles,California,https://www.mercuryinsurance.com,Public,2857
+676,Fortune Brands Innovations,Materials,11700,4626.2,404.5,6565,Nicholas I. Fink,U.S.,Deerfield,Illinois,https://www.fbin.com,Public,10643
+677,Zions Bancorp.,Financials,9679,4624,680,87203,Paul E. Burdiss,U.S.,Salt Lake City,Utah,https://www.zionsbancorporation.com,Public,6406
+678,JELD-WEN Holding,Materials,17700,4606.2,62.4,2980.1,William J. Christensen,U.S.,Charlotte,North Carolina,https://www.jeld-wen.com,Public,1825
+679,Snap,Technology,5289,4606.1,-1322.5,7967.8,Evan Spiegel,U.S.,Santa Monica,California,https://www.snap.com,Public,18949
+680,Zebra Technologies,Industrials,9750,4584,296,7306,William J. Burns,U.S.,Lincolnshire,Illinois,https://www.zebra.com,Public,15493
+681,Agilon Health,Health Care,1117,4583.1,-262.6,1740.9,Steven J. Sell,U.S.,Austin,Texas,https://www.agilonhealth.com,Public,2498
+682,Toro,Industrials,10706,4553.2,329.7,3644.3,Richard M. Olson,U.S.,Bloomington,Minnesota,https://www.thetorocompany.com,Public,9567
+683,Zoom Video Communications,Technology,7420,4527.2,637.5,9929.8,Eric S. Yuan,U.S.,San Jose,California,https://www.zoom.com,Public,20105
+684,Tetra Tech,Engineering & Construction,27000,4522.6,273.4,3820.5,Dan L. Batrack,U.S.,Pasadena,California,https://www.tetratech.com,Public,9876
+685,Public Storage,Financials,6200,4517.7,2148.3,19809.2,Joseph D. Russell Jr.,U.S.,Glendale,California,https://www.publicstorage.com,Public,50965
+686,Illumina,Technology,11490,4504,-1161,10111,Jacob Thaysen,U.S.,San Diego,California,https://www.illumina.com,Public,21820
+687,Ventas,Financials,486,4497.8,-41,24725.4,Debra A. Cafaro,U.S.,Chicago,Illinois,https://www.ventasreit.com,Public,17523
+688,FMC,Chemicals,6600,4486.8,1321.5,11926.2,Pierre R. Brondeau,U.S.,Philadelphia,Pennsylvania,https://www.fmc.com,Public,7951
+689,ArcBest,Transportation,15000,4483.4,195.4,2485.1,Judy R. McReynolds,U.S.,Fort Smith,Arkansas,https://www.arcb.com,Public,3349
+690,Domino's Pizza,"Hotels, Restaurants & Leisure",8850,4479.4,519.1,1674.9,Russell J. Weiner,U.S.,Ann Arbor,Michigan,https://www.dominos.com,Public,17306
+691,ASGN,Business Services,15450,4450.6,219.3,3544.6,Theodore S. Hanson,U.S.,Glen Allen,Virginia,https://www.asgn.com,Public,4871
+692,Rivian Automotive,Motor Vehicles & Parts,16790,4434,-5432,16778,Robert J. Scaringe,U.S.,Irvine,California,https://rivian.com,Public,10703
+693,Elanco Animal Health,Health Care,9800,4417,-1231,14362,Jeffrey N. Simmons,U.S.,Greenfield,Indiana,https://www.elanco.com,Public,8026
+694,Graham Holdings,Business Services,17006,4414.9,205.3,7187.7,Timothy J. O?Shaughnessy,U.S.,Arlington,Virginia,https://www.ghco.com,Public,3422
+695,Floor & Decor Holdings,Retailing,11320,4413.9,246,4662.6,Thomas V. Taylor,U.S.,Atlanta,Georgia,https://www.flooranddecor.com,Public,13871
+696,Applied Industrial Technologies,Wholesalers,6200,4412.8,346.7,2743.3,Neil A. Schrimsher,U.S.,Cleveland,Ohio,https://www.applied.com,Public,7639
+697,PriceSmart,Retailing,11000,4411.8,109.2,2005.6,Robert E. Price,U.S.,San Diego,California,https://www.pricesmart.com,Public,2563
+698,Lyft,Technology,2945,4403.6,-340.3,4564.5,John David Risher,U.S.,San Francisco,California,https://investor.lyft.com,Public,7736
+699,Ciena,Technology,8398,4386.5,254.8,5601.5,Gary B. Smith,U.S.,Hanover,Maryland,https://www.ciena.com,Public,7151
+700,IAC,Technology,9500,4365.2,265.9,10371.2,Joseph M. Levin,U.S.,New York,New York,https://www.iac.com,Public,4585
+701,Country Financial,Financials,3275,4358.3,-65.4,17272.8,Jim Jacobs,U.S.,Bloomington,Illinois,https://www.countryfinancial.com,Private,
+702,Western Union,Business Services,9000,4357,626,8198.8,Devin B. McGranahan,U.S.,Denver,Colorado,https://www.westernunion.com,Public,4784
+703,Flowserve,Industrials,16000,4320.6,186.7,5108.7,R. Scott Rowe,U.S.,Irving,Texas,https://www.flowserve.com,Public,5994
+704,Western Alliance Bancorp.,Financials,3260,4316,722.4,70862,Kenneth A. Vecchione,U.S.,Phoenix,Arizona,https://www.westernalliancebancorporation.com,Public,7073
+705,Option Care Health,Health Care,6806,4302.3,267.1,3217,John C. Rademacher,U.S.,Bannockburn,Illinois,https://www.optioncarehealth.com,Public,5819
+706,SiteOne Landscape Supply,Wholesalers,7585,4301.2,173.4,2828.9,Doug Black,U.S.,Roswell,Georgia,https://www.siteone.com,Public,7887
+707,Topgolf Callaway Brands,"Hotels, Restaurants & Leisure",32000,4284.8,95,9120.6,Oliver G. Brewer III,U.S.,Carlsbad,California,https://www.topgolfcallawaybrands.com,Public,2969
+708,eXp World Holdings,Financials,2114,4281.1,-9,385.7,Glenn Sanford,U.S.,Bellingham,Washington,https://www.expworldholdings.com,Public,1570
+709,Abercrombie & Fitch,Retailing,19200,4280.7,328.1,2974.2,Fran Horowitz,U.S.,New Albany,Ohio,https://www.abercrombie.com,Public,6317
+710,Atmos Energy,Energy,5019,4275.4,885.9,22517,John K. Akers,U.S.,Dallas,Texas,https://www.atmosenergy.com,Public,17930
+711,Catalent,Health Care,17800,4263,-256,10777,Alessandro Maselli,U.S.,Somerset,New Jersey,https://www.catalent.com,Public,10203
+712,Brown & Brown,Financials,16152,4257.1,870.5,14883.4,J. Powell Brown,U.S.,Daytona Beach,Florida,https://www.bbinsurance.com,Public,24979
+713,GoDaddy,Technology,6159,4254.1,1374.8,7564.9,Aman Bhutani,U.S.,Tempe,Arizona,https://www.godaddy.com,Public,16909
+714,American Water Works,Energy,6500,4234,944,30298,M. Susan Hardwick,U.S.,Camden,New Jersey,https://www.amwater.com,Public,23809
+715,Selective Insurance Group,Financials,2650,4232.1,365.2,11802.5,John J. Marchioni,U.S.,Branchville,New Jersey,https://www.selective.com,Public,6637
+716,Brown-Forman,"Food, Beverages & Tobacco",5600,4228,783,7777,Lawson E. Whiting,U.S.,Louisville,Kentucky,https://www.brown-forman.com,Public,24617
+717,Advantage Solutions,Business Services,45000,4224.8,-63.3,3779.3,David Peacock,U.S.,Irvine,California,https://www.advantagesolutions.net,Public,1387
+718,ResMed,Health Care,10140,4223,897.6,6751.7,Michael J. Farrell,U.S.,San Diego,California,https://www.resmed.com,Public,29087
+719,Splunk,Technology,7500,4215.6,263.7,6687.4,Gary Steele,U.S.,San Francisco,California,https://www.splunk.com,Private,15868
+720,Plexus,Technology,25000,4210.3,139.1,3321.2,Todd P. Kelsey,U.S.,Neenah,Wisconsin,https://www.plexus.com,Public,2618
+721,Hub Group,Transportation,5950,4202.6,167.5,2936,Phillip D. Yeager,U.S.,Oak Brook,Illinois,https://www.hubgroup.com,Public,2715
+722,Lincoln Electric Holdings,Industrials,12000,4191.6,545.2,3377.3,Steven B. Hedlund,U.S.,Cleveland,Ohio,https://www.lincolnelectric.com,Public,14515
+723,NCR Atleos,Business Services,20000,4191,-134,5741,Timothy C. Oliver,U.S.,Atlanta,Georgia,https://www.ncratleos.com,Public,1424
+724,Calumet,Energy,1580,4181,48.1,2751.3,Todd Borgmann,U.S.,Indianapolis,Indiana,https://www.calumetspecialty.com,Public,1192
+725,Dycom Industries,Engineering & Construction,15611,4175.6,218.9,2516.9,Steven E. Nielsen,U.S.,Palm Beach Gardens,Florida,https://www.dycomind.com,Public,4176
+726,Valmont Industries,Materials,11125,4174.6,150.8,3477.4,Avner M. Applbaum,U.S.,Omaha,Nebraska,https://www.valmont.com,Public,4608
+727,ATI,Materials,7300,4173.7,410.8,4985.1,Kimberly A. Fields,U.S.,Dallas,Texas,https://www.atimaterials.com,Public,6368
+728,Twilio,Technology,5867,4153.9,-1015.4,11609.7,Khozema Z. Shipchandler,U.S.,San Francisco,California,https://www.twilio.com,Public,11133
+729,CNO Financial Group,Financials,3500,4146.8,276.5,35102.5,Gary C. Bhojwani,U.S.,Carmel,Indiana,https://www.cnoinc.com,Public,2986
+730,Patterson-UTI Energy,Energy,10600,4146.5,246.3,7420,William A. Hendricks Jr.,U.S.,Houston,Texas,https://www.patenergy.com,Public,4874
+731,Brinker International,"Hotels, Restaurants & Leisure",64323,4133.2,102.6,2487,Kevin D. Hochman,U.S.,Dallas,Texas,https://www.brinker.com,Public,2197
+732,Charles River Laboratories International,Health Care,21100,4129.4,474.6,8195,James C. Foster,U.S.,Wilmington,Massachusetts,https://www.criver.com,Public,13957
+733,Hyster-Yale,Industrials,8600,4118.3,125.9,2079.1,Rajiv K. Prasad,U.S.,Cleveland,Ohio,https://www.hyster-yale.com,Public,1122
+734,Brighthouse Financial,Financials,1500,4117,-1112,236340,Eric T. Steigerwalt,U.S.,Charlotte,North Carolina,https://www.brighthousefinancial.com,Public,3241
+735,Service Corp. International,Business Services,21267,4099.8,537.3,16355.4,Thomas L. Ryan,U.S.,Houston,Texas,https://www.sci-corp.com,Public,10873
+736,CrossAmerica Partners,Energy,2521,4090.5,42.6,1181.7,Charles M. Nifong Jr.,U.S.,Allentown,Pennsylvania,https://www.crossamericapartners.com,Public,866
+737,Cadence,Technology,11226,4090,1041.1,5669.5,Anirudh Devgan,U.S.,San Jose,California,https://www.cadence.com,Public,84855
+738,MillerKnoll,Household Products,10900,4087.1,42.1,4274.8,Andrea R. Owen,U.S.,Zeeland,Michigan,https://www.millerknoll.com,Public,1803
+739,Realty Income,Financials,418,4079,872.3,57779.4,Sumit Roy,U.S.,San Diego,California,https://www.realtyincome.com,Public,46587
+740,Middleby,Industrials,10722,4036.6,400.9,6906.7,Timothy J. FitzGerald,U.S.,Elgin,Illinois,https://www.middleby.com,Public,8645
+741,M/I Homes,Engineering & Construction,1607,4033.5,465.4,4022.4,Robert H. Schottenstein,U.S.,Columbus,Ohio,https://www.mihomes.com,Public,3790
+742,Hologic,Health Care,6990,4030.4,456,9139.3,Stephen P. MacMillan,U.S.,Marlborough,Massachusetts,https://www.hologic.com,Public,18300
+743,Alliant Energy,Energy,3281,4027,703,21237,Lisa M. Barton,U.S.,Madison,Wisconsin,https://www.alliantenergy.com,Public,12908
+744,Generac Holdings,Industrials,8458,4022.7,214.6,5093.3,Aaron P. Jagdfeld,U.S.,Waukesha,Wisconsin,https://www.generac.com,Public,7602
+745,MSC Industrial Direct,Wholesalers,7254,4009.3,343.2,2544.1,Erik Gershwind,U.S.,Melville,New York,https://www.mscdirect.com,Public,5463
+746,Rocket Companies,Financials,14700,4005.9,-15.5,19231.7,Varun Krishna,U.S.,Detroit,Michigan,https://www.rocketcompanies.com,Public,28891
+747,Upbound Group,Retailing,12970,3992.4,-5.2,2721.4,Mitchell E. Fadel,U.S.,Plano,Texas,https://www.upbound.com,Public,1916
+748,East West Bancorp,Financials,3206,3989.1,1161.2,69612.9,Dominic Ng,U.S.,Pasadena,California,https://www.eastwestbank.com,Public,11078
+749,Hilton Grand Vacations,"Hotels, Restaurants & Leisure",15000,3978,313,8685,Mark D. Wang,U.S.,Orlando,Florida,https://www.hgv.com,Public,4945
+750,Grocery Outlet Holding,Food & Drug Stores,949,3969.5,79.4,2969.6,Robert J. Sheedy Jr.,U.S.,Emeryville,California,https://www.groceryoutlet.com,Public,2856
+751,Dentsply Sirona,Health Care,15000,3965,-132,7370,Simon D. Campion,U.S.,Charlotte,North Carolina,https://www.dentsplysirona.com,Public,6882
+752,V2X,Aerospace & Defense,16000,3963.1,-22.6,3081.9,Jeremy Wensinger,U.S.,McLean,Virginia,https://www.gov2x.com,Public,1469
+753,Crocs,Apparel,7030,3962.3,792.6,4643.8,Andrew Rees,U.S.,Broomfield,Colorado,https://www.crocs.com,Public,8700
+754,Spectrum Brands Holdings,Household Products,3100,3961.3,1801.5,5258.4,David M. Maura,U.S.,Middleton,Wisconsin,https://www.spectrumbrands.com,Public,2695
+755,Visteon,Motor Vehicles & Parts,10000,3954,486,2727,Sachin S. Lawande,U.S.,Van Buren Township,Michigan,https://www.visteon.com,Public,3233
+756,Acuity Brands,Industrials,12200,3952.2,346,3408.5,Neil M. Ashe,U.S.,Atlanta,Georgia,https://www.acuitybrands.com,Public,8281
+757,Greenbrier,Transportation,13800,3944,62.5,3978.4,Lorie L. Tekorius,U.S.,Lake Oswego,Oregon,https://www.gbrx.com,Public,1620
+758,Webster Financial,Financials,4196,3942.6,867.8,74945.2,John R. Ciulla,U.S.,Stamford,Connecticut,https://investors.websterbank.com,Public,8710
+759,Cabot,Chemicals,4268,3931,445,3604,Sean D. Keohane,U.S.,Boston,Massachusetts,https://www.cabotcorp.com,Public,5111
+760,RXO,Transportation,7242,3927,4,1825,Drew M. Wilkerson,U.S.,Charlotte,North Carolina,https://www.rxo.com,Public,2561
+761,Chord Energy,Energy,514,3896.6,1023.8,6926.2,Daniel E. Brown,U.S.,Houston,Texas,https://www.chordenergy.com,Public,7405
+762,Popular,Financials,9088,3896,541.3,70758.2,Ignacio Alvarez,U.S.,Hato Rey,Puerto Rico,https://www.popular.com,Public,6368
+763,Garrett Motion,Motor Vehicles & Parts,8650,3886,261,2527,Olivier Rabiller,U.S.,Plymouth,Michigan,https://www.garrettmotion.com,Public,2263
+764,Tutor Perini,Engineering & Construction,8200,3880.2,-171.2,4429.9,Ronald N. Tutor,U.S.,Sylmar,California,https://www.tutorperini.com,Public,752
+765,Copart,Retailing,12000,3869.5,1237.7,6737.9,Jeffrey Liaw,U.S.,Dallas,Texas,https://www.copart.com,Public,55688
+766,Toast,Business Services,5500,3865,-246,1958,Aman Narang,U.S.,Boston,Massachusetts,https://www.toasttab.com,Public,13656
+767,Align Technology,Health Care,21610,3862.3,445.1,6083.9,Joseph M. Hogan,U.S.,Tempe,Arizona,https://www.aligntech.com,Public,24628
+768,A.O. Smith,Industrials,12000,3852.8,556.6,3213.9,Kevin J. Wheeler,U.S.,Milwaukee,Wisconsin,https://www.aosmith.com,Public,13156
+769,TransUnion,Business Services,13200,3831.2,-206.2,11105.1,Christopher A. Cartwright,U.S.,Chicago,Illinois,https://www.transunion.com,Public,15500
+770,NCR Voyix,Technology,15500,3830,-423,4990,David Wilkinson,U.S.,Atlanta,Georgia,https://ncrvoyix.com,Public,1822
+771,Akamai Technologies,Technology,10281,3811.9,547.6,9900,F. Thomson Leighton,U.S.,Cambridge,Massachusetts,https://www.akamai.com,Public,16663
+772,Trimble,Technology,12700,3798.7,311.3,9539.3,Robert G. Painter,U.S.,Westminster,Colorado,https://www.trimble.com,Public,15812
+773,Medical Mutual of Ohio,Financials,3084,3795.5,65.9,2787.4,Steven C. Glass,U.S.,Cleveland,Ohio,https://www.medmutual.com,Private,
+774,AMN Healthcare Services,Health Care,3585,3789.3,210.7,2924.4,Caroline S. Grace,U.S.,Dallas,Texas,https://www.amnhealthcare.com,Public,2368
+775,Mettler-Toledo International,Technology,16650,3788.3,788.8,3355.6,Patrick Kaltenbach,U.S.,Columbus,Ohio,https://www.mt.com,Public,28474
+776,ScanSource,Wholesalers,2300,3787.7,89.8,2068.2,Michael L. Baur,U.S.,Greenville,South Carolina,https://www.scansource.com,Public,1109
+777,LCI Industries,Motor Vehicles & Parts,11700,3784.8,64.2,2959.3,Jason D. Lippert,U.S.,Elkhart,Indiana,https://www.lci1.com,Public,3132
+778,Cboe Global Markets,Financials,1647,3773.5,761.4,7487.5,Fredric J. Tomczyk,U.S.,Chicago,Illinois,https://www.cboe.com,Public,19399
+779,Diebold Nixdorf,Technology,21000,3760.5,,4162,Octavio Marquez,U.S.,North Canton,Ohio,https://www.dieboldnixdorf.com,Public,1294
+780,ChampionX,Energy,7100,3758.3,314.2,3241.7,Sivasankaran Somasundaram,U.S.,The Woodlands,Texas,https://www.championx.com,Public,6859
+781,Corpay,Business Services,10500,3757.7,981.9,15476.3,Ronald F. Clarke,U.S.,Atlanta,Georgia,https://www.fleetcor.com,Public,22170
+782,iHeartMedia,Media,9990,3751,-1102.7,6952.6,Robert W. Pittman,U.S.,San Antonio,Texas,https://www.iheartmedia.com,Public,313
+783,Travel + Leisure,"Hotels, Restaurants & Leisure",19000,3750,396,6738,Michael D. Brown,U.S.,Orlando,Florida,https://www.travelandleisureco.com,Public,3478
+784,Dream Finders Homes,Engineering & Construction,1236,3748.6,295.9,2562.4,Patrick O. Zalupski,U.S.,Jacksonville,Florida,https://www.dreamfindershomes.com,Public,4079
+785,Boyd Gaming,"Hotels, Restaurants & Leisure",16129,3738.5,620,6273.1,Keith E. Smith,U.S.,Las Vegas,Nevada,https://www.boydgaming.com,Public,6466
+786,NLV Financial,Financials,1370,3735,217.4,45472.1,Mehran Assadi,U.S.,Montpelier,Vermont,https://www.nationallife.com,Private,
+787,Ensign Group,Health Care,35300,3729.4,209.4,4177.5,Barry R. Port,U.S.,San Juan Capistrano,California,https://www.ensigngroup.net,Public,7080
+788,Sally Beauty Holdings,Retailing,20000,3728.1,184.6,2725.3,Denise A. Paulonis,U.S.,Denton,Texas,https://www.sallybeautyholdings.com,Public,1303
+789,Conduent,Business Services,59000,3722,-296,3162,Clifford A. Skelton,U.S.,Florham Park,New Jersey,https://www.conduent.com,Public,710
+790,Sylvamo,Materials,6500,3721,253,2872,Jean-Michel Ribi?ras,U.S.,Memphis,Tennessee,https://www.sylvamo.com,Public,2560
+791,Tri Pointe Homes,Engineering & Construction,1438,3715.2,343.7,4914.6,Douglas F. Bauer,U.S.,Incline Village,Nevada,https://www.tripointehomes.com,Public,3710
+792,EnerSys,Industrials,11350,3708.6,175.8,3616.7,David M. Shaffer,U.S.,Reading,Pennsylvania,https://www.enersys.com,Public,3818
+793,Incyte,Health Care,2524,3695.6,597.6,6782.1,Herv? Hoppenot,U.S.,Wilmington,Delaware,https://www.incyte.com,Public,12791
+794,Century Communities,Engineering & Construction,1650,3692.2,259.2,4139.4,Dale Francescon,U.S.,Greenwood Village,Colorado,https://www.centurycommunities.com,Public,3067
+795,Rithm Capital,Financials,6570,3691.9,622.3,35311.8,Michael Nierenberg,U.S.,New York,New York,https://www.rithmcap.com,Public,5393
+796,Euronet Worldwide,Business Services,10000,3688,279.7,5894.4,Michael J. Brown,U.S.,Leawood,Kansas,https://www.euronetworldwide.com,Public,5033
+797,Hawaiian Electric Industries,Energy,3652,3682.2,199.2,17243.8,Scott W.H. Seu,U.S.,Honolulu,Hawaii,https://www.hei.com,Public,1243
+798,DraftKings,"Hotels, Restaurants & Leisure",4400,3665.4,-802.1,3944.9,Jason D. Robins,U.S.,Boston,Massachusetts,https://www.draftkings.com,Public,39447
+799,IDEXX Laboratories,Health Care,11000,3661,845,3259.9,Jonathan J. Mazelsky,U.S.,Westbrook,Maine,https://www.idexx.com,Public,44843
+800,MYR Group,Engineering & Construction,9000,3643.9,91,1578.7,Richard S. Swartz,U.S.,Thornton,Colorado,https://www.myrgroup.com,Public,2959
+801,Deckers Outdoor,Apparel,4200,3627.3,516.8,2556.2,Stefano Caroti,U.S.,Goleta,California,https://www.deckers.com,Public,24161
+802,DexCom,Health Care,9550,3622.3,541.5,6264.5,Kevin R. Sayer,U.S.,San Diego,California,https://www.dexcom.com,Public,53471
+803,MKS Instruments,Technology,10100,3622,-1841,9118,John T.C. Lee,U.S.,Andover,Massachusetts,https://www.mks.com,Public,8918
+804,VICI Properties,Financials,28,3612,2513.5,44059.8,Edward B. Pitoniak,U.S.,New York,New York,https://www.viciproperties.com,Public,31075
+805,Cooper Cos.,Health Care,15000,3593.2,294.2,11658.9,Albert G. White III,U.S.,San Ramon,California,https://www.coopercos.com,Public,20166
+806,Frontier Group Holdings,Transportation,7214,3589,-11,4993,Barry L. Biffle,U.S.,Denver,Colorado,https://www.flyfrontier.com,Public,1812
+807,Qorvo,Technology,8500,3569.4,103.2,6691.9,Robert A. Bruggeworth,U.S.,Greensboro,North Carolina,https://www.qorvo.com,Public,11087
+808,Five Below,Retailing,14500,3559.4,301.1,3872,Kenneth R. Bull,U.S.,Philadelphia,Pennsylvania,https://www.fivebelow.com,Public,10019
+809,TreeHouse Foods,"Food, Beverages & Tobacco",7400,3552.9,53.1,4106.6,Steven T. Oakland,U.S.,Oak Brook,Illinois,https://www.treehousefoods.com,Public,2098
+810,Scotts Miracle-Gro,Chemicals,6375,3551.3,-380.1,3413.7,James S. Hagedorn,U.S.,Marysville,Ohio,https://www.scotts.com,Public,4229
+811,Atlassian,Technology,10726,3534.6,-486.8,4106.8,Michael Cannon-Brookes,U.S.,San Francisco,California,https://www.atlassian.com,Public,50613
+812,Entegris,Technology,8000,3523.9,180.7,8812.6,Bertrand Loy,U.S.,Billerica,Massachusetts,https://www.entegris.com,Public,21184
+813,Atkore,Industrials,5208,3518.8,689.9,2935,William E. Waltz,U.S.,Harvey,Illinois,https://www.atkore.com,Public,6999
+814,H.B. Fuller,Chemicals,7200,3510.9,144.9,4723.6,Celeste B. Mastin,U.S.,St. Paul,Minnesota,https://www.hbfuller.com,Public,4345
+815,Granite Construction,Engineering & Construction,4100,3509.1,43.6,2813.5,Kyle T. Larkin,U.S.,Watsonville,California,https://www.graniteconstruction.com,Public,2512
+816,Winnebago Industries,Motor Vehicles & Parts,6250,3490.7,215.9,2432.4,Michael J. Happe,U.S.,Eden Prairie,Minnesota,https://www.winnebagoind.com,Public,2166
+817,FTI Consulting,Business Services,7990,3489.2,274.9,3325.9,Steven H. Gunby,U.S.,Washington,District Of Columbia,https://www.fticonsulting.com,Public,7472
+818,AptarGroup,Materials,13800,3487.5,284.5,4451.9,Stephan B. Tanda,U.S.,Crystal Lake,Illinois,https://www.aptar.com,Public,9521
+819,Columbia Sportswear,Apparel,10070,3487.2,251.4,2939,Timothy P. Boyle,U.S.,Portland,Oregon,https://www.columbia.com,Public,4854
+820,Roku,Media,3150,3484.6,-709.6,4261.8,Anthony J. Wood,U.S.,San Jose,California,https://www.roku.com,Public,9353
+821,Civitas Resources,Energy,516,3479.2,784.3,14097.3,M. Christopher Doyle,U.S.,Denver,Colorado,https://www.civitasresources.com,Public,7669
+822,H&R Block,Financials,39200,3472.2,553.7,3072.3,Jeffrey J. Jones II,U.S.,Kansas City,Missouri,https://www.hrblock.com,Public,6852
+823,Alpha Metallurgical Resources,Energy,4160,3471.4,722,2406.1,Charles Andrew Eidson,U.S.,Bristol,Tennessee,https://www.alphametresources.com,Public,4308
+824,Patrick Industries,Motor Vehicles & Parts,10000,3468,142.9,2562.4,Andy L. Nemeth,U.S.,Elkhart,Indiana,https://www.patrickind.com,Public,2674
+825,Murphy Oil,Energy,725,3460.1,661.6,9766.7,Roger W. Jenkins,U.S.,Houston,Texas,https://www.murphyoilcorp.com,Public,6973
+826,Synovus Financial,Financials,4798,3454.4,543.7,59809.5,Kevin S. Blair,U.S.,Columbus,Georgia,https://www.synovus.com,Public,5866
+827,Cracker Barrel Old Country Store,"Hotels, Restaurants & Leisure",77000,3442.8,99.1,2218.1,Julie Felss Masino,U.S.,Lebanon,Tennessee,https://www.crackerbarrel.com,Public,1615
+828,Cheesecake Factory,"Hotels, Restaurants & Leisure",47900,3439.5,101.4,2840.4,David M. Overton,U.S.,Calabasas Hills,California,https://www.thecheesecakefactory.com,Public,1848
+829,CNX Resources,Energy,470,3434.9,1720.7,8626.7,Nicholas J. DeIuliis,U.S.,Canonsburg,Pennsylvania,https://www.cnx.com,Public,3632
+830,Chefs' Warehouse,Wholesalers,4873,3433.8,34.6,1705.3,Christopher Pappas,U.S.,Ridgefield,Connecticut,https://www.chefswarehouse.com,Public,1499
+831,Donaldson,Industrials,13000,3430.8,358.8,2770.5,Tod E. Carpenter,U.S.,Minneapolis,Minnesota,https://www.donaldson.com,Public,8989
+832,Mueller Industries,Industrials,4509,3420.3,602.9,2759.3,Gregory L. Christopher,U.S.,Collierville,Tennessee,https://www.muellerindustries.com,Public,6126
+833,MRC Global,Wholesalers,2800,3412,114,1886,Robert J. Saltiel Jr.,U.S.,Houston,Texas,https://www.mrcglobal.com,Public,1061
+834,Chart Industries,Industrials,11637,3411.3,47.3,9102.4,Jillian C. Evanko,U.S.,Ball Ground,Georgia,https://www.chartindustries.com,Public,6964
+835,Alight,Business Services,18000,3410,-345,10782,Stephan D. Scholl,U.S.,Lincolnshire,Illinois,https://www.alight.com,Public,5545
+836,Vishay Intertechnology,Technology,23500,3402,323.8,4239.9,Joel Smejkal,U.S.,Malvern,Pennsylvania,https://www.vishay.com,Public,3119
+837,Range Resources,Energy,548,3374.4,871.1,7203.9,Dennis L. Degner,U.S.,Fort Worth,Texas,https://www.rangeresources.com,Public,8353
+838,Valley National Bancorp,Financials,3749,3364.6,498.5,60935,Ira D. Robbins,U.S.,New York,New York,https://valley.com/,Public,4051
+839,Match Group,Technology,2610,3364.5,651.5,4507.9,Bernard Kim,U.S.,Dallas,Texas,https://www.mtch.com,Public,9724
+840,Gen Digital,Technology,3700,3338,1349,15947,Vincent Pilette,U.S.,Tempe,Arizona,https://www.gendigital.com,Public,14267
+841,Wintrust Financial,Financials,5521,3327.2,622.6,56259.9,Timothy S. Crane,U.S.,Rosemont,Illinois,https://www.wintrust.com,Public,6417
+842,Moog,Aerospace & Defense,13500,3319.1,171,3808,Patrick J. Roche,U.S.,East Aurora,New York,https://www.moog.com,Public,5307
+843,First Solar,Energy,6700,3318.6,830.8,10365.1,Mark R. Widmar,U.S.,Tempe,Arizona,https://www.firstsolar.com,Public,18068
+844,Central Garden & Pet,Household Products,6500,3310.1,125.6,3378.6,Mary Beth Springer,U.S.,Walnut Creek,California,https://www.central.com,Public,2435
+845,Green Plains,Energy,921,3295.7,-93.4,1939.3,Todd A. Becker,U.S.,Omaha,Nebraska,https://www.gpreinc.com,Public,1495
+846,Werner Enterprises,Transportation,13809,3283.5,112.4,3157.9,Derek J. Leathers,U.S.,Omaha,Nebraska,https://www.werner.com,Public,2483
+847,AppLovin,Technology,1731,3283.1,356.7,5359.2,Adam Foroughi,U.S.,Palo Alto,California,https://www.applovin.com,Public,22796
+848,ITT,Industrials,10600,3283,410.5,3932.6,Luca Savi,U.S.,Stamford,Connecticut,https://www.itt.com,Public,11168
+849,Herc Holdings,Business Services,7200,3282,347,7061,Lawrence H. Silber,U.S.,Bonita Springs,Florida,https://www.hercrentals.com,Public,4773
+850,Gray Television,Media,9649,3281,-76,10640,Patrick D. LaPlatney/Hilton H. Howell Jr.,U.S.,Atlanta,Georgia,https://www.gray.tv,Public,635
+851,IDEX,Industrials,8800,3273.9,596.1,5865.2,Eric D. Ashleman,U.S.,Northbrook,Illinois,https://www.idexcorp.com,Public,18470
+852,Boston Properties,Financials,836,3273.6,190.2,26026.1,Owen D. Thomas,U.S.,Boston,Massachusetts,https://www.bxp.com,Public,10254
+853,Pitney Bowes,Technology,10500,3266.3,-385.6,4272.2,Jason C. Dies,U.S.,Stamford,Connecticut,https://www.pitneybowes.com,Public,764
+854,Steelcase,Household Products,12250,3232.6,35.3,2202.8,Sara E. Armbruster,U.S.,Grand Rapids,Michigan,https://www.steelcase.com,Public,1494
+855,Sun Communities,Financials,6757,3224.6,-213.3,16940.7,Gary A. Shiffman,U.S.,Southfield,Michigan,https://suninc.com,Public,15997
+856,AdaptHealth,Health Care,10700,3200.2,-678.9,4508.7,Suzanne Foster,U.S.,Plymouth Meeting,Pennsylvania,https://www.adapthealth.com,Public,1530
+857,Vertex Energy,Energy,481,3184.6,-71.5,854.6,Benjamin P. Cowart,U.S.,Houston,Texas,https://www.vertexenergy.com,Public,131
+858,Genesis Energy,Energy,2137,3177,117.7,7018.8,Grant E. Sims,U.S.,Houston,Texas,https://www.genesisenergy.com,Public,1362
+859,Jackson Financial,Financials,3428,3159,934,330255,Laura L. Prieskorn,U.S.,Lansing,Michigan,https://www.jackson.com,Public,5120
+860,FirstCash Holdings,Retailing,19000,3151.8,219.3,4289.9,Rick L. Wessel,U.S.,Fort Worth,Texas,https://www.firstcash.com,Public,5753
+861,Cal-Maine Foods,"Food, Beverages & Tobacco",2896,3146.2,758,1954.5,Sherman L. Miller,U.S.,Ridgeland,Mississippi,https://www.calmainefoods.com,Public,2883
+862,Arch Resources,Energy,3404,3145.8,464,2484.2,Paul A. Lang,U.S.,St. Louis,Missouri,https://www.archrsc.com,Public,2934
+863,Avient,Chemicals,9300,3142.8,75.7,5968.5,Ashish K. Khandpur,U.S.,Avon Lake,Ohio,https://www.avient.com,Public,3961
+864,Cano Health,Health Care,2700,3137.8,-594.4,1013.7,Mark Kent,U.S.,Miami,Florida,https://www.canohealth.com,Private,1
+865,BlueLinx Holdings,Wholesalers,1990,3136.4,48.5,1537.6,Shyam K. Reddy,U.S.,Marietta,Georgia,https://www.bluelinxco.com,Public,1127
+866,Sinclair,Media,7300,3134,-291,6085,Christopher S. Ripley,U.S.,Hunt Valley,Maryland,https://www.sbgi.net,Public,857
+867,BOK Financial,Financials,4966,3132.4,530.7,49824.8,Stacy C. Kymes,U.S.,Tulsa,Oklahoma,https://www.bokf.com,Public,5946
+868,Permian Resources,Energy,461,3120.9,476.3,14965.6,William M. Hickey III/James H. Walter,U.S.,Midland,Texas,https://permianres.com,Public,13631
+869,PACS Group,Health Care,32433,3111.5,112.9,3512.7,Jason  Murray,U.S.,Farmington,Utah,https://pacs.com,Public,
+870,Coinbase Global,Financials,3416,3108.4,94.9,206983,Brian Armstrong,U.S.,Wilmington,Delaware,https://www.coinbase.com,Public,64232
+871,Western Midstream Partners,Energy,1377,3106.5,1022.2,12471.6,Michael P. Ure,U.S.,The Woodlands,Texas,https://www.westernmidstream.com,Public,13526
+872,Federated Mutual Insurance,Financials,2922,3098.7,422.8,12190,Nicholas R. Lower,U.S.,Owatonna,Minnesota,https://www.federatedinsurance.com,Private,
+873,G-III Apparel Group,Apparel,4050,3098.2,176.2,2681.2,Morris Goldfarb,U.S.,New York,New York,https://www.giii.com,Public,1318
+874,Vontier,Technology,8000,3095.2,376.9,4294,Mark D. Morelli,U.S.,Raleigh,North Carolina,https://www.vontier.com,Public,6981
+875,Matson,Transportation,4315,3094.6,297.1,4294.6,Matthew J. Cox,U.S.,Honolulu,Hawaii,https://www.matson.com,Public,3876
+876,Kirby,Transportation,5450,3091.6,222.9,5722.2,David W. Grzebinski,U.S.,Houston,Texas,https://www.kirbycorp.com,Public,5574
+877,Kaiser Aluminum,Materials,4000,3087,47.2,2267.4,Keith A. Harvey,U.S.,Franklin,Tennessee,https://www.kaiseraluminum.com,Public,1431
+878,Vista Outdoor,Business Services,7000,3079.8,-9.7,2798.9,Jason  Vanderbrink /Eric  Nyman,U.S.,Anoka,Minnesota,https://www.vistaoutdoor.com,Public,1906
+879,Designer Brands,Retailing,14000,3075,29.1,2076.2,Douglas M. Howe,U.S.,Columbus,Ohio,https://www.designerbrands.com,Public,626
+880,Rollins,Business Services,19031,3073.3,435,2595.5,Jerry E. Gahlhoff Jr.,U.S.,Atlanta,Georgia,https://www.rollins.com,Public,22419
+881,Advanced Drainage Systems,Materials,5870,3071.1,507.1,2901.1,D. Scott Barbour,U.S.,Hilliard,Ohio,https://www.adspipe.com,Public,13369
+882,Cinemark Holdings,Media,17888,3066.7,188.2,4836.8,Sean Gamble,U.S.,Plano,Texas,https://www.cinemark.com,Public,2188
+883,CrowdStrike,Technology,7925,3055.6,89.3,6646.5,George R. Kurtz,U.S.,Austin,Texas,https://www.crowdstrike.com,Public,77541
+884,Pinterest,Technology,4014,3055.1,-35.6,3594.4,William J. Ready,U.S.,San Francisco,California,https://investor.pinterestinc.com,Public,23540
+885,Instacart,Retailing,3380,3042,-1622,4727,Fidji Simo,U.S.,San Francisco,California,https://instacart.com/company,Public,9938
+886,Hillenbrand,Industrials,10400,3039.7,569.7,5547.7,Kimberly K. Ryan,U.S.,Batesville,Indiana,https://www.hillenbrand.com,Public,3528
+887,Allison Transmission Holdings,Motor Vehicles & Parts,3700,3035,673,5025,David S. Graziosi,U.S.,Indianapolis,Indiana,https://www.allisontransmission.com,Public,7111
+888,RH,Retailing,5645,3029.1,127.6,4143.9,Gary G. Friedman,U.S.,Corte Madera,California,https://www.rh.com,Public,6379
+889,Brookdale Senior Living,Health Care,30600,3015.8,-189,5573.4,Lucinda M. Baier,U.S.,Brentwood,Tennessee,https://www.brookdale.com,Public,1252
+890,QuidelOrtho,Health Care,7100,2997.8,-10.1,8563.1,Brian J. Blaser,U.S.,San Diego,California,https://www.quidelortho.com,Public,3205
+891,Trinity Industries,Transportation,9480,2983.3,106,8906.5,E. Jean Savage,U.S.,Dallas,Texas,https://www.trin.net,Public,2280
+892,Teleflex,Health Care,14500,2974.5,356.3,7532.5,Liam J. Kelly,U.S.,Wayne,Pennsylvania,https://www.teleflex.com,Public,10643
+893,HEICO,Aerospace & Defense,9600,2968.1,403.6,7195.1,Laurans A. Mendelson,U.S.,Hollywood,Florida,https://www.heico.com,Public,23341
+894,Bruker,Technology,9707,2964.5,427.2,4249.9,Frank H. Laukien,U.S.,Billerica,Massachusetts,https://www.bruker.com,Public,12933
+895,Carlyle Group,Financials,2200,2963.9,-608.4,21176,Harvey M. Schwartz,U.S.,Washington,District Of Columbia,https://www.carlyle.com,Public,16987
+896,Energizer Holdings,Household Products,5080,2959.7,140.5,4509.6,Mark S. LaVigne,U.S.,St. Louis,Missouri,https://www.energizerholdings.com,Public,2113
+897,Quad/Graphics,Media,13150,2957.7,-55.4,1509.7,J. Joel Quadracci,U.S.,Sussex,Wisconsin,https://www.quad.com,Public,278
+898,Rackspace Technology,Technology,5800,2957.1,-837.8,4096.2,Amar Maletira,U.S.,San Antonio,Texas,https://www.rackspace.com,Public,347
+899,Waters,Technology,7900,2956.4,642.2,4626.9,Udit Batra,U.S.,Milford,Massachusetts,https://www.waters.com,Public,20379
+900,West Pharmaceutical Services,Health Care,10600,2949.8,593.4,3829.5,Eric M. Green,U.S.,Exton,Pennsylvania,https://www.westpharma.com,Public,28968
+901,Carter's,Apparel,15230,2945.6,232.5,2378.6,Michael D. Casey,U.S.,Atlanta,Georgia,https://www.carters.com,Public,3089
+902,NeueHealth,Health Care,1252,2938.1,-1151.5,1225.5,G. Mike Mikan,U.S.,Doral,Florida,https://neuehealth.com,Public,52
+903,SkyWest,Transportation,12296,2935.4,34.3,7026.3,Russell A. Childs,U.S.,St. George,Utah,https://www.skywest.com,Public,2788
+904,Acadia Healthcare,Health Care,20250,2928.7,-21.7,5358.8,Christopher H. Hunter,U.S.,Franklin,Tennessee,https://www.acadiahealthcare.com,Public,7322
+905,Revvity,Health Care,11500,2926.9,693.1,13564.7,Prahlad R. Singh,U.S.,Waltham,Massachusetts,https://www.revvity.com,Public,12970
+906,Portland General Electric,Energy,2842,2923,228,11208,Maria M. Pope,U.S.,Portland,Oregon,https://www.portlandgeneral.com,Public,4251
+907,Woodward,Aerospace & Defense,8800,2914.6,232.4,4010.2,Charles Blankenship Jr.,U.S.,Fort Collins,Colorado,https://www.woodward.com,Public,9293
+908,TEGNA,Media,6200,2910.9,476.7,7000.1,Michael Steib,U.S.,Tysons,Virginia,https://www.tegna.com,Public,2631
+909,Sabre,Retailing,6232,2907.7,-527.6,4672.2,Kurt J. Ekert,U.S.,Southlake,Texas,https://www.sabre.com,Public,918
+910,Light & Wonder,"Hotels, Restaurants & Leisure",6500,2902,163,5552,Matthew R. Wilson,U.S.,Las Vegas,Nevada,https://www.lnw.com,Public,9171
+911,Vail Resorts,"Hotels, Restaurants & Leisure",32100,2889.4,268.1,5947.8,Kirsten A. Lynch,U.S.,Broomfield,Colorado,https://www.vailresorts.com,Public,8460
+912,Radius Recycling,Materials,3353,2882.2,-25.8,1715.9,Tamara L. Lundgren,U.S.,Portland,Oregon,https://www.radiusrecycling.com,Public,589
+913,PennyMac Financial Services,Financials,3914,2881.8,144.7,18844.6,David A. Spector,U.S.,Westlake Village,California,https://www.pennymacfinancial.com,Public,4594
+914,Saia,Transportation,14000,2881.4,354.9,2583.6,Frederick J. Holzgrefe III,U.S.,Johns Creek,Georgia,https://www.saia.com,Public,15554
+915,Equity Residential,Financials,2400,2874,835.4,20034.6,Mark J. Parrell,U.S.,Chicago,Illinois,https://www.equityapartments.com,Public,23954
+916,Helmerich & Payne,Energy,7100,2872.4,434.1,4382,John W. Lindsay,U.S.,Tulsa,Oklahoma,https://www.hpinc.com,Public,4157
+917,Korn Ferry,Business Services,10697,2863.8,209.5,3574.4,Gary D. Burnison,U.S.,Los Angeles,California,https://www.kornferry.com,Public,3431
+918,PC Connection,Wholesalers,2703,2850.6,83.3,1188.4,Timothy J. McGrath,U.S.,Merrimack,New Hampshire,https://www.connection.com,Public,1738
+919,Curtiss-Wright,Aerospace & Defense,8600,2845.4,354.5,4621,Lynn M. Bamford,U.S.,Davidson,North Carolina,https://www.curtisswright.com,Public,9797
+920,SLM,Financials,1740,2839.4,581.4,29169.5,Jonathan W. Witter,U.S.,Newark,Delaware,https://www.salliemae.com,Public,4801
+921,Benchmark Electronics,Technology,12703,2839,64.3,2274.8,Jeffrey W. Benck,U.S.,Tempe,Arizona,https://www.bench.com,Public,1074
+922,American National Group,Financials,1020,2836,210.5,79918.3,Anant Bhalla,U.S.,West Des Moines,Iowa,https://www.american-equity.com,Private,4464
+923,Pure Storage,Technology,5600,2830.6,61.3,3655.8,Charles H. Giancarlo,U.S.,Santa Clara,California,https://www.purestorage.com,Public,16892
+924,Knife River,Materials,4389,2830.4,182.9,2599.8,Brian R. Gray,U.S.,Bismarck,North Dakota,https://www.kniferiver.com,Public,4590
+925,Caleres,Retailing,7150,2817.3,171.4,1804.7,John W. Schmidt,U.S.,St. Louis,Missouri,https://www.caleres.com,Public,1457
+926,BrightView Holdings,Business Services,20700,2816,-7.7,3352.2,Dale A. Asplund,U.S.,Blue Bell,Pennsylvania,https://www.brightview.com,Public,1123
+927,Cooper-Standard Holdings,Motor Vehicles & Parts,21500,2815.9,-202,1872.3,Jeffrey S. Edwards,U.S.,Northville,Michigan,https://www.cooperstandard.com,Public,285
+928,Primerica,Financials,3150,2815.7,576.6,15027.7,Glenn J. Williams,U.S.,Duluth,Georgia,https://www.primerica.com,Public,8777
+929,F5,Technology,6492,2813.2,394.9,5248.3,Fran?ois Locoh-Donou,U.S.,Seattle,Washington,https://www.f5.com,Public,11149
+930,Matador Resources,Energy,395,2806.8,846.1,7727,Joseph Wm. Foran,U.S.,Dallas,Texas,https://www.matadorresources.com,Public,8332
+931,Snowflake,Technology,7004,2806.5,-836.1,8223.4,Sridhar Ramaswamy,U.S.,Bozeman,Montana,https://www.snowflake.com,Public,54007
+932,Viasat,Technology,6800,2803.2,1084.8,7730.3,Mark D. Dankberg,U.S.,Carlsbad,California,https://www.viasat.com,Public,2267
+933,California Resources,Energy,970,2801,564,3998,Francisco J. Leon,U.S.,Long Beach,California,https://www.crc.com,Public,3789
+934,Peloton Interactive,"Hotels, Restaurants & Leisure",3541,2800.2,-1261.7,2769.1,Karen Boone/Christopher Bruzzo,U.S.,New York,New York,https://www.onepeloton.com,Public,1572
+935,Roblox,Media,2457,2799.3,-1151.9,6168.1,David Baszucki,U.S.,San Mateo,California,https://www.corp.roblox.com,Public,24116
+936,Installed Building Products,Engineering & Construction,10600,2778.6,243.7,1981.3,Jeffrey W. Edwards,U.S.,Columbus,Ohio,https://www.installedbuildingproducts.com,Public,7339
+937,First National of Nebraska,Financials,4799,2777.5,227.4,31285.9,Clarkson D. Lauritzen,U.S.,Omaha,Nebraska,https://www.fnni.com,Public,3265
+938,Guess,Retailing,12000,2776.5,198.2,2590,Carlos E. Alberini,U.S.,Los Angeles,California,https://www.guess.com,Public,1690
+939,ESAB,Industrials,9000,2774.8,205.3,3828.6,Shyam P. Kambeyanda,U.S.,North Bethesda,Maryland,https://www.esabcorporation.com,Public,6672
+940,Amica Mutual Insurance,Financials,3597,2772.5,-218.4,6668,Edmiund Shallcross III,U.S.,Lincoln,Rhode Island,https://www.amica.com,Private,
+941,AvalonBay Communities,Financials,3009,2767.9,928.8,20678.2,Benjamin W. Schall,U.S.,Arlington,Virginia,https://www.avalonbay.com,Public,26384
+942,DocuSign,Technology,6840,2761.9,74,2971.3,Allan C. Thygesen,U.S.,San Francisco,California,https://www.docusign.com,Public,12233
+943,Titan Machinery,Retailing,3471,2758.4,112.4,1992.3,Bryan J. Knutson,U.S.,West Fargo,North Dakota,https://www.titanmachinery.com,Public,567
+944,ModivCare,Health Care,21200,2756.2,-204.5,1767.3,L. Heath Sampson,U.S.,Denver,Colorado,https://www.modivcare.com,Public,333
+945,Hovnanian Enterprises,Engineering & Construction,1715,2756,205.9,2492.9,Ara K. Hovnanian,U.S.,Matawan,New Jersey,https://www.khov.com,Public,957
+946,Etsy,Retailing,2420,2748.4,307.6,2685.4,Joshua G. Silverman,U.S.,Brooklyn,New York,https://www.etsy.com,Public,8143
+947,Adams Resources & Energy,Energy,741,2745.3,0.2,361.3,Kevin J. Roycraft,U.S.,Houston,Texas,https://www.adamsresources.com,Public,74
+948,Surgery Partners,Health Care,12000,2743.3,-11.9,6876.7,J. Eric  Evans,U.S.,Brentwood,Tennessee,https://www.surgerypartners.com,Public,3777
+949,Columbia Banking System,Financials,5114,2743.3,348.7,52173.6,Clint E. Stein,U.S.,Tacoma,Washington,https://www.columbiabankingsystem.com,Public,4050
+950,Verisk,Business Services,7500,2728.2,614.6,4366.1,Lee M. Shavel,U.S.,Jersey City,New Jersey,https://www.verisk.com,Public,33801
+951,MasterBrand,Materials,12307,2726.2,182,2381.7,R. David Banyard Jr.,U.S.,Beachwood,Ohio,https://www.masterbrand.com,Public,2380
+952,Hawaiian Holdings,Transportation,7362,2716.3,-260.5,3733.5,Peter R. Ingram,U.S.,Honolulu,Hawaii,https://www.hawaiianairlines.com,Public,691
+953,AMC Networks,Media,1900,2711.9,215.5,4969.8,Kristin A. Dolan,U.S.,New York,New York,https://www.amcnetworks.com,Public,528
+954,SBA Communications,Financials,1787,2711.6,501.8,10178.4,Brendan T. Cavanagh,U.S.,Boca Raton,Florida,https://www.sbasite.com,Public,23427
+955,Americold Realty Trust,Financials,14632,2702.8,-336.2,7869.3,George F. Chappelle Jr.,U.S.,Atlanta,Georgia,https://www.americold.com,Public,7072
+956,NewMarket,Chemicals,2000,2698.4,388.9,2308.9,Thomas E. Gottwald,U.S.,Richmond,Virginia,https://www.newmarket.com,Public,6086
+957,Park Hotels & Resorts,Financials,90,2698,97,9419,Thomas J. Baltimore Jr.,U.S.,Tysons,Virginia,https://www.pkhotelsandresorts.com,Public,3682
+958,Alexandria Real Estate Equities,Financials,568,2690.3,103.6,36771.4,Peter M. Moglia,U.S.,Pasadena,California,https://www.are.com,Public,22555
+959,Griffon,Materials,5700,2685.2,77.6,2418.9,Ronald J. Kramer,U.S.,New York,New York,https://www.griffon.com,Public,3763
+960,Air Lease,Business Services,163,2685,614.6,30452.3,John L. Plueger,U.S.,Los Angeles,California,https://www.airleasecorp.com,Public,5729
+961,UL Solutions,Business Services,15063,2678,260,2736,Jennifer F. Scanlon,U.S.,Northbrook,Illinois,https://www.ul.com,Public,
+962,Teradyne,Technology,6500,2676.3,448.8,3486.8,Gregory S. Smith,U.S.,North Reading,Massachusetts,https://www.teradyne.com,Public,17260
+963,OGE Energy,Energy,2329,2674.3,416.8,12790.7,Sean  Trauschke,U.S.,Oklahoma City,Oklahoma,https://www.ogeenergy.com,Public,6871
+964,Bio-Rad Laboratories,Technology,8030,2671.3,-637.3,12299.1,Norman D. Schwartz,U.S.,Hercules,California,https://www.bio-rad.com,Public,9794
+965,Spire,Energy,3589,2666.3,217.5,10313.6,Steven L. Lindsey,U.S.,St. Louis,Missouri,https://www.spireenergy.com,Public,3374
+966,Gannett,Media,12800,2663.6,-27.8,2181.2,Michael E. Reed,U.S.,McLean,Virginia,https://www.gannett.com,Public,363
+967,Stericycle,Business Services,13948,2659.3,-21.4,5352.6,Cindy J. Miller,U.S.,Bannockburn,Illinois,https://www.stericycle.com,Public,4883
+968,Cullen/Frost Bankers,Financials,5495,2646.3,598,50845,Phillip D. Green,U.S.,San Antonio,Texas,https://www.frostbank.com,Public,7229
+969,Extra Space Storage,Financials,7618,2645.1,803.2,27456.3,Joseph D. Margolis,U.S.,Salt Lake City,Utah,https://www.extraspace.com,Public,31102
+970,REV Group,Motor Vehicles & Parts,6724,2638,45.3,1410.4,Mark A. Skonieczny,U.S.,Brookfield,Wisconsin,https://www.revgroup.com,Public,1144
+971,ProFrac Holding,Energy,2949,2630,-97.7,3070.7,Ladd  Wilks,U.S.,Willow Park,Texas,https://www.pfholdingscorp.com,Public,1334
+972,Nordson,Industrials,7900,2628.6,487.5,5251.8,Sundaram Nagarajan,U.S.,Westlake,Ohio,https://www.nordson.com,Public,15702
+973,Summit Materials,Materials,5300,2619.5,285.9,5149.6,Anne P. Noonan,U.S.,Denver,Colorado,https://www.summit-materials.com,Public,7767
+974,Valvoline,Chemicals,10250,2617.9,1419.7,2889.9,Lori A. Flees,U.S.,Lexington,Kentucky,https://www.valvoline.com,Public,5779
+975,Kontoor Brands,Apparel,13700,2607.5,231,1645.4,Scott H. Baxter,U.S.,Greensboro,North Carolina,https://www.kontoorbrands.com,Public,3360
+976,Skyline Champion,Engineering & Construction,7700,2606.6,401.8,1562.7,Mark J. Yost,U.S.,Troy,Michigan,https://ir.skylinechampion.com,Public,4910
+977,Teladoc Health,Health Care,5208,2602.4,-220.4,4392.4,Charles Divita III,U.S.,Purchase,New York,https://www.teladochealth.com,Public,2522
+978,Louisiana-Pacific,Materials,4100,2581,178,2437,W. Bradley Southern,U.S.,Nashville,Tennessee,https://www.lpcorp.com,Public,6068
+979,Universal,"Food, Beverages & Tobacco",19600,2569.8,124.1,2639.2,George C. Freeman III,U.S.,Richmond,Virginia,https://www.universalcorp.com,Public,1271
+980,Consol Energy,Energy,2020,2568.9,655.9,2675,James A. Brock,U.S.,Canonsburg,Pennsylvania,https://www.consolenergy.com,Public,2480
+981,Encore Wire,Industrials,1629,2567.7,372.4,1967.9,Daniel L. Jones,U.S.,McKinney,Texas,https://www.encorewire.com,Private,4148
+982,Playtika Holding,Media,3600,2567,235,3175,Robert Antokol,U.S.,Henderson,Nevada,https://www.playtika.com,Public,2613
+983,Alliance Resource Partners,Energy,3595,2566.7,630.1,2788.4,Joseph W. Craft III,U.S.,Tulsa,Oklahoma,https://www.arlp.com,Public,2568
+984,Envista Holdings,Health Care,12800,2566.5,-100.2,6605.1,Paul Keel,U.S.,Brea,California,https://www.envistaco.com,Public,3674
+985,Shift4 Payments,Business Services,3030,2564.8,86.2,3387.8,Jared Isaacman,U.S.,Center Valley,Pennsylvania,https://www.shift4.com,Public,5695
+986,Talen Energy,Energy,2000,2554,,7121,Mark  McFarland,U.S.,Houston,Texas,https://www.talenenergy.com,Public,5569
+987,Carpenter Technology,Materials,4500,2550.3,56.4,3053.9,Tony R. Thene,U.S.,Philadelphia,Pennsylvania,https://www.carpentertechnology.com,Public,3529
+988,WEX,Business Services,7200,2548,266.6,13882.1,Melissa D. Smith,U.S.,Portland,Maine,https://www.wexinc.com,Public,9913
+989,Old National Bancorp,Financials,3940,2540.2,582,49089.8,James C. Ryan III,U.S.,Evansville,Indiana,https://www.oldnational.com,Public,5096
+990,AGNC Investment,Financials,53,2538,155,71596,Peter J. Federico,U.S.,Bethesda,Maryland,https://www.agnc.com,Public,6887
+991,Wabash National,Motor Vehicles & Parts,6667,2536.5,231.3,1362.8,Brent L. Yeagy,U.S.,Lafayette,Indiana,https://www.onewabash.com,Public,1350
+992,MSCI,Business Services,5794,2528.9,1148.6,5518.2,Henry A. Fernandez,U.S.,New York,New York,https://www.msci.com,Public,44401
+993,Stagwell,Business Services,10250,2527.2,0.1,3767,Mark Penn,U.S.,New York,New York,https://www.stagwellglobal.com,Public,1670
+994,Mativ Holdings,Chemicals,5400,2516.9,-309.5,2642.4,Julie A. Schertell,U.S.,Alpharetta,Georgia,https://mativ.com,Public,1018
+995,Belden,Industrials,8000,2512.1,242.8,3240.2,Ashish Chand,U.S.,St. Louis,Missouri,https://www.belden.com,Public,3805
+996,Allegiant Travel,Transportation,6686,2509.9,117.6,4869.4,Maurice J. Gallagher Jr.,U.S.,Las Vegas,Nevada,https://www.allegiant.com,Public,1375
+997,Dropbox,Technology,2693,2501.6,453.6,2983.5,Andrew W. Houston,U.S.,San Francisco,California,https://www.dropbox.com,Public,8359
+998,Exact Sciences,Health Care,6550,2499.8,-204.1,6471.3,Kevin T. Conroy,U.S.,Madison,Wisconsin,https://www.exactsciences.com,Public,12537
+999,BWX Technologies,Aerospace & Defense,7800,2496.3,245.8,2747.1,Rex D. Geveden,U.S.,Lynchburg,Virginia,https://www.bwxt.com,Public,9380
+1000,Clear Channel Outdoor Hldgs.,Business Services,3900,2489,-310.9,4722.5,Scott R. Wells,U.S.,San Antonio,Texas,https://www.clearchanneloutdoor.com,Public,798
