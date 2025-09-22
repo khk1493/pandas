@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Dataset Intro and Optimization</title>
+<title>06_The .isnull() and .notnull() Methods</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0401.-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#54952;&#50984;&#51201;&#51004;&#47196;-&#48148;&#44984;&#44592;:-pd.to_datetime(&#54644;&#45817;&#52972;&#47100;)">0401. &#45936;&#51060;&#53552; &#53440;&#51077;&#51012; &#54952;&#50984;&#51201;&#51004;&#47196; &#48148;&#44984;&#44592;: pd.to_datetime(&#54644;&#45817;&#52972;&#47100;)<a class="anchor-link" href="#0401.-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#54952;&#50984;&#51201;&#51004;&#47196;-&#48148;&#44984;&#44592;:-pd.to_datetime(&#54644;&#45817;&#52972;&#47100;)">&#182;</a></h1>
+<h1>0406. 결측치 있는 행 추출: .isnull()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;결측치 없는 행 추출: .notnull()</h1>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13124,11 +13125,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/employees/employee.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/성적/성적3_null.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 
     </div>
@@ -13141,62 +13142,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 49653 entries, 0 to 49652
-Data columns (total 18 columns):
- #   Column               Non-Null Count  Dtype 
----  ------               --------------  ----- 
- 0   EmployeeID           49653 non-null  int64 
- 1   recorddate_key       49653 non-null  object
- 2   birthdate_key        49653 non-null  object
- 3   orighiredate_key     49653 non-null  object
- 4   terminationdate_key  49653 non-null  object
- 5   age                  49653 non-null  int64 
- 6   length_of_service    49653 non-null  int64 
- 7   city_name            49653 non-null  object
- 8   department_name      49653 non-null  object
- 9   job_title            49653 non-null  object
- 10  store_name           49653 non-null  int64 
- 11  gender_short         49653 non-null  object
- 12  gender_full          49653 non-null  object
- 13  termreason_desc      49653 non-null  object
- 14  termtype_desc        49653 non-null  object
- 15  STATUS_YEAR          49653 non-null  int64 
- 16  STATUS               49653 non-null  object
- 17  BUSINESS_UNIT        49653 non-null  object
-dtypes: int64(5), object(13)
-memory usage: 6.8+ MB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13219,89 +13165,95 @@ memory usage: 6.8+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>EmployeeID</th>
-      <th>recorddate_key</th>
-      <th>birthdate_key</th>
-      <th>orighiredate_key</th>
-      <th>terminationdate_key</th>
-      <th>age</th>
-      <th>length_of_service</th>
-      <th>city_name</th>
-      <th>department_name</th>
-      <th>job_title</th>
-      <th>store_name</th>
-      <th>gender_short</th>
-      <th>gender_full</th>
-      <th>termreason_desc</th>
-      <th>termtype_desc</th>
-      <th>STATUS_YEAR</th>
-      <th>STATUS</th>
-      <th>BUSINESS_UNIT</th>
+      <th>성명</th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1318</td>
-      <td>12/31/2006 0:00</td>
-      <td>1/3/1954</td>
-      <td>8/28/1989</td>
-      <td>1/1/1900</td>
-      <td>52</td>
-      <td>17</td>
-      <td>Vancouver</td>
-      <td>Executive</td>
-      <td>CEO</td>
-      <td>35</td>
-      <td>M</td>
-      <td>Male</td>
-      <td>Not Applicable</td>
-      <td>Not Applicable</td>
-      <td>2006</td>
-      <td>ACTIVE</td>
-      <td>HEADOFFICE</td>
+      <td>황지영</td>
+      <td>92.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>181.0</td>
+      <td>60.33</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1318</td>
-      <td>12/31/2007 0:00</td>
-      <td>1/3/1954</td>
-      <td>8/28/1989</td>
-      <td>1/1/1900</td>
-      <td>53</td>
-      <td>18</td>
-      <td>Vancouver</td>
-      <td>Executive</td>
-      <td>CEO</td>
-      <td>35</td>
-      <td>M</td>
-      <td>Male</td>
-      <td>Not Applicable</td>
-      <td>Not Applicable</td>
-      <td>2007</td>
-      <td>ACTIVE</td>
-      <td>HEADOFFICE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1318</td>
-      <td>12/31/2008 0:00</td>
-      <td>1/3/1954</td>
-      <td>8/28/1989</td>
-      <td>1/1/1900</td>
-      <td>54</td>
-      <td>19</td>
-      <td>Vancouver</td>
-      <td>Executive</td>
-      <td>CEO</td>
-      <td>35</td>
-      <td>M</td>
-      <td>Male</td>
-      <td>Not Applicable</td>
-      <td>Not Applicable</td>
-      <td>2008</td>
-      <td>ACTIVE</td>
-      <td>HEADOFFICE</td>
+      <td>주약란</td>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>조소접</td>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>왕산악</td>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>양몽환</td>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>신원통</td>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>이창란</td>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>이요홍</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -13317,17 +13269,17 @@ memory usage: 6.8+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위에서 employee.csv 파일을 읽어 'df'라는 이름의 데이터프레임으로 가져왔다. 이 데이터에 대한 구조를 보려고 info()를 사용한 결과 이 데이터는 49653개의 row과 18개의 column으로 이루어졌으며 각 컬럼의 데이터타입은 int가 5개 object가 13개이다. 그런데 날짜를 나타내는 데이터가 object(문자형)이다. 이런 경우에는 연산을 위하여 문자형을 날짜형으로 바꾸어주는 것이 좋다. 이를 위해서는 pd.datetime()메소드를 사용한다. 우선 'recorddate_key' 컬럼을 날짜형으로 바꿔주면 다음과 같이 된다.</p>
+<p>df에는 결측치가 포함되어 있다. isnull()메소드는 이러한 결측치를 찾아주는 기능을 한다. 아래 예를 보자. 영어 컬럼에 이 메소드를 붙이니까 결측치가 있는 행은 True, 결측치가 없는 행은 False로 나타났다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;recorddate_key&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13340,24 +13292,22 @@ memory usage: 6.8+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0       2006-12-31
-1       2007-12-31
-2       2008-12-31
-3       2009-12-31
-4       2010-12-31
-           ...    
-49648   2015-12-01
-49649   2013-08-01
-49650   2015-12-01
-49651   2013-12-01
-49652   2014-12-01
-Name: recorddate_key, Length: 49653, dtype: datetime64[ns]</pre>
+<pre>0     True
+1    False
+2    False
+3     True
+4     True
+5    False
+6    False
+7    False
+8     True
+Name: 영어, dtype: bool</pre>
 </div>
 
 </div>
@@ -13369,21 +13319,18 @@ Name: recorddate_key, Length: 49653, dtype: datetime64[ns]</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>그런데 날짜 타입이 3개가 더 있다. 이것을 일일이 바꾸기보다 한꺼번에 바꿔주려면 당초 파일을 읽을 때 parse_dates=True 라는 매개변수를 아래와 같이 바꾸어주면 된다.</p>
+<p>이 결과를 mask로 넘겨주고 다시 원래 df의 괄호로 감싸면 True인 행, 즉, 결측치가 있는 행만 나타난다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/employees/employee.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;recorddate_key&#39;</span><span class="p">,</span> 
-                                                                  <span class="s1">&#39;birthdate_key&#39;</span><span class="p">,</span>
-                                                                  <span class="s1">&#39;orighiredate_key&#39;</span><span class="p">,</span>
-                                                                  <span class="s1">&#39;terminationdate_key&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13396,37 +13343,79 @@ Name: recorddate_key, Length: 49653, dtype: datetime64[ns]</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 49653 entries, 0 to 49652
-Data columns (total 18 columns):
- #   Column               Non-Null Count  Dtype         
----  ------               --------------  -----         
- 0   EmployeeID           49653 non-null  int64         
- 1   recorddate_key       49653 non-null  datetime64[ns]
- 2   birthdate_key        49653 non-null  datetime64[ns]
- 3   orighiredate_key     49653 non-null  datetime64[ns]
- 4   terminationdate_key  49653 non-null  datetime64[ns]
- 5   age                  49653 non-null  int64         
- 6   length_of_service    49653 non-null  int64         
- 7   city_name            49653 non-null  object        
- 8   department_name      49653 non-null  object        
- 9   job_title            49653 non-null  object        
- 10  store_name           49653 non-null  int64         
- 11  gender_short         49653 non-null  object        
- 12  gender_full          49653 non-null  object        
- 13  termreason_desc      49653 non-null  object        
- 14  termtype_desc        49653 non-null  object        
- 15  STATUS_YEAR          49653 non-null  int64         
- 16  STATUS               49653 non-null  object        
- 17  BUSINESS_UNIT        49653 non-null  object        
-dtypes: datetime64[ns](4), int64(5), object(9)
-memory usage: 6.8+ MB
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>성명</th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>황지영</td>
+      <td>92.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>181.0</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>조소접</td>
+      <td>36.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>148.0</td>
+      <td>49.33</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>왕산악</td>
+      <td>27.0</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>74.0</td>
+      <td>24.67</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>이요홍</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -13436,7 +13425,7 @@ memory usage: 6.8+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>그리고 데이터의 행 수는 거의 5만개에 가까운데 object로 되어 있는 데이터는 중복된 값이 많다. 즉, 데이터 형태가 남자 아니면 여자와 같이 대부분 범주형이라는 것이다. 따라서 문자형(object)을 범주형(category)으로 아래와 같이 바꾸어 주는 것이 좋다.</p>
+<p>한편, notnull()메소드는 특정 컬럼에 붙였을 때 이름 그대로 결측치가 없는 행만 True를 반환한다. 따라서 이를 다시 원래의 df로 감싸면 영어에서 결측치가 없는 행만 나타난다.</p>
 
 </div>
 </div>
@@ -13446,17 +13435,8 @@ memory usage: 6.8+ MB
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;city_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;city_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;department_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;department_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;job_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;job_title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;store_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;store_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender_short&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender_short&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender_full&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender_full&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;termreason_desc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;termreason_desc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;termtype_desc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;termtype_desc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;STATUS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;STATUS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;BUSINESS_UNIT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BUSINESS_UNIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;영어&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13469,76 +13449,86 @@ memory usage: 6.8+ MB
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 49653 entries, 0 to 49652
-Data columns (total 18 columns):
- #   Column               Non-Null Count  Dtype         
----  ------               --------------  -----         
- 0   EmployeeID           49653 non-null  int64         
- 1   recorddate_key       49653 non-null  datetime64[ns]
- 2   birthdate_key        49653 non-null  datetime64[ns]
- 3   orighiredate_key     49653 non-null  datetime64[ns]
- 4   terminationdate_key  49653 non-null  datetime64[ns]
- 5   age                  49653 non-null  int64         
- 6   length_of_service    49653 non-null  int64         
- 7   city_name            49653 non-null  category      
- 8   department_name      49653 non-null  category      
- 9   job_title            49653 non-null  category      
- 10  store_name           49653 non-null  category      
- 11  gender_short         49653 non-null  category      
- 12  gender_full          49653 non-null  category      
- 13  termreason_desc      49653 non-null  category      
- 14  termtype_desc        49653 non-null  category      
- 15  STATUS_YEAR          49653 non-null  int64         
- 16  STATUS               49653 non-null  category      
- 17  BUSINESS_UNIT        49653 non-null  category      
-dtypes: category(10), datetime64[ns](4), int64(4)
-memory usage: 3.5 MB
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>성명</th>
+      <th>국어</th>
+      <th>수학</th>
+      <th>영어</th>
+      <th>총점</th>
+      <th>평균</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>71.0</td>
+      <td>226.0</td>
+      <td>75.33</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>주약란</td>
+      <td>95.0</td>
+      <td>100.0</td>
+      <td>98.0</td>
+      <td>293.0</td>
+      <td>97.67</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>양몽환</td>
+      <td>7.0</td>
+      <td>28.0</td>
+      <td>65.0</td>
+      <td>100.0</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>신원통</td>
+      <td>95.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>274.0</td>
+      <td>91.33</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>이창란</td>
+      <td>35.0</td>
+      <td>47.0</td>
+      <td>26.0</td>
+      <td>108.0</td>
+      <td>36.00</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>바꿔주고 나니까 메모리 소비량이 많이 줄었다. 당초에는 6.8MB이었는데 지금은 3.5MB로 49%가 줄었다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">-</span> <span class="mf">3.5</span><span class="o">/</span><span class="mf">6.8</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.48529411764705876</pre>
 </div>
 
 </div>
