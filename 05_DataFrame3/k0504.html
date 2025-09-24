@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_The set_index() and reset_index() Methods</title>
+<title>04_Passing the second argument to .loc[ ] and .iloc[ ] accessor</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,32 +13105,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1>0501. 컬럼을 인덱스로 만들기: .set_index(keys='컬럼명) <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 기존 인덱스를 리셋하기: .reset_index()</h1>
+<h1>0504. 인덱스, 컬럼 라벨로 특정 데이터 추: .loc[i, c] <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  인덱스, 컬럼 위치로 특정 데이터 추출: .iloc[i, c]</h1>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;director&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13143,18 +13130,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4644
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13186,12 +13162,23 @@ div#notebook {
       <th>title</th>
       <th>vote_average</th>
       <th>vote_count</th>
+    </tr>
+    <tr>
       <th>director</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>Rob Marshall</th>
       <td>380,000,000</td>
       <td>Adventure Action Fantasy</td>
       <td>135.413856</td>
@@ -13201,10 +13188,9 @@ div#notebook {
       <td>Pirates of the Caribbean: On Stranger Tides</td>
       <td>6.4</td>
       <td>4948</td>
-      <td>Rob Marshall</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>Gore Verbinski</th>
       <td>300,000,000</td>
       <td>Adventure Fantasy Action</td>
       <td>139.082615</td>
@@ -13214,10 +13200,9 @@ div#notebook {
       <td>Pirates of the Caribbean: At World's End</td>
       <td>6.9</td>
       <td>4500</td>
-      <td>Gore Verbinski</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>Joss Whedon</th>
       <td>280,000,000</td>
       <td>Action Adventure Science Fiction</td>
       <td>134.279229</td>
@@ -13227,7 +13212,54 @@ div#notebook {
       <td>Avengers: Age of Ultron</td>
       <td>7.3</td>
       <td>6767</td>
-      <td>Joss Whedon</td>
+    </tr>
+    <tr>
+      <th>Bryan Singer</th>
+      <td>270,000,000</td>
+      <td>Adventure Fantasy Action Science Fiction</td>
+      <td>57.925623</td>
+      <td>2006-06-28</td>
+      <td>391,081,192</td>
+      <td>154.0</td>
+      <td>Superman Returns</td>
+      <td>5.4</td>
+      <td>1400</td>
+    </tr>
+    <tr>
+      <th>Byron Howard</th>
+      <td>260,000,000</td>
+      <td>Animation Family</td>
+      <td>48.681969</td>
+      <td>2010-11-24</td>
+      <td>591,794,936</td>
+      <td>100.0</td>
+      <td>Tangled</td>
+      <td>7.4</td>
+      <td>3330</td>
+    </tr>
+    <tr>
+      <th>Andrew Stanton</th>
+      <td>260,000,000</td>
+      <td>Action Adventure Science Fiction</td>
+      <td>43.926995</td>
+      <td>2012-03-07</td>
+      <td>284,139,100</td>
+      <td>132.0</td>
+      <td>John Carter</td>
+      <td>6.1</td>
+      <td>2124</td>
+    </tr>
+    <tr>
+      <th>Sam Raimi</th>
+      <td>258,000,000</td>
+      <td>Fantasy Action Adventure</td>
+      <td>115.699814</td>
+      <td>2007-05-01</td>
+      <td>890,871,626</td>
+      <td>139.0</td>
+      <td>Spider-Man 3</td>
+      <td>5.9</td>
+      <td>3576</td>
     </tr>
   </tbody>
 </table>
@@ -13243,18 +13275,338 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="set_index():-&#51064;&#45937;&#49828;&#47484;-&#49444;&#51221;&#54632;,-&#47924;&#50631;&#51004;&#47196;?-&#52972;&#47100;&#51004;&#47196;.">set_index(): &#51064;&#45937;&#49828;&#47484; &#49444;&#51221;&#54632;, &#47924;&#50631;&#51004;&#47196;? &#52972;&#47100;&#51004;&#47196;.<a class="anchor-link" href="#set_index():-&#51064;&#45937;&#49828;&#47484;-&#49444;&#51221;&#54632;,-&#47924;&#50631;&#51004;&#47196;?-&#52972;&#47100;&#51004;&#47196;.">&#182;</a></h3><p>아래 예제에서 영화제목으로 인덱스를 설정한다. 즉, 'name'컬럼으로 인덱스를 설정한다. 이를 위해서  set_index()메소드를 데이터프레임에 적용하면 된다. 이때 인덱스로 만들기 원하는 'name' 컬럼을 매개변수 keys의 아규먼트로 사용한다. 그러면 기존 인덱스는 없어지고 'name'컬럼이 인덱스 위치로 오게 된다. 또한 inplcae=true 옵션을 넣어야 바뀐 것이 계속 유지된다.</p>
+<h3 id=".loc[-]:-&#51064;&#45937;&#49828;-&#46972;&#48296;&#47196;-row&#50752;-column&#51012;-&#46041;&#49884;-&#52628;&#52636;">.loc[ ]: &#51064;&#45937;&#49828; &#46972;&#48296;&#47196; row&#50752; column&#51012; &#46041;&#49884; &#52628;&#52636;<a class="anchor-link" href="#.loc[-]:-&#51064;&#45937;&#49828;-&#46972;&#48296;&#47196;-row&#50752;-column&#51012;-&#46041;&#49884;-&#52628;&#52636;">&#182;</a></h3><p>행과 열을 동시에 추출하려면 loc[ ] 접근자에 1개의 row label, 1개의 column label을 넣어서 추출한다. 예를 들면 위의 데이터프레임 m에서 'Stanley Kubrick' 감독이 만든 영화를 찾고 싶다면 m.loc['Stanley Kubrick', 'title']와 같이 적용하면 된다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Stanley Kubrick&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>director
+Stanley Kubrick                                       Eyes Wide Shut
+Stanley Kubrick                                          The Shining
+Stanley Kubrick                                         Barry Lyndon
+Stanley Kubrick                                2001: A Space Odyssey
+Stanley Kubrick                                               Lolita
+Stanley Kubrick    Dr. Strangelove or: How I Learned to Stop Worr...
+Name: title, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 'Stanley Kubrick' 감독이 만든 영화의 주연배우를 찾고 싶다면 두번째 아규먼트에 'star'을 넣으면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Stanley Kubrick&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>director
+Stanley Kubrick    162,091,208
+Stanley Kubrick     44,017,374
+Stanley Kubrick     20,000,000
+Stanley Kubrick     68,700,000
+Stanley Kubrick      9,250,000
+Stanley Kubrick      9,440,272
+Name: revenue, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 'Stanley Kubrick' 감독이 만든 영화의 이름과 주연배우를 동시에 알고 싶다면 컬럼명을 리스트에 넣어서 다시 두번째 아규먼트로 넣으면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Stanley Kubrick&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>revenue</th>
+    </tr>
+    <tr>
+      <th>director</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Eyes Wide Shut</td>
+      <td>162,091,208</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>The Shining</td>
+      <td>44,017,374</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Barry Lyndon</td>
+      <td>20,000,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>2001: A Space Odyssey</td>
+      <td>68,700,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Lolita</td>
+      <td>9,250,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Dr. Strangelove or: How I Learned to Stop Worr...</td>
+      <td>9,440,272</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 2명의 감독이 만든 영화명과 주연배우를 알고 싶다면 역시 row label을 리스트에 넣어서 다시 첫번째 아규먼트로 넣으면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Stanley Kubrick&#39;</span><span class="p">,</span> <span class="s1">&#39;Rob Marshall&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>revenue</th>
+    </tr>
+    <tr>
+      <th>director</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Eyes Wide Shut</td>
+      <td>162,091,208</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>The Shining</td>
+      <td>44,017,374</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Barry Lyndon</td>
+      <td>20,000,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>2001: A Space Odyssey</td>
+      <td>68,700,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Lolita</td>
+      <td>9,250,000</td>
+    </tr>
+    <tr>
+      <th>Stanley Kubrick</th>
+      <td>Dr. Strangelove or: How I Learned to Stop Worr...</td>
+      <td>9,440,272</td>
+    </tr>
+    <tr>
+      <th>Rob Marshall</th>
+      <td>Pirates of the Caribbean: On Stranger Tides</td>
+      <td>1,045,713,802</td>
+    </tr>
+    <tr>
+      <th>Rob Marshall</th>
+      <td>Memoirs of a Geisha</td>
+      <td>162,242,962</td>
+    </tr>
+    <tr>
+      <th>Rob Marshall</th>
+      <td>Nine</td>
+      <td>53,825,515</td>
+    </tr>
+    <tr>
+      <th>Rob Marshall</th>
+      <td>Into the Woods</td>
+      <td>212,902,372</td>
+    </tr>
+    <tr>
+      <th>Rob Marshall</th>
+      <td>Chicago</td>
+      <td>306,776,732</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id=".iloc[-]-:-&#51064;&#45937;&#49828;-&#50948;&#52824;&#47196;-row,-column-&#52628;&#52636;">.iloc[ ] : &#51064;&#45937;&#49828; &#50948;&#52824;&#47196; row, column &#52628;&#52636;<a class="anchor-link" href="#.iloc[-]-:-&#51064;&#45937;&#49828;-&#50948;&#52824;&#47196;-row,-column-&#52628;&#52636;">&#182;</a></h3><p>.iloc[ ]는 데이터프레임에서 데이터를 추출하는 접근자로서 [ ]안에 인덱스 위치 숫자를 넣어주면 그 인덱스 위치 숫자에 해당하는 데이터가 추출된다. 이때 첫번째 아규먼트는 row 위치, 두번째 아규먼트는 column 위치를 가르킨다. row 인덱스 위치를 쉽게 파악하기 위해 인덱스를 reset한다. 또한 컬럼 인덱스 위치는 0부터 시작하며 아래에서 'director'가 0, 'name'이 1, 'rating'이 2, .... 이런 식으로 만들어진다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -13268,408 +13620,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-      <th>director</th>
-    </tr>
-    <tr>
-      <th>title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Pirates of the Caribbean: On Stranger Tides</th>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>6.4</td>
-      <td>4948</td>
-      <td>Rob Marshall</td>
-    </tr>
-    <tr>
-      <th>Pirates of the Caribbean: At World's End</th>
-      <td>300,000,000</td>
-      <td>Adventure Fantasy Action</td>
-      <td>139.082615</td>
-      <td>2007-05-19</td>
-      <td>961,000,000</td>
-      <td>169.0</td>
-      <td>6.9</td>
-      <td>4500</td>
-      <td>Gore Verbinski</td>
-    </tr>
-    <tr>
-      <th>Avengers: Age of Ultron</th>
-      <td>280,000,000</td>
-      <td>Action Adventure Science Fiction</td>
-      <td>134.279229</td>
-      <td>2015-04-22</td>
-      <td>1,405,403,694</td>
-      <td>141.0</td>
-      <td>7.3</td>
-      <td>6767</td>
-      <td>Joss Whedon</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>이 기능은 애초 파일을 읽을 때 아래와 같이 index_col='name'라는 옵션(매개변수+아규먼트)을 넣어서 구현해도 된다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-      <th>director</th>
-    </tr>
-    <tr>
-      <th>title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Pirates of the Caribbean: On Stranger Tides</th>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>6.4</td>
-      <td>4948</td>
-      <td>Rob Marshall</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>만약 'director'컬럼을 인덱스로 만들려면 다시 set_index(keys='director')를 사용하거나, csv 파일 읽을 때  index_col='director' 옵션을 넣어주면 된다. 그런데 여기서 차이점이 있는데 전자는 이미 'title'이 인덱스로 된 상태에서 적용하기 때문에 'title'컬럼은 없어지고 'director'컬럼이 인덱스가 된다. 그러나 후자는 'title'컬럼은 건드리 않고 'director'컬럼만 인덱스가 된다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s1">&#39;director&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-    </tr>
-    <tr>
-      <th>director</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Rob Marshall</th>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>6.4</td>
-      <td>4948</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;director&#39;</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-    </tr>
-    <tr>
-      <th>director</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Rob Marshall</th>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>Pirates of the Caribbean: On Stranger Tides</td>
-      <td>6.4</td>
-      <td>4948</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="reset_index():-&#51064;&#45937;&#49828;&#47484;-&#47532;&#49483;&#54616;&#45716;-&#44163;">reset_index(): &#51064;&#45937;&#49828;&#47484; &#47532;&#49483;&#54616;&#45716; &#44163;<a class="anchor-link" href="#reset_index():-&#51064;&#45937;&#49828;&#47484;-&#47532;&#49483;&#54616;&#45716;-&#44163;">&#182;</a></h3><p>이 메소드는 인덱스를 원래의 인덱스(0, 1, 2, 3, 4, ...)로 돌아가게 하는 기능을 한다. 따라서 기존의 인덱스는 컬럼으로 돌아가게 된다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13693,346 +13644,64 @@ div#notebook {
     <tr style="text-align: right;">
       <th></th>
       <th>director</th>
+      <th>name</th>
+      <th>rating</th>
+      <th>genre</th>
+      <th>year</th>
+      <th>score</th>
+      <th>votes</th>
+      <th>star</th>
+      <th>country</th>
       <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
+      <th>gross</th>
       <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Rob Marshall</td>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>Pirates of the Caribbean: On Stranger Tides</td>
-      <td>6.4</td>
-      <td>4948</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>그런데 이 메소드는 기존의 인덱스로 옮기고 새로운 인덱스를 reset하는 것이기 때문에 반복 실행하면 아래와 같이 불필요한 index 컬럼이 생기므로 조심해야 한다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>director</th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Rob Marshall</td>
-      <td>380,000,000</td>
-      <td>Adventure Action Fantasy</td>
-      <td>135.413856</td>
-      <td>2011-05-14</td>
-      <td>1,045,713,802</td>
-      <td>136.0</td>
-      <td>Pirates of the Caribbean: On Stranger Tides</td>
-      <td>6.4</td>
-      <td>4948</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>특히 당초의 데이터프레임에서 조건에 맞는 행을 추출하였을 경우에는 인덱스가 불규칙하게 되어 새로운 인덱스를 만들 필요가 있고, 그때 기존의 인덱스는 불필요하므로 이때는 drop=True라는 옵션을 사용한다. 우선 이러한 옵션을 사용할 상황을 만들어보자.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/movies/movies.csv&quot;</span><span class="p">)</span>
-<span class="n">m2</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;vote_average&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">7.5</span><span class="p">]</span>
-<span class="n">m2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-      <th>director</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>9</th>
-      <td>250,000,000</td>
-      <td>Action Crime Drama Thriller</td>
-      <td>112.312950</td>
-      <td>2012-07-16</td>
-      <td>1,084,939,099</td>
-      <td>165.0</td>
-      <td>The Dark Knight Rises</td>
-      <td>7.6</td>
-      <td>9106</td>
-      <td>Christopher Nolan</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>250,000,000</td>
-      <td>Adventure Fantasy</td>
-      <td>94.370564</td>
-      <td>2013-12-11</td>
-      <td>958,400,000</td>
-      <td>161.0</td>
-      <td>The Hobbit: The Desolation of Smaug</td>
-      <td>7.6</td>
-      <td>4524</td>
-      <td>Peter Jackson</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>250,000,000</td>
-      <td>Action Adventure Fantasy Science Fiction</td>
-      <td>118.078691</td>
-      <td>2014-05-15</td>
-      <td>747,862,775</td>
-      <td>131.0</td>
-      <td>X-Men: Days of Future Past</td>
-      <td>7.5</td>
-      <td>6032</td>
-      <td>Bryan Singer</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>위 데이터프레임 m2는 인덱스가 첫행이 2, 둘째행이 11, 셋째행이 15로 되어 있다. 이러한 인덱스는 데이터 처리를 위해 새로 만드는 것이 좋다. 이때 reset_index()를 사용하는데 이 때 옵션으로 drop=True를 넣어주면 기존 인덱스는 없어지게 된다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">m2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
-      <th>director</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>250,000,000</td>
-      <td>Action Crime Drama Thriller</td>
-      <td>112.312950</td>
-      <td>2012-07-16</td>
-      <td>1,084,939,099</td>
-      <td>165.0</td>
-      <td>The Dark Knight Rises</td>
-      <td>7.6</td>
-      <td>9106</td>
-      <td>Christopher Nolan</td>
+      <td>Stanley Kubrick</td>
+      <td>The Shining</td>
+      <td>R</td>
+      <td>Drama</td>
+      <td>1980</td>
+      <td>8.4</td>
+      <td>927000.0</td>
+      <td>Jack Nicholson</td>
+      <td>United Kingdom</td>
+      <td>19000000.0</td>
+      <td>46998772.0</td>
+      <td>146.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>250,000,000</td>
-      <td>Adventure Fantasy</td>
-      <td>94.370564</td>
-      <td>2013-12-11</td>
-      <td>958,400,000</td>
-      <td>161.0</td>
-      <td>The Hobbit: The Desolation of Smaug</td>
-      <td>7.6</td>
-      <td>4524</td>
-      <td>Peter Jackson</td>
+      <td>Randal Kleiser</td>
+      <td>The Blue Lagoon</td>
+      <td>R</td>
+      <td>Adventure</td>
+      <td>1980</td>
+      <td>5.8</td>
+      <td>65000.0</td>
+      <td>Brooke Shields</td>
+      <td>United States</td>
+      <td>4500000.0</td>
+      <td>58853106.0</td>
+      <td>104.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>250,000,000</td>
-      <td>Action Adventure Fantasy Science Fiction</td>
-      <td>118.078691</td>
-      <td>2014-05-15</td>
-      <td>747,862,775</td>
-      <td>131.0</td>
-      <td>X-Men: Days of Future Past</td>
-      <td>7.5</td>
-      <td>6032</td>
-      <td>Bryan Singer</td>
+      <td>Jim Abrahams</td>
+      <td>Airplane!</td>
+      <td>PG</td>
+      <td>Comedy</td>
+      <td>1980</td>
+      <td>7.7</td>
+      <td>221000.0</td>
+      <td>Robert Hays</td>
+      <td>United States</td>
+      <td>3500000.0</td>
+      <td>83453539.0</td>
+      <td>88.0</td>
     </tr>
   </tbody>
 </table>
@@ -14048,18 +13717,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>이 만약 이 옵션을 넣지 않는다면 아래와 같이 불필요한 index컬럼이 생겨 보기 싫다.</p>
+<p>아래는 row 인덱스 위치 0번째, column 인덱스 위치 7번째에 있는 데이터를 추출한 것이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">m2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14072,7 +13740,48 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Jack Nicholson&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 row를 복수로 추출하려면 row 인덱스 위치를 리스트 안에 넣고, column을 복수로 추출하려면 column 인덱스 위치를 리스트 안에 넣으면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -14095,61 +13804,26 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>index</th>
-      <th>budget</th>
-      <th>genres</th>
-      <th>popularity</th>
-      <th>release_date</th>
-      <th>revenue</th>
-      <th>runtime</th>
-      <th>title</th>
-      <th>vote_average</th>
-      <th>vote_count</th>
       <th>director</th>
+      <th>rating</th>
+      <th>votes</th>
+      <th>country</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>250,000,000</td>
-      <td>Action Crime Drama Thriller</td>
-      <td>112.312950</td>
-      <td>2012-07-16</td>
-      <td>1,084,939,099</td>
-      <td>165.0</td>
-      <td>The Dark Knight Rises</td>
-      <td>7.6</td>
-      <td>9106</td>
-      <td>Christopher Nolan</td>
+      <th>300</th>
+      <td>Thomas K. Avildsen</td>
+      <td>R</td>
+      <td>3100.0</td>
+      <td>United States</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>250,000,000</td>
-      <td>Adventure Fantasy</td>
-      <td>94.370564</td>
-      <td>2013-12-11</td>
-      <td>958,400,000</td>
-      <td>161.0</td>
-      <td>The Hobbit: The Desolation of Smaug</td>
-      <td>7.6</td>
-      <td>4524</td>
-      <td>Peter Jackson</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>250,000,000</td>
-      <td>Action Adventure Fantasy Science Fiction</td>
-      <td>118.078691</td>
-      <td>2014-05-15</td>
-      <td>747,862,775</td>
-      <td>131.0</td>
-      <td>X-Men: Days of Future Past</td>
-      <td>7.5</td>
-      <td>6032</td>
-      <td>Bryan Singer</td>
+      <th>19</th>
+      <td>William Friedkin</td>
+      <td>R</td>
+      <td>20000.0</td>
+      <td>West Germany</td>
     </tr>
   </tbody>
 </table>
@@ -14165,20 +13839,95 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51452;&#51032;!">&#51452;&#51032;!<a class="anchor-link" href="#&#51452;&#51032;!">&#182;</a></h3><p>set_index()는 기존 인덱스는 없애고 특정 컬럼을 인덱스로 만들어주는 메소드이므로 반복 사용하면 인덱스의 정보가 날라가게 된다. 따라서 반복 사용할 때는 항상 reset_index()로 기존 인덱스 정보를 보존한 후 set_index()를 사용하는 것이 좋다. 위의 예에서 처음에 'title'컬럼을 인덱스로 만들고 그 다음 'director'를 인덱스로 만들면 'title'컬럼은 없어진다. 따라서 'director'를 인덱스로 만들기 전에 reset_index()로 인덱스 'title'을 컬럼으로 만들어 놓고 set_index()로 'director'를 인덱스로 만들라는 이야기다.</p>
+<p>만약 row 인덱스 위치와 column 인덱스 위치를 연결된 것으로 추출하려면 콜론(:)을 사용한다. 단 이때는 리스트로 만들지 않아야 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">55</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>genre</th>
+      <th>year</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>55</th>
+      <td>Action</td>
+      <td>1980</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Comedy</td>
+      <td>1980</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Action</td>
+      <td>1980</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Sci-Fi</td>
+      <td>1980</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Adventure</td>
+      <td>1980</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
