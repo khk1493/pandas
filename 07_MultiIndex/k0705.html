@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Intro to Multiindex</title>
+<title>05_Extract Rows from a Multiindex DataFrame</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,7 +13105,350 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0701.-MultiIndex-&#49548;&#44060;">0701. MultiIndex &#49548;&#44060;<a class="anchor-link" href="#0701.-MultiIndex-&#49548;&#44060;">&#182;</a></h1>
+<h1 id="0705.-&#47680;&#54000;-&#51064;&#45937;&#49828;-df&#50640;&#49436;-&#54665;-&#52628;&#52636;">0705. &#47680;&#54000; &#51064;&#45937;&#49828; df&#50640;&#49436; &#54665; &#52628;&#52636;<a class="anchor-link" href="#0705.-&#47680;&#54000;-&#51064;&#45937;&#49828;-df&#50640;&#49436;-&#54665;-&#52628;&#52636;">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">bigmac</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/bigMac/bigmac.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> 
+                     <span class="n">index_col</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span>
+<span class="n">bigmac</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">bigmac</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Currency_code</th>
+      <th>Local_price</th>
+      <th>Dollar_price</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">2000-04-01</th>
+      <th>Argentina</th>
+      <td>ARS</td>
+      <td>2.50</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>AUD</td>
+      <td>2.59</td>
+      <td>1.541667</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>BRL</td>
+      <td>2.95</td>
+      <td>1.648045</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Date-&#51064;&#45937;&#49828;&#47196;-row&#47484;-&#52628;&#52636;.">Date &#51064;&#45937;&#49828;&#47196; row&#47484; &#52628;&#52636;.<a class="anchor-link" href="#Date-&#51064;&#45937;&#49828;&#47196;-row&#47484;-&#52628;&#52636;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Currency_code</th>
+      <th>Local_price</th>
+      <th>Dollar_price</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Argentina</th>
+      <td>ARS</td>
+      <td>7.00</td>
+      <td>1.842833</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>AUD</td>
+      <td>4.35</td>
+      <td>3.977870</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>BRL</td>
+      <td>8.20</td>
+      <td>4.758313</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">),</span> <span class="s2">&quot;Dollar_price&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.842832697</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>아래 코드에서 2번째 아규먼트가 인덱스인지 컬럼 이름인지 불명확하기 때문에 <br>인덱스를 나타내기 위해서는 튜플을 쓰는 것이 권장된다.</h3>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Currency_code         ARS
+Local_price           7.0
+Dollar_price     1.842833
+Name: (2010-01-01 00:00:00, Argentina), dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Currency_code         ARS
+Local_price           7.0
+Dollar_price     1.842833
+Name: (2010-01-01 00:00:00, Argentina), dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50500;&#47000;&#45716;-&#52395;&#48264;&#51704;-&#51064;&#45937;&#49828;&#50752;-'Dollar_price'-&#52972;&#47100;&#50640;-&#51080;&#45716;-&#44050;&#51012;-&#52628;&#52636;&#54620;&#45796;.">&#50500;&#47000;&#45716; &#52395;&#48264;&#51704; &#51064;&#45937;&#49828;&#50752; 'Dollar_price' &#52972;&#47100;&#50640; &#51080;&#45716; &#44050;&#51012; &#52628;&#52636;&#54620;&#45796;.<a class="anchor-link" href="#&#50500;&#47000;&#45716;-&#52395;&#48264;&#51704;-&#51064;&#45937;&#49828;&#50752;-'Dollar_price'-&#52972;&#47100;&#50640;-&#51080;&#45716;-&#44050;&#51012;-&#52628;&#52636;&#54620;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Dollar_price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Country
+Argentina    1.842833
+Australia    3.977870
+Brazil       4.758313
+Name: Dollar_price, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>아래는 소괄호가 있으므로 튜플로서 소괄호 안에 첫번째 인덱스, 두번째 인덱스를 넣게 된다. <br> 그런데 두번째 인덱스는 없으므로 첫번째 인덱스에 해당하는 값이 모두 추출된다.</h3>
+
 </div>
 </div>
 </div>
@@ -13114,9 +13457,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">bigmac</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/bigMac/bigmac.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
-<span class="n">bigmac</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13152,37 +13493,35 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Date</th>
       <th>Currency_code</th>
-      <th>Country</th>
       <th>Local_price</th>
       <th>Dollar_price</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2000-04-01</td>
+      <th>Argentina</th>
       <td>ARS</td>
-      <td>Argentina</td>
-      <td>2.50</td>
-      <td>2.500000</td>
+      <td>7.00</td>
+      <td>1.842833</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>2000-04-01</td>
+      <th>Australia</th>
       <td>AUD</td>
-      <td>Australia</td>
-      <td>2.59</td>
-      <td>1.541667</td>
+      <td>4.35</td>
+      <td>3.977870</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>2000-04-01</td>
+      <th>Brazil</th>
       <td>BRL</td>
-      <td>Brazil</td>
-      <td>2.95</td>
-      <td>1.648045</td>
+      <td>8.20</td>
+      <td>4.758313</td>
     </tr>
   </tbody>
 </table>
@@ -13198,52 +13537,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id=".dtypes-&#47484;-&#51060;&#50857;&#54616;&#50668;-df&#51032;-&#52972;&#47100;&#48324;-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#50508;&#50500;&#48376;&#45796;.">.dtypes &#47484; &#51060;&#50857;&#54616;&#50668; df&#51032; &#52972;&#47100;&#48324; &#45936;&#51060;&#53552; &#53440;&#51077;&#51012; &#50508;&#50500;&#48376;&#45796;.<a class="anchor-link" href="#.dtypes-&#47484;-&#51060;&#50857;&#54616;&#50668;-df&#51032;-&#52972;&#47100;&#48324;-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#50508;&#50500;&#48376;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
+<h3>아래에서 인덱스는 소괄호 안에 규정되었고, 컬럼은 그 다음에 규정되었다. <br>따라서 거기에 해당하는 값 하나만 추출되었다.</h3>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Date             datetime64[ns]
-Currency_code            object
-Country                  object
-Local_price             float64
-Dollar_price            float64
-dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51204;&#52404;&#47484;-&#54028;&#50501;&#54620;&#45796;.">&#51204;&#52404;&#47484; &#54028;&#50501;&#54620;&#45796;.<a class="anchor-link" href="#&#51204;&#52404;&#47484;-&#54028;&#50501;&#54620;&#45796;.">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13252,7 +13547,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">),</span> <span class="s1">&#39;Dollar_price&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13265,24 +13560,15 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 1386 entries, 0 to 1385
-Data columns (total 5 columns):
- #   Column         Non-Null Count  Dtype         
----  ------         --------------  -----         
- 0   Date           1386 non-null   datetime64[ns]
- 1   Currency_code  1386 non-null   object        
- 2   Country        1386 non-null   object        
- 3   Local_price    1386 non-null   float64       
- 4   Dollar_price   1386 non-null   float64       
-dtypes: datetime64[ns](1), float64(2), object(2)
-memory usage: 54.3+ KB
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.842832697</pre>
 </div>
+
 </div>
 
 </div>
@@ -13292,7 +13578,8 @@ memory usage: 54.3+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Date&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">Date&#47484; &#51064;&#45937;&#49828;&#47196; &#47564;&#46304;&#45796;.<a class="anchor-link" href="#Date&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">&#182;</a></h3>
+<h3>아래에서 인덱스는 소괄호 안에 규정되었고, 컬럼은 그 다음에 2개가 규정되었다. <br>따라서 거기에 해당하는 값 2개가 추출되었다.</h3>
+
 </div>
 </div>
 </div>
@@ -13301,7 +13588,7 @@ memory usage: 54.3+ KB
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;Currency_code&#39;</span><span class="p">,</span> <span class="s1">&#39;Local_price&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13318,247 +13605,11 @@ memory usage: 54.3+ KB
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Currency_code</th>
-      <th>Country</th>
-      <th>Local_price</th>
-      <th>Dollar_price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-04-01</th>
-      <td>ARS</td>
-      <td>Argentina</td>
-      <td>2.50</td>
-      <td>2.500000</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>AUD</td>
-      <td>Australia</td>
-      <td>2.59</td>
-      <td>1.541667</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>BRL</td>
-      <td>Brazil</td>
-      <td>2.95</td>
-      <td>1.648045</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Date,-Country-2&#44060;&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">Date, Country 2&#44060;&#47484; &#51064;&#45937;&#49828;&#47196; &#47564;&#46304;&#45796;.<a class="anchor-link" href="#Date,-Country-2&#44060;&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">bigmac</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>Currency_code</th>
-      <th>Local_price</th>
-      <th>Dollar_price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="5" valign="top">2000-04-01</th>
-      <th>Argentina</th>
-      <td>ARS</td>
-      <td>2.50</td>
-      <td>2.500000</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>AUD</td>
-      <td>2.59</td>
-      <td>1.541667</td>
-    </tr>
-    <tr>
-      <th>Brazil</th>
-      <td>BRL</td>
-      <td>2.95</td>
-      <td>1.648045</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>CAD</td>
-      <td>2.85</td>
-      <td>1.938776</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>CHF</td>
-      <td>5.90</td>
-      <td>3.470588</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th rowspan="5" valign="top">2020-07-01</th>
-      <th>Ukraine</th>
-      <td>UAH</td>
-      <td>59.00</td>
-      <td>2.174714</td>
-    </tr>
-    <tr>
-      <th>Uruguay</th>
-      <td>UYU</td>
-      <td>189.00</td>
-      <td>4.327418</td>
-    </tr>
-    <tr>
-      <th>United States</th>
-      <td>USD</td>
-      <td>5.71</td>
-      <td>5.710000</td>
-    </tr>
-    <tr>
-      <th>Vietnam</th>
-      <td>VND</td>
-      <td>66000.00</td>
-      <td>2.847282</td>
-    </tr>
-    <tr>
-      <th>South Africa</th>
-      <td>ZAR</td>
-      <td>31.00</td>
-      <td>1.859349</td>
-    </tr>
-  </tbody>
-</table>
-<p>1386 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#51032;-type&#51008;-Multiindex&#44032;-&#46108;&#45796;.">bigmac.index&#51032; type&#51008; Multiindex&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#51032;-type&#51008;-Multiindex&#44032;-&#46108;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
 
 <div class="output_text output_subarea output_execute_result">
-<pre>pandas.core.indexes.multi.MultiIndex</pre>
+<pre>Currency_code    ARS
+Local_price      7.0
+Name: (2010-01-01 00:00:00, Argentina), dtype: object</pre>
 </div>
 
 </div>
@@ -13570,110 +13621,16 @@ memory usage: 54.3+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-&#53916;&#54540;-&#44061;&#52404;&#44032;-&#46108;&#45796;.">bigmac.index&#45716; Date&#50752; Country&#47484; &#50836;&#49548;&#47196; &#44054;&#45716; &#53916;&#54540; &#44061;&#52404;&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-&#53916;&#54540;-&#44061;&#52404;&#44032;-&#46108;&#45796;.">&#182;</a></h3>
+<h3 id="&#47680;&#54000;&#51064;&#45937;&#49828;&#45716;-iloc&#50640;-&#50500;&#47924;-&#50689;&#54693;&#46020;-&#45180;&#52824;&#51648;-&#50506;&#45716;&#45796;.-0&#51060;&#47732;-&#52395;&#48264;&#51704;-&#54665;,-1&#51060;&#47732;-2&#48264;&#51704;-&#54665;,-2&#51060;&#47732;-3&#48264;&#51704;-&#54665;&#51060;-&#52628;&#52636;&#46108;&#45796;.">&#47680;&#54000;&#51064;&#45937;&#49828;&#45716; iloc&#50640; &#50500;&#47924; &#50689;&#54693;&#46020; &#45180;&#52824;&#51648; &#50506;&#45716;&#45796;. 0&#51060;&#47732; &#52395;&#48264;&#51704; &#54665;, 1&#51060;&#47732; 2&#48264;&#51704; &#54665;, 2&#51060;&#47732; 3&#48264;&#51704; &#54665;&#51060; &#52628;&#52636;&#46108;&#45796;.<a class="anchor-link" href="#&#47680;&#54000;&#51064;&#45937;&#49828;&#45716;-iloc&#50640;-&#50500;&#47924;-&#50689;&#54693;&#46020;-&#45180;&#52824;&#51648;-&#50506;&#45716;&#45796;.-0&#51060;&#47732;-&#52395;&#48264;&#51704;-&#54665;,-1&#51060;&#47732;-2&#48264;&#51704;-&#54665;,-2&#51060;&#47732;-3&#48264;&#51704;-&#54665;&#51060;-&#52628;&#52636;&#46108;&#45796;.">&#182;</a></h3>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MultiIndex([(&#39;2000-04-01&#39;,      &#39;Argentina&#39;),
-            (&#39;2000-04-01&#39;,      &#39;Australia&#39;),
-            (&#39;2000-04-01&#39;,         &#39;Brazil&#39;),
-            (&#39;2000-04-01&#39;,         &#39;Canada&#39;),
-            (&#39;2000-04-01&#39;,    &#39;Switzerland&#39;),
-            (&#39;2000-04-01&#39;,          &#39;Chile&#39;),
-            (&#39;2000-04-01&#39;,          &#39;China&#39;),
-            (&#39;2000-04-01&#39;, &#39;Czech Republic&#39;),
-            (&#39;2000-04-01&#39;,        &#39;Denmark&#39;),
-            (&#39;2000-04-01&#39;,      &#39;Euro area&#39;),
-            ...
-            (&#39;2020-07-01&#39;,      &#39;Singapore&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Sweden&#39;),
-            (&#39;2020-07-01&#39;,       &#39;Thailand&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Turkey&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Taiwan&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Ukraine&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Uruguay&#39;),
-            (&#39;2020-07-01&#39;,  &#39;United States&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Vietnam&#39;),
-            (&#39;2020-07-01&#39;,   &#39;South Africa&#39;)],
-           names=[&#39;Date&#39;, &#39;Country&#39;], length=1386)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#51032;-names&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-FrozenList&#44032;-&#46108;&#45796;.">bigmac.index&#51032; names&#45716; Date&#50752; Country&#47484; &#50836;&#49548;&#47196; &#44054;&#45716; FrozenList&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#51032;-names&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-FrozenList&#44032;-&#46108;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>FrozenList([&#39;Date&#39;, &#39;Country&#39;])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13692,7 +13649,176 @@ memory usage: 54.3+ KB
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(Timestamp(&#39;2000-04-01 00:00:00&#39;), &#39;Chile&#39;)</pre>
+<pre>Currency_code    ARS
+Local_price      2.5
+Dollar_price     2.5
+Name: (2000-04-01 00:00:00, Argentina), dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Currency_code         AUD
+Local_price          2.59
+Dollar_price     1.541667
+Name: (2000-04-01 00:00:00, Australia), dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Currency_code         BRL
+Local_price          2.95
+Dollar_price     1.648045
+Name: (2000-04-01 00:00:00, Brazil), dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47564;&#50557;-11,-34,-56&#51012;-&#50416;&#47732;-12&#48264;&#51704;,-35&#48264;&#51704;,-57&#48264;&#51704;-&#54665;&#51060;-&#54632;&#44760;-&#52628;&#52636;&#46108;&#45796;.">&#47564;&#50557; 11, 34, 56&#51012; &#50416;&#47732; 12&#48264;&#51704;, 35&#48264;&#51704;, 57&#48264;&#51704; &#54665;&#51060; &#54632;&#44760; &#52628;&#52636;&#46108;&#45796;.<a class="anchor-link" href="#&#47564;&#50557;-11,-34,-56&#51012;-&#50416;&#47732;-12&#48264;&#51704;,-35&#48264;&#51704;,-57&#48264;&#51704;-&#54665;&#51060;-&#54632;&#44760;-&#52628;&#52636;&#46108;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">56</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Currency_code</th>
+      <th>Local_price</th>
+      <th>Dollar_price</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-04-01</th>
+      <th>Hungary</th>
+      <td>HUF</td>
+      <td>339.0</td>
+      <td>1.215054</td>
+    </tr>
+    <tr>
+      <th>2001-04-01</th>
+      <th>China</th>
+      <td>CNY</td>
+      <td>9.9</td>
+      <td>1.195652</td>
+    </tr>
+    <tr>
+      <th>2002-04-01</th>
+      <th>Argentina</th>
+      <td>ARS</td>
+      <td>2.5</td>
+      <td>0.798722</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>

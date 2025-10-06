@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Intro to Multiindex</title>
+<title>13_The .pivot_table() Method</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,7 +13105,490 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0701.-MultiIndex-&#49548;&#44060;">0701. MultiIndex &#49548;&#44060;<a class="anchor-link" href="#0701.-MultiIndex-&#49548;&#44060;">&#182;</a></h1>
+<h1>0713. 피봇 테이블 만들기 : .pivot_table(&nbsp;)</h1>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">foods</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/foods/foods.csv&quot;</span><span class="p">)</span>
+<span class="n">foods</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First Name</th>
+      <th>Gender</th>
+      <th>City</th>
+      <th>Frequency</th>
+      <th>Item</th>
+      <th>Spend</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Wanda</td>
+      <td>Female</td>
+      <td>Stamford</td>
+      <td>Weekly</td>
+      <td>Burger</td>
+      <td>15.66</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Eric</td>
+      <td>Male</td>
+      <td>Stamford</td>
+      <td>Daily</td>
+      <td>Chalupa</td>
+      <td>10.56</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Charles</td>
+      <td>Male</td>
+      <td>New York</td>
+      <td>Never</td>
+      <td>Sushi</td>
+      <td>42.14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Anna</td>
+      <td>Female</td>
+      <td>Philadelphia</td>
+      <td>Once</td>
+      <td>Ice Cream</td>
+      <td>11.01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Deborah</td>
+      <td>Female</td>
+      <td>Philadelphia</td>
+      <td>Daily</td>
+      <td>Chalupa</td>
+      <td>23.49</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 style = 'color:red'>매우 중요!</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(1)-Spend-&#44050;&#51012;-Gender(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54217;&#44512;&#51012;-&#48372;&#45716;-&#44163;">(1) Spend &#44050;&#51012; Gender(&#49464;&#47196;&#52629;, index)&#48324;&#47196; &#54217;&#44512;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(1)-Spend-&#44050;&#51012;-Gender(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54217;&#44512;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Spend</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>50.709629</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>49.397623</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(2)-Spend-&#44050;&#51012;-Gender(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">(2) Spend &#44050;&#51012; Gender(&#49464;&#47196;&#52629;, index)&#48324;&#47196; &#54633;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(2)-Spend-&#44050;&#51012;-Gender(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Spend</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>25963.33</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>24106.04</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(3)-Spend-&#44050;&#51012;-Item(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">(3) Spend &#44050;&#51012; Item(&#49464;&#47196;&#52629;, index)&#48324;&#47196; &#54633;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(3)-Spend-&#44050;&#51012;-Item(&#49464;&#47196;&#52629;,-index)&#48324;&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Spend</th>
+    </tr>
+    <tr>
+      <th>Item</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Burger</th>
+      <td>7765.73</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>8270.44</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>7644.52</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>8758.76</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>8886.99</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>8742.93</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(4)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">(4) Spend &#44050;&#51012; 2&#44060;&#51032; index&#47196; &#54633;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(4)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">],</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Spend</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th>Item</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">Female</th>
+      <th>Burger</th>
+      <td>4094.30</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>4257.82</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>4152.26</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>4743.00</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>4032.87</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>4683.08</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Male</th>
+      <th>Burger</th>
+      <td>3671.43</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>4012.62</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>3492.26</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>4015.76</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>4854.12</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>4059.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="(5)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index,-1&#44060;&#51032;-column-level-&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">(5) Spend &#44050;&#51012; 2&#44060;&#51032; index, 1&#44060;&#51032; column level &#47196; &#54633;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(5)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index,-1&#44060;&#51032;-column-level-&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13114,9 +13597,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">bigmac</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/bigMac/bigmac.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
-<span class="n">bigmac</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;City&#39;</span><span class="p">,</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13152,37 +13633,93 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Date</th>
-      <th>Currency_code</th>
-      <th>Country</th>
-      <th>Local_price</th>
-      <th>Dollar_price</th>
+      <th>City</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th>Item</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2000-04-01</td>
-      <td>ARS</td>
-      <td>Argentina</td>
-      <td>2.50</td>
-      <td>2.500000</td>
+      <th rowspan="6" valign="top">Female</th>
+      <th>Burger</th>
+      <td>1239.04</td>
+      <td>1639.24</td>
+      <td>1216.02</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>2000-04-01</td>
-      <td>AUD</td>
-      <td>Australia</td>
-      <td>2.59</td>
-      <td>1.541667</td>
+      <th>Burrito</th>
+      <td>978.95</td>
+      <td>1458.76</td>
+      <td>1820.11</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>2000-04-01</td>
-      <td>BRL</td>
-      <td>Brazil</td>
-      <td>2.95</td>
-      <td>1.648045</td>
+      <th>Chalupa</th>
+      <td>876.58</td>
+      <td>1673.33</td>
+      <td>1602.35</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>1446.78</td>
+      <td>1639.26</td>
+      <td>1656.96</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>1521.62</td>
+      <td>1479.22</td>
+      <td>1032.03</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>1480.29</td>
+      <td>1742.88</td>
+      <td>1459.91</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Male</th>
+      <th>Burger</th>
+      <td>1294.09</td>
+      <td>938.18</td>
+      <td>1439.16</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>1399.40</td>
+      <td>1312.93</td>
+      <td>1300.29</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>1227.77</td>
+      <td>1114.23</td>
+      <td>1150.26</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>1345.27</td>
+      <td>1249.36</td>
+      <td>1421.13</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>1603.63</td>
+      <td>2191.27</td>
+      <td>1059.22</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>1396.15</td>
+      <td>1395.88</td>
+      <td>1267.82</td>
     </tr>
   </tbody>
 </table>
@@ -13198,7 +13735,428 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id=".dtypes-&#47484;-&#51060;&#50857;&#54616;&#50668;-df&#51032;-&#52972;&#47100;&#48324;-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#50508;&#50500;&#48376;&#45796;.">.dtypes &#47484; &#51060;&#50857;&#54616;&#50668; df&#51032; &#52972;&#47100;&#48324; &#45936;&#51060;&#53552; &#53440;&#51077;&#51012; &#50508;&#50500;&#48376;&#45796;.<a class="anchor-link" href="#.dtypes-&#47484;-&#51060;&#50857;&#54616;&#50668;-df&#51032;-&#52972;&#47100;&#48324;-&#45936;&#51060;&#53552;-&#53440;&#51077;&#51012;-&#50508;&#50500;&#48376;&#45796;.">&#182;</a></h3>
+<h3 id="(6)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index,-2&#44060;&#51032;-column-level-&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">(6) Spend &#44050;&#51012; 2&#44060;&#51032; index, 2&#44060;&#51032; column level &#47196; &#54633;&#51012; &#48372;&#45716; &#44163;<a class="anchor-link" href="#(6)-Spend-&#44050;&#51012;-2&#44060;&#51032;-index,-2&#44060;&#51032;-column-level-&#47196;-&#54633;&#51012;-&#48372;&#45716;-&#44163;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> 
+                  <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">],</span> 
+                  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="s1">&#39;City&#39;</span><span class="p">],</span> 
+                  <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Frequency</th>
+      <th colspan="3" halign="left">Daily</th>
+      <th colspan="3" halign="left">Monthly</th>
+      <th colspan="3" halign="left">Never</th>
+      <th>Often</th>
+      <th>...</th>
+      <th>Once</th>
+      <th colspan="3" halign="left">Seldom</th>
+      <th colspan="3" halign="left">Weekly</th>
+      <th colspan="3" halign="left">Yearly</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>City</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>...</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th>Item</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">Female</th>
+      <th>Burger</th>
+      <td>262.67</td>
+      <td>231.68</td>
+      <td>144.66</td>
+      <td>171.86</td>
+      <td>215.05</td>
+      <td>238.49</td>
+      <td>97.89</td>
+      <td>218.97</td>
+      <td>90.97</td>
+      <td>94.96</td>
+      <td>...</td>
+      <td>95.05</td>
+      <td>63.16</td>
+      <td>409.05</td>
+      <td>97.53</td>
+      <td>184.35</td>
+      <td>32.00</td>
+      <td>155.02</td>
+      <td>259.30</td>
+      <td>123.17</td>
+      <td>307.03</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>224.45</td>
+      <td>321.57</td>
+      <td>195.63</td>
+      <td>122.74</td>
+      <td>34.28</td>
+      <td>67.94</td>
+      <td>189.73</td>
+      <td>382.30</td>
+      <td>366.34</td>
+      <td>103.60</td>
+      <td>...</td>
+      <td>168.01</td>
+      <td>167.54</td>
+      <td>198.11</td>
+      <td>234.49</td>
+      <td>39.69</td>
+      <td>62.82</td>
+      <td>230.91</td>
+      <td>71.26</td>
+      <td>116.75</td>
+      <td>172.98</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>43.19</td>
+      <td>23.49</td>
+      <td>95.70</td>
+      <td>158.37</td>
+      <td>289.96</td>
+      <td>161.98</td>
+      <td>35.15</td>
+      <td>121.97</td>
+      <td>156.36</td>
+      <td>39.73</td>
+      <td>...</td>
+      <td>40.59</td>
+      <td>160.00</td>
+      <td>274.51</td>
+      <td>175.25</td>
+      <td>171.52</td>
+      <td>84.41</td>
+      <td>204.69</td>
+      <td>157.82</td>
+      <td>504.44</td>
+      <td>348.16</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>478.10</td>
+      <td>247.40</td>
+      <td>124.35</td>
+      <td>284.53</td>
+      <td>50.25</td>
+      <td>229.30</td>
+      <td>56.07</td>
+      <td>433.58</td>
+      <td>157.33</td>
+      <td>130.63</td>
+      <td>...</td>
+      <td>158.24</td>
+      <td>90.81</td>
+      <td>183.25</td>
+      <td>104.66</td>
+      <td>285.56</td>
+      <td>208.80</td>
+      <td>440.06</td>
+      <td>62.95</td>
+      <td>175.23</td>
+      <td>224.48</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>262.19</td>
+      <td>177.69</td>
+      <td>92.88</td>
+      <td>92.53</td>
+      <td>74.51</td>
+      <td>125.85</td>
+      <td>206.15</td>
+      <td>156.03</td>
+      <td>77.66</td>
+      <td>232.26</td>
+      <td>...</td>
+      <td>279.33</td>
+      <td>242.35</td>
+      <td>203.10</td>
+      <td>117.73</td>
+      <td>227.62</td>
+      <td>285.28</td>
+      <td>125.03</td>
+      <td>151.67</td>
+      <td>159.86</td>
+      <td>15.24</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>81.07</td>
+      <td>348.53</td>
+      <td>393.27</td>
+      <td>93.16</td>
+      <td>78.71</td>
+      <td>108.39</td>
+      <td>69.33</td>
+      <td>190.58</td>
+      <td>19.56</td>
+      <td>343.94</td>
+      <td>...</td>
+      <td>194.75</td>
+      <td>87.70</td>
+      <td>314.24</td>
+      <td>27.82</td>
+      <td>410.89</td>
+      <td>334.00</td>
+      <td>315.36</td>
+      <td>232.41</td>
+      <td>145.85</td>
+      <td>362.74</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Male</th>
+      <th>Burger</th>
+      <td>319.46</td>
+      <td>112.70</td>
+      <td>197.72</td>
+      <td>187.29</td>
+      <td>213.14</td>
+      <td>27.16</td>
+      <td>90.32</td>
+      <td>17.31</td>
+      <td>NaN</td>
+      <td>55.47</td>
+      <td>...</td>
+      <td>326.64</td>
+      <td>225.68</td>
+      <td>188.06</td>
+      <td>159.75</td>
+      <td>69.69</td>
+      <td>99.89</td>
+      <td>310.21</td>
+      <td>49.61</td>
+      <td>197.36</td>
+      <td>225.07</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>236.21</td>
+      <td>165.76</td>
+      <td>276.23</td>
+      <td>147.54</td>
+      <td>89.58</td>
+      <td>119.60</td>
+      <td>86.78</td>
+      <td>378.32</td>
+      <td>351.84</td>
+      <td>189.92</td>
+      <td>...</td>
+      <td>30.15</td>
+      <td>202.40</td>
+      <td>27.71</td>
+      <td>9.84</td>
+      <td>256.74</td>
+      <td>289.25</td>
+      <td>161.85</td>
+      <td>220.70</td>
+      <td>118.51</td>
+      <td>262.64</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>54.09</td>
+      <td>274.81</td>
+      <td>192.64</td>
+      <td>333.76</td>
+      <td>90.70</td>
+      <td>343.76</td>
+      <td>199.09</td>
+      <td>242.98</td>
+      <td>138.70</td>
+      <td>251.52</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>11.69</td>
+      <td>130.75</td>
+      <td>174.02</td>
+      <td>163.20</td>
+      <td>135.68</td>
+      <td>44.37</td>
+      <td>167.74</td>
+      <td>68.81</td>
+      <td>116.19</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>230.00</td>
+      <td>190.71</td>
+      <td>129.42</td>
+      <td>183.73</td>
+      <td>259.29</td>
+      <td>119.53</td>
+      <td>219.63</td>
+      <td>53.65</td>
+      <td>219.64</td>
+      <td>139.80</td>
+      <td>...</td>
+      <td>139.89</td>
+      <td>16.25</td>
+      <td>99.01</td>
+      <td>163.31</td>
+      <td>74.44</td>
+      <td>115.80</td>
+      <td>311.27</td>
+      <td>143.10</td>
+      <td>44.61</td>
+      <td>16.52</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>178.22</td>
+      <td>148.69</td>
+      <td>15.17</td>
+      <td>152.20</td>
+      <td>386.55</td>
+      <td>74.36</td>
+      <td>57.54</td>
+      <td>321.94</td>
+      <td>119.77</td>
+      <td>347.55</td>
+      <td>...</td>
+      <td>182.71</td>
+      <td>270.42</td>
+      <td>138.44</td>
+      <td>40.83</td>
+      <td>223.86</td>
+      <td>221.24</td>
+      <td>239.42</td>
+      <td>159.70</td>
+      <td>239.94</td>
+      <td>96.32</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>225.57</td>
+      <td>280.93</td>
+      <td>NaN</td>
+      <td>430.86</td>
+      <td>155.59</td>
+      <td>93.03</td>
+      <td>164.01</td>
+      <td>245.77</td>
+      <td>204.90</td>
+      <td>9.31</td>
+      <td>...</td>
+      <td>314.65</td>
+      <td>160.49</td>
+      <td>91.26</td>
+      <td>224.15</td>
+      <td>150.15</td>
+      <td>260.33</td>
+      <td>338.16</td>
+      <td>119.44</td>
+      <td>33.80</td>
+      <td>48.71</td>
+    </tr>
+  </tbody>
+</table>
+<p>12 rows × 24 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>(7) foods라는 객체를 처음에 사용하는 것 대신에 pd를 사용하고 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;괄호 안에 parameter option 중 data = foods를 사용해도 동일한 결과를 얻는다.</h3>
+
 </div>
 </div>
 </div>
@@ -13207,7 +14165,11 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">dtypes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">foods</span><span class="p">,</span> 
+               <span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;Spend&#39;</span><span class="p">,</span> 
+               <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">],</span> 
+               <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">],</span> 
+               <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13224,14 +14186,116 @@ div#notebook {
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>Date             datetime64[ns]
-Currency_code            object
-Country                  object
-Local_price             float64
-Dollar_price            float64
-dtype: object</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>City</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th>Item</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">Female</th>
+      <th>Burger</th>
+      <td>1239.04</td>
+      <td>1639.24</td>
+      <td>1216.02</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>978.95</td>
+      <td>1458.76</td>
+      <td>1820.11</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>876.58</td>
+      <td>1673.33</td>
+      <td>1602.35</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>1446.78</td>
+      <td>1639.26</td>
+      <td>1656.96</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>1521.62</td>
+      <td>1479.22</td>
+      <td>1032.03</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>1480.29</td>
+      <td>1742.88</td>
+      <td>1459.91</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Male</th>
+      <th>Burger</th>
+      <td>1294.09</td>
+      <td>938.18</td>
+      <td>1439.16</td>
+    </tr>
+    <tr>
+      <th>Burrito</th>
+      <td>1399.40</td>
+      <td>1312.93</td>
+      <td>1300.29</td>
+    </tr>
+    <tr>
+      <th>Chalupa</th>
+      <td>1227.77</td>
+      <td>1114.23</td>
+      <td>1150.26</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>1345.27</td>
+      <td>1249.36</td>
+      <td>1421.13</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>1603.63</td>
+      <td>2191.27</td>
+      <td>1059.22</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>1396.15</td>
+      <td>1395.88</td>
+      <td>1267.82</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13243,7 +14307,7 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51204;&#52404;&#47484;-&#54028;&#50501;&#54620;&#45796;.">&#51204;&#52404;&#47484; &#54028;&#50501;&#54620;&#45796;.<a class="anchor-link" href="#&#51204;&#52404;&#47484;-&#54028;&#50501;&#54620;&#45796;.">&#182;</a></h3>
+<h3 id="(8)-&#48712;&#46020;&#49688;&#44032;-&#54596;&#50836;&#54616;&#47732;-&#52972;&#47100;&#51012;-&#54616;&#45208;-&#45908;-&#47564;&#46308;&#50612;-&#44144;&#44592;&#50640;-1&#51012;-&#45347;&#50612;&#51452;&#44256;-&#51060;&#47484;-values&#51032;-&#50500;&#44508;&#47676;&#53944;&#47196;-&#51204;&#45804;&#54616;&#47732;-&#46108;&#45796;.">(8) &#48712;&#46020;&#49688;&#44032; &#54596;&#50836;&#54616;&#47732; &#52972;&#47100;&#51012; &#54616;&#45208; &#45908; &#47564;&#46308;&#50612; &#44144;&#44592;&#50640; 1&#51012; &#45347;&#50612;&#51452;&#44256; &#51060;&#47484; values&#51032; &#50500;&#44508;&#47676;&#53944;&#47196; &#51204;&#45804;&#54616;&#47732; &#46108;&#45796;.<a class="anchor-link" href="#(8)-&#48712;&#46020;&#49688;&#44032;-&#54596;&#50836;&#54616;&#47732;-&#52972;&#47100;&#51012;-&#54616;&#45208;-&#45908;-&#47564;&#46308;&#50612;-&#44144;&#44592;&#50640;-1&#51012;-&#45347;&#50612;&#51452;&#44256;-&#51060;&#47484;-values&#51032;-&#50500;&#44508;&#47676;&#53944;&#47196;-&#51204;&#45804;&#54616;&#47732;-&#46108;&#45796;.">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13252,7 +14316,8 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foods</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">foods</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Item&#39;</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;City&#39;</span><span class="p">,</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13265,56 +14330,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 1386 entries, 0 to 1385
-Data columns (total 5 columns):
- #   Column         Non-Null Count  Dtype         
----  ------         --------------  -----         
- 0   Date           1386 non-null   datetime64[ns]
- 1   Currency_code  1386 non-null   object        
- 2   Country        1386 non-null   object        
- 3   Local_price    1386 non-null   float64       
- 4   Dollar_price   1386 non-null   float64       
-dtypes: datetime64[ns](1), float64(2), object(2)
-memory usage: 54.3+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Date&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">Date&#47484; &#51064;&#45937;&#49828;&#47196; &#47564;&#46304;&#45796;.<a class="anchor-link" href="#Date&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13336,15 +14352,13 @@ memory usage: 54.3+ KB
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
-      <th>Currency_code</th>
-      <th>Country</th>
-      <th>Local_price</th>
-      <th>Dollar_price</th>
+      <th>City</th>
+      <th>New York</th>
+      <th>Philadelphia</th>
+      <th>Stamford</th>
     </tr>
     <tr>
-      <th>Date</th>
-      <th></th>
+      <th>Item</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13352,25 +14366,40 @@ memory usage: 54.3+ KB
   </thead>
   <tbody>
     <tr>
-      <th>2000-04-01</th>
-      <td>ARS</td>
-      <td>Argentina</td>
-      <td>2.50</td>
-      <td>2.500000</td>
+      <th>Burger</th>
+      <td>46</td>
+      <td>52</td>
+      <td>58</td>
     </tr>
     <tr>
-      <th>2000-04-01</th>
-      <td>AUD</td>
-      <td>Australia</td>
-      <td>2.59</td>
-      <td>1.541667</td>
+      <th>Burrito</th>
+      <td>48</td>
+      <td>58</td>
+      <td>62</td>
     </tr>
     <tr>
-      <th>2000-04-01</th>
-      <td>BRL</td>
-      <td>Brazil</td>
-      <td>2.95</td>
-      <td>1.648045</td>
+      <th>Chalupa</th>
+      <td>44</td>
+      <td>55</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>Donut</th>
+      <td>61</td>
+      <td>63</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>Ice Cream</th>
+      <td>56</td>
+      <td>73</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>Sushi</th>
+      <td>58</td>
+      <td>58</td>
+      <td>50</td>
     </tr>
   </tbody>
 </table>
@@ -13379,337 +14408,6 @@ memory usage: 54.3+ KB
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Date,-Country-2&#44060;&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">Date, Country 2&#44060;&#47484; &#51064;&#45937;&#49828;&#47196; &#47564;&#46304;&#45796;.<a class="anchor-link" href="#Date,-Country-2&#44060;&#47484;-&#51064;&#45937;&#49828;&#47196;-&#47564;&#46304;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">bigmac</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>Currency_code</th>
-      <th>Local_price</th>
-      <th>Dollar_price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th>Country</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="5" valign="top">2000-04-01</th>
-      <th>Argentina</th>
-      <td>ARS</td>
-      <td>2.50</td>
-      <td>2.500000</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>AUD</td>
-      <td>2.59</td>
-      <td>1.541667</td>
-    </tr>
-    <tr>
-      <th>Brazil</th>
-      <td>BRL</td>
-      <td>2.95</td>
-      <td>1.648045</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>CAD</td>
-      <td>2.85</td>
-      <td>1.938776</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>CHF</td>
-      <td>5.90</td>
-      <td>3.470588</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th rowspan="5" valign="top">2020-07-01</th>
-      <th>Ukraine</th>
-      <td>UAH</td>
-      <td>59.00</td>
-      <td>2.174714</td>
-    </tr>
-    <tr>
-      <th>Uruguay</th>
-      <td>UYU</td>
-      <td>189.00</td>
-      <td>4.327418</td>
-    </tr>
-    <tr>
-      <th>United States</th>
-      <td>USD</td>
-      <td>5.71</td>
-      <td>5.710000</td>
-    </tr>
-    <tr>
-      <th>Vietnam</th>
-      <td>VND</td>
-      <td>66000.00</td>
-      <td>2.847282</td>
-    </tr>
-    <tr>
-      <th>South Africa</th>
-      <td>ZAR</td>
-      <td>31.00</td>
-      <td>1.859349</td>
-    </tr>
-  </tbody>
-</table>
-<p>1386 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#51032;-type&#51008;-Multiindex&#44032;-&#46108;&#45796;.">bigmac.index&#51032; type&#51008; Multiindex&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#51032;-type&#51008;-Multiindex&#44032;-&#46108;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>pandas.core.indexes.multi.MultiIndex</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-&#53916;&#54540;-&#44061;&#52404;&#44032;-&#46108;&#45796;.">bigmac.index&#45716; Date&#50752; Country&#47484; &#50836;&#49548;&#47196; &#44054;&#45716; &#53916;&#54540; &#44061;&#52404;&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-&#53916;&#54540;-&#44061;&#52404;&#44032;-&#46108;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>MultiIndex([(&#39;2000-04-01&#39;,      &#39;Argentina&#39;),
-            (&#39;2000-04-01&#39;,      &#39;Australia&#39;),
-            (&#39;2000-04-01&#39;,         &#39;Brazil&#39;),
-            (&#39;2000-04-01&#39;,         &#39;Canada&#39;),
-            (&#39;2000-04-01&#39;,    &#39;Switzerland&#39;),
-            (&#39;2000-04-01&#39;,          &#39;Chile&#39;),
-            (&#39;2000-04-01&#39;,          &#39;China&#39;),
-            (&#39;2000-04-01&#39;, &#39;Czech Republic&#39;),
-            (&#39;2000-04-01&#39;,        &#39;Denmark&#39;),
-            (&#39;2000-04-01&#39;,      &#39;Euro area&#39;),
-            ...
-            (&#39;2020-07-01&#39;,      &#39;Singapore&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Sweden&#39;),
-            (&#39;2020-07-01&#39;,       &#39;Thailand&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Turkey&#39;),
-            (&#39;2020-07-01&#39;,         &#39;Taiwan&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Ukraine&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Uruguay&#39;),
-            (&#39;2020-07-01&#39;,  &#39;United States&#39;),
-            (&#39;2020-07-01&#39;,        &#39;Vietnam&#39;),
-            (&#39;2020-07-01&#39;,   &#39;South Africa&#39;)],
-           names=[&#39;Date&#39;, &#39;Country&#39;], length=1386)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="bigmac.index&#51032;-names&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-FrozenList&#44032;-&#46108;&#45796;.">bigmac.index&#51032; names&#45716; Date&#50752; Country&#47484; &#50836;&#49548;&#47196; &#44054;&#45716; FrozenList&#44032; &#46108;&#45796;.<a class="anchor-link" href="#bigmac.index&#51032;-names&#45716;-Date&#50752;-Country&#47484;-&#50836;&#49548;&#47196;-&#44054;&#45716;-FrozenList&#44032;-&#46108;&#45796;.">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>FrozenList([&#39;Date&#39;, &#39;Country&#39;])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigmac</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(Timestamp(&#39;2000-04-01 00:00:00&#39;), &#39;Chile&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
