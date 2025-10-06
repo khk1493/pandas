@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Working with text data</title>
+<title>05_More String Method</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">0601. &#48276;&#51452;&#54805;&#51004;&#47196; &#47700;&#47784;&#47532; &#52629;&#49548;<a class="anchor-link" href="#0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">&#182;</a></h1>
+<h1 id="0605.-&#44592;&#53440;-&#47928;&#51088;&#50676;-&#52376;&#47532;:-.strip(),-.lstrip(),-.rstrip()">0605. &#44592;&#53440; &#47928;&#51088;&#50676; &#52376;&#47532;: .strip(), .lstrip(), .rstrip()<a class="anchor-link" href="#0605.-&#44592;&#53440;-&#47928;&#51088;&#50676;-&#52376;&#47532;:-.strip(),-.lstrip(),-.rstrip()">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13124,11 +13124,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13141,7 +13142,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13172,25 +13173,25 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>AARON,  ELVIA J</td>
-      <td>WATER RATE TAKER</td>
-      <td>WATER MGMNT</td>
-      <td>$90744.00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AARON,  JEFFERY M</td>
+      <th>32059</th>
+      <td>ZYMANTAS,  MARK E</td>
       <td>POLICE OFFICER</td>
       <td>POLICE</td>
       <td>$84450.00</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>AARON,  KARINA</td>
+      <th>32060</th>
+      <td>ZYRKOWSKI,  CARLO E</td>
       <td>POLICE OFFICER</td>
       <td>POLICE</td>
-      <td>$84450.00</td>
+      <td>$87384.00</td>
+    </tr>
+    <tr>
+      <th>32061</th>
+      <td>ZYSKOWSKI,  DARIUSZ</td>
+      <td>CHIEF DATA BASE ANALYST</td>
+      <td>DoIT</td>
+      <td>$113664.00</td>
     </tr>
   </tbody>
 </table>
@@ -13206,17 +13207,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>info를 보면 데이터가 32,063개이고 메모리가 1,002kb이다.</p>
-
+<h3 id=".lstrip()---left-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">.lstrip() - left &#44277;&#48177;&#51012; &#50630;&#50528;&#51452;&#45716; &#47700;&#49548;&#46300;.<a class="anchor-link" href="#.lstrip()---left-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;     Hello World  &#39;</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13229,66 +13229,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype 
----  ------                  --------------  ----- 
- 0   Name                    32062 non-null  object
- 1   Position Title          32062 non-null  object
- 2   Department              32062 non-null  object
- 3   Employee Annual Salary  32062 non-null  object
-dtypes: object(4)
-memory usage: 1002.1+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>메모리를 줄이기 위해 카테고리로 변환할 컬럼을 찾아보면 Department가 35종류 밖에 없어 눈에 띈다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Name                      31776
-Position Title             1093
-Department                   35
-Employee Annual Salary     1156
-dtype: int64</pre>
+<pre>&#39;Hello World  &#39;</pre>
 </div>
 
 </div>
@@ -13300,18 +13247,16 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Department를 카테고리 타입으로 변환하고 메모리를 보니 784로 감소되었다.</p>
-
+<h3 id=".rstrip()---right-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">.rstrip() - right &#44277;&#48177;&#51012; &#50630;&#50528;&#51452;&#45716; &#47700;&#49548;&#46300;.<a class="anchor-link" href="#.rstrip()---right-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;     Hello World  &#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13324,23 +13269,103 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype   
----  ------                  --------------  -----   
- 0   Name                    32062 non-null  object  
- 1   Position Title          32062 non-null  object  
- 2   Department              32062 non-null  category
- 3   Employee Annual Salary  32062 non-null  object  
-dtypes: category(1), object(3)
-memory usage: 784.2+ KB
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;     Hello World&#39;</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id=".strip()---&#50577;&#51901;-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">.strip() - &#50577;&#51901; &#44277;&#48177;&#51012; &#50630;&#50528;&#51452;&#45716; &#47700;&#49548;&#46300;.<a class="anchor-link" href="#.strip()---&#50577;&#51901;-&#44277;&#48177;&#51012;-&#50630;&#50528;&#51452;&#45716;-&#47700;&#49548;&#46300;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;     Hello World  &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Hello World&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df&#50640;-&#51201;&#50857;">df&#50640; &#51201;&#50857;<a class="anchor-link" href="#df&#50640;-&#51201;&#50857;">&#182;</a></h3><p>df도 입력하는 과정에서 공백이 들어 갈 수 있다.<br>
+따라서 이러한 공백 없애기 메소드를 적어주는 것이 좋다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0            WATER RATE TAKER
+1              POLICE OFFICER
+2              POLICE OFFICER
+3    CHIEF CONTRACT EXPEDITER
+4           CIVIL ENGINEER IV
+Name: Position Title, dtype: object</pre>
+</div>
+
 </div>
 
 </div>

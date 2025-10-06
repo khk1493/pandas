@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Working with text data</title>
+<title>07_Split Strings by Characters with .str.split() Method</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">0601. &#48276;&#51452;&#54805;&#51004;&#47196; &#47700;&#47784;&#47532; &#52629;&#49548;<a class="anchor-link" href="#0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">&#182;</a></h1>
+<h1 id="0607.-&#47928;&#51088;&#50676;&#51012;-&#45800;&#50612;&#47196;-&#44396;&#48516;&#54616;&#44592;:-.str.split()">0607. &#47928;&#51088;&#50676;&#51012; &#45800;&#50612;&#47196; &#44396;&#48516;&#54616;&#44592;: .str.split()<a class="anchor-link" href="#0607.-&#47928;&#51088;&#50676;&#51012;-&#45800;&#50612;&#47196;-&#44396;&#48516;&#54616;&#44592;:-.str.split()">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13124,11 +13124,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13141,7 +13142,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13172,25 +13173,25 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>AARON,  ELVIA J</td>
-      <td>WATER RATE TAKER</td>
-      <td>WATER MGMNT</td>
-      <td>$90744.00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AARON,  JEFFERY M</td>
+      <th>32059</th>
+      <td>ZYMANTAS,  MARK E</td>
       <td>POLICE OFFICER</td>
       <td>POLICE</td>
       <td>$84450.00</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>AARON,  KARINA</td>
+      <th>32060</th>
+      <td>ZYRKOWSKI,  CARLO E</td>
       <td>POLICE OFFICER</td>
       <td>POLICE</td>
-      <td>$84450.00</td>
+      <td>$87384.00</td>
+    </tr>
+    <tr>
+      <th>32061</th>
+      <td>ZYSKOWSKI,  DARIUSZ</td>
+      <td>CHIEF DATA BASE ANALYST</td>
+      <td>DoIT</td>
+      <td>$113664.00</td>
     </tr>
   </tbody>
 </table>
@@ -13206,17 +13207,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>info를 보면 데이터가 32,063개이고 메모리가 1,002kb이다.</p>
+<h3>문장을 단어로 나누기: .split(&nbsp;) - 이걸로 나누면 리스트가 된다.</h3>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;Hello My Name Is Michael&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13229,66 +13230,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype 
----  ------                  --------------  ----- 
- 0   Name                    32062 non-null  object
- 1   Position Title          32062 non-null  object
- 2   Department              32062 non-null  object
- 3   Employee Annual Salary  32062 non-null  object
-dtypes: object(4)
-memory usage: 1002.1+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>메모리를 줄이기 위해 카테고리로 변환할 컬럼을 찾아보면 Department가 35종류 밖에 없어 눈에 띈다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Name                      31776
-Position Title             1093
-Department                   35
-Employee Annual Salary     1156
-dtype: int64</pre>
+<pre>[&#39;Hello&#39;, &#39;My&#39;, &#39;Name&#39;, &#39;Is&#39;, &#39;Michael&#39;]</pre>
 </div>
 
 </div>
@@ -13300,18 +13248,16 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Department를 카테고리 타입으로 변환하고 메모리를 보니 784로 감소되었다.</p>
-
+<h3 id="&#50896;&#47000;-df-&#52972;&#47100;">&#50896;&#47000; df &#52972;&#47100;<a class="anchor-link" href="#&#50896;&#47000;-df-&#52972;&#47100;">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13324,23 +13270,417 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype   
----  ------                  --------------  -----   
- 0   Name                    32062 non-null  object  
- 1   Position Title          32062 non-null  object  
- 2   Department              32062 non-null  category
- 3   Employee Annual Salary  32062 non-null  object  
-dtypes: category(1), object(3)
-memory usage: 784.2+ KB
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0        AARON,  ELVIA J
+1      AARON,  JEFFERY M
+2         AARON,  KARINA
+3    AARON,  KIMBERLEI R
+4    ABAD JR,  VICENTE M
+Name: Name, dtype: object</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50896;&#47000;-df-&#52972;&#47100;&#50640;-&#51201;&#50857;:-.str&#51012;-&#48537;&#51060;&#44256;-&#49324;&#50857;&#54620;&#45796;.">&#50896;&#47000; df &#52972;&#47100;&#50640; &#51201;&#50857;: .str&#51012; &#48537;&#51060;&#44256; &#49324;&#50857;&#54620;&#45796;.<a class="anchor-link" href="#&#50896;&#47000;-df-&#52972;&#47100;&#50640;-&#51201;&#50857;:-.str&#51012;-&#48537;&#51060;&#44256;-&#49324;&#50857;&#54620;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0        [AARON,   ELVIA J]
+1      [AARON,   JEFFERY M]
+2         [AARON,   KARINA]
+3    [AARON,   KIMBERLEI R]
+4    [ABAD JR,   VICENTE M]
+Name: Name, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50668;&#44592;&#49436;-.str.get()&#47484;-&#50416;&#44256;-(-)&#50504;&#50640;-&#45936;&#51060;&#53552;-&#50948;&#52824;(&#48264;&#54840;)&#47484;-&#45347;&#51004;&#47732;-&#54644;&#45817;-&#45936;&#51060;&#53552;&#44032;-&#48152;&#54872;&#46108;&#45796;.">&#50668;&#44592;&#49436; .str.get()&#47484; &#50416;&#44256; ( )&#50504;&#50640; &#45936;&#51060;&#53552; &#50948;&#52824;(&#48264;&#54840;)&#47484; &#45347;&#51004;&#47732; &#54644;&#45817; &#45936;&#51060;&#53552;&#44032; &#48152;&#54872;&#46108;&#45796;.<a class="anchor-link" href="#&#50668;&#44592;&#49436;-.str.get()&#47484;-&#50416;&#44256;-(-)&#50504;&#50640;-&#45936;&#51060;&#53552;-&#50948;&#52824;(&#48264;&#54840;)&#47484;-&#45347;&#51004;&#47732;-&#54644;&#45817;-&#45936;&#51060;&#53552;&#44032;-&#48152;&#54872;&#46108;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0      AARON
+1      AARON
+2      AARON
+3      AARON
+4    ABAD JR
+Name: Name, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#48372;&#44592;-&#51339;&#44172;-&#49884;&#51089;&#47564;-&#45824;&#47928;&#51088;&#47196;-&#47564;&#46304;&#45796;.">&#48372;&#44592; &#51339;&#44172; &#49884;&#51089;&#47564; &#45824;&#47928;&#51088;&#47196; &#47564;&#46304;&#45796;.<a class="anchor-link" href="#&#48372;&#44592;-&#51339;&#44172;-&#49884;&#51089;&#47564;-&#45824;&#47928;&#51088;&#47196;-&#47564;&#46304;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0            Aaron
+1            Aaron
+2            Aaron
+3            Aaron
+4          Abad Jr
+           ...    
+32057      Zygadlo
+32058     Zygowicz
+32059     Zymantas
+32060    Zyrkowski
+32061    Zyskowski
+Name: Name, Length: 32062, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44057;&#51008;-&#51060;&#47492;&#51060;-&#47751;&#48264;-&#45208;&#50724;&#45716;&#51648;-&#52852;&#50868;&#53944;&#54620;&#45796;.">&#44057;&#51008; &#51060;&#47492;&#51060; &#47751;&#48264; &#45208;&#50724;&#45716;&#51648; &#52852;&#50868;&#53944;&#54620;&#45796;.<a class="anchor-link" href="#&#44057;&#51008;-&#51060;&#47492;&#51060;-&#47751;&#48264;-&#45208;&#50724;&#45716;&#51648;-&#52852;&#50868;&#53944;&#54620;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Williams      293
+Johnson       244
+Smith         241
+Brown         185
+Jones         183
+             ... 
+Higham          1
+Andrews Jr      1
+Nestor          1
+Uzueta          1
+Heyden Ii       1
+Name: Name, Length: 13829, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id=".split&#51012;-&#49324;&#50857;&#54616;&#50668;-&#44277;&#46976;&#51004;&#47196;-&#44050;&#51012;-&#44396;&#48516;&#54620;&#45796;.">.split&#51012; &#49324;&#50857;&#54616;&#50668; &#44277;&#46976;&#51004;&#47196; &#44050;&#51012; &#44396;&#48516;&#54620;&#45796;.<a class="anchor-link" href="#.split&#51012;-&#49324;&#50857;&#54616;&#50668;-&#44277;&#46976;&#51004;&#47196;-&#44050;&#51012;-&#44396;&#48516;&#54620;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0                        [WATER, RATE, TAKER]
+1                           [POLICE, OFFICER]
+2                           [POLICE, OFFICER]
+3                [CHIEF, CONTRACT, EXPEDITER]
+4                       [CIVIL, ENGINEER, IV]
+                         ...                 
+32057    [FRM, OF, MACHINISTS, -, AUTOMOTIVE]
+32058                       [POLICE, OFFICER]
+32059                       [POLICE, OFFICER]
+32060                       [POLICE, OFFICER]
+32061            [CHIEF, DATA, BASE, ANALYST]
+Name: Position Title, Length: 32062, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44396;&#48516;&#46108;-&#44050;&#51012;-get(0)&#51012;-&#49324;&#50857;&#54616;&#50668;-&#47592;-&#52376;&#51020;-&#44050;&#47564;-&#52628;&#52636;&#54620;&#45796;.">&#44396;&#48516;&#46108; &#44050;&#51012; get(0)&#51012; &#49324;&#50857;&#54616;&#50668; &#47592; &#52376;&#51020; &#44050;&#47564; &#52628;&#52636;&#54620;&#45796;.<a class="anchor-link" href="#&#44396;&#48516;&#46108;-&#44050;&#51012;-get(0)&#51012;-&#49324;&#50857;&#54616;&#50668;-&#47592;-&#52376;&#51020;-&#44050;&#47564;-&#52628;&#52636;&#54620;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0         WATER
+1        POLICE
+2        POLICE
+3         CHIEF
+4         CIVIL
+          ...  
+32057       FRM
+32058    POLICE
+32059    POLICE
+32060    POLICE
+32061     CHIEF
+Name: Position Title, Length: 32062, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47564;&#50557;-2&#48264;&#51704;-&#44050;&#51012;-&#52628;&#52636;&#54624;-&#46412;-&#50630;&#51004;&#47732;-NaN&#51060;-&#48152;&#54872;&#46108;&#45796;.">&#47564;&#50557; 2&#48264;&#51704; &#44050;&#51012; &#52628;&#52636;&#54624; &#46412; &#50630;&#51004;&#47732; NaN&#51060; &#48152;&#54872;&#46108;&#45796;.<a class="anchor-link" href="#&#47564;&#50557;-2&#48264;&#51704;-&#44050;&#51012;-&#52628;&#52636;&#54624;-&#46412;-&#50630;&#51004;&#47732;-NaN&#51060;-&#48152;&#54872;&#46108;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0             TAKER
+1               NaN
+2               NaN
+3         EXPEDITER
+4                IV
+            ...    
+32057    MACHINISTS
+32058           NaN
+32059           NaN
+32060           NaN
+32061          BASE
+Name: Position Title, Length: 32062, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#48152;&#54872;&#44050;&#50640;-&#45824;&#54644;-Value_counts()&#47196;-&#44079;&#49688;&#47484;-&#49468;&#45796;.">&#48152;&#54872;&#44050;&#50640; &#45824;&#54644; Value_counts()&#47196; &#44079;&#49688;&#47484; &#49468;&#45796;.<a class="anchor-link" href="#&#48152;&#54872;&#44050;&#50640;-&#45824;&#54644;-Value_counts()&#47196;-&#44079;&#49688;&#47484;-&#49468;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Position Title
+POLICE             10856
+FIREFIGHTER-EMT     1509
+SERGEANT            1186
+POOL                 918
+FIREFIGHTER          810
+                   ...  
+DENTIST                1
+ASSOC                  1
+TELEPHONE              1
+MAYOR                  1
+PREPRESS               1
+Name: count, Length: 320, dtype: int64</pre>
+</div>
+
 </div>
 
 </div>

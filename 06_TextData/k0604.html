@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Working with text data</title>
+<title>04_Filtering a DataFrame's Rows with string Method</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">0601. &#48276;&#51452;&#54805;&#51004;&#47196; &#47700;&#47784;&#47532; &#52629;&#49548;<a class="anchor-link" href="#0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">&#182;</a></h1>
+<h1 id="0604.-df-&#54665;&#51012;-&#54596;&#53552;&#47553;">0604. df &#54665;&#51012; &#54596;&#53552;&#47553;<a class="anchor-link" href="#0604.-df-&#54665;&#51012;-&#54596;&#53552;&#47553;">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13127,8 +13127,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13172,6 +13173,553 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
+      <th>32059</th>
+      <td>ZYMANTAS,  MARK E</td>
+      <td>POLICE OFFICER</td>
+      <td>POLICE</td>
+      <td>$84450.00</td>
+    </tr>
+    <tr>
+      <th>32060</th>
+      <td>ZYRKOWSKI,  CARLO E</td>
+      <td>POLICE OFFICER</td>
+      <td>POLICE</td>
+      <td>$87384.00</td>
+    </tr>
+    <tr>
+      <th>32061</th>
+      <td>ZYSKOWSKI,  DARIUSZ</td>
+      <td>CHIEF DATA BASE ANALYST</td>
+      <td>DoIT</td>
+      <td>$113664.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.contains() - 특정 컬럼에서 특정 표현이 있는 row를 추출한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;water&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Position Title</th>
+      <th>Department</th>
+      <th>Employee Annual Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AARON,  ELVIA J</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$90744.00</td>
+    </tr>
+    <tr>
+      <th>554</th>
+      <td>ALUISE,  VINCENT G</td>
+      <td>FOREMAN OF WATER PIPE CONSTRUCTION</td>
+      <td>WATER MGMNT</td>
+      <td>$102440.00</td>
+    </tr>
+    <tr>
+      <th>671</th>
+      <td>ANDER,  PERRY A</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>685</th>
+      <td>ANDERSON,  ANDREW J</td>
+      <td>DISTRICT SUPERINTENDENT OF WATER DISTRIBUTION</td>
+      <td>WATER MGMNT</td>
+      <td>$109272.00</td>
+    </tr>
+    <tr>
+      <th>702</th>
+      <td>ANDERSON,  DONALD</td>
+      <td>FOREMAN OF WATER PIPE CONSTRUCTION</td>
+      <td>WATER MGMNT</td>
+      <td>$102440.00</td>
+    </tr>
+    <tr>
+      <th>1054</th>
+      <td>ASHLEY,  KARMA T</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>1079</th>
+      <td>ATKINS,  JOANNA M</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>1181</th>
+      <td>AZEEM,  MOHAMMED A</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$53172.00</td>
+    </tr>
+    <tr>
+      <th>1285</th>
+      <td>BAJIC,  JOHN A</td>
+      <td>WATER METER MACHINIST</td>
+      <td>WATER MGMNT</td>
+      <td>$82576.00</td>
+    </tr>
+    <tr>
+      <th>2400</th>
+      <td>BOLTON,  BRIAN E</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$78948.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.startswith() - 특정 컬럼에서 시작을 특정 표현으로 하는 row를 추출한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;water&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Position Title</th>
+      <th>Department</th>
+      <th>Employee Annual Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AARON,  ELVIA J</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$90744.00</td>
+    </tr>
+    <tr>
+      <th>671</th>
+      <td>ANDER,  PERRY A</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>1054</th>
+      <td>ASHLEY,  KARMA T</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>1079</th>
+      <td>ATKINS,  JOANNA M</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>1181</th>
+      <td>AZEEM,  MOHAMMED A</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$53172.00</td>
+    </tr>
+    <tr>
+      <th>1285</th>
+      <td>BAJIC,  JOHN A</td>
+      <td>WATER METER MACHINIST</td>
+      <td>WATER MGMNT</td>
+      <td>$82576.00</td>
+    </tr>
+    <tr>
+      <th>2400</th>
+      <td>BOLTON,  BRIAN E</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$78948.00</td>
+    </tr>
+    <tr>
+      <th>2586</th>
+      <td>BOYCE,  ADNER L</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$82044.00</td>
+    </tr>
+    <tr>
+      <th>2745</th>
+      <td>BRANDYS,  DANIEL</td>
+      <td>WATER CHEMIST II</td>
+      <td>WATER MGMNT</td>
+      <td>$53172.00</td>
+    </tr>
+    <tr>
+      <th>3143</th>
+      <td>BROWN,  SHARON L</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$82728.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.startswith() - 특정 컬럼에서 특정 표현으로 끝나는 row를 추출한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ist&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Position Title</th>
+      <th>Department</th>
+      <th>Employee Annual Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>184</th>
+      <td>AFROZ,  NAYYAR</td>
+      <td>PSYCHIATRIST</td>
+      <td>HEALTH</td>
+      <td>$99840.00</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>ALARCON,  LUIS J</td>
+      <td>LOAN PROCESSING SPECIALIST</td>
+      <td>COMMUNITY DEVELOPMENT</td>
+      <td>$81948.00</td>
+    </tr>
+    <tr>
+      <th>422</th>
+      <td>ALLAIN,  CAROLYN</td>
+      <td>SENIOR TELECOMMUNICATIONS SPECIALIST</td>
+      <td>DoIT</td>
+      <td>$89880.00</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>ALLEN,  ROBERT</td>
+      <td>MACHINIST</td>
+      <td>WATER MGMNT</td>
+      <td>$94328.00</td>
+    </tr>
+    <tr>
+      <th>705</th>
+      <td>ANDERSON,  EDWARD M</td>
+      <td>SR PROCUREMENT SPECIALIST</td>
+      <td>PROCUREMENT</td>
+      <td>$91476.00</td>
+    </tr>
+    <tr>
+      <th>1022</th>
+      <td>ARTEAGA,  PAUL</td>
+      <td>MACHINIST</td>
+      <td>TRANSPORTN</td>
+      <td>$94328.00</td>
+    </tr>
+    <tr>
+      <th>1163</th>
+      <td>AYALA JR,  JUAN</td>
+      <td>FIELD SANITATION SPECIALIST</td>
+      <td>STREETS &amp; SAN</td>
+      <td>$78948.00</td>
+    </tr>
+    <tr>
+      <th>1285</th>
+      <td>BAJIC,  JOHN A</td>
+      <td>WATER METER MACHINIST</td>
+      <td>WATER MGMNT</td>
+      <td>$82576.00</td>
+    </tr>
+    <tr>
+      <th>1558</th>
+      <td>BARRETT,  BARBARA J</td>
+      <td>TECHNICAL TRAINING SPECIALIST</td>
+      <td>POLICE</td>
+      <td>$94200.00</td>
+    </tr>
+    <tr>
+      <th>1869</th>
+      <td>BELTRAN,  MAURICIO</td>
+      <td>PROCUREMENT SPECIALIST</td>
+      <td>PROCUREMENT</td>
+      <td>$79596.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>df에서는 .replace() 메소드를 쓰기 전에 .str을 먼저 쓴다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;OFFICER&#39;</span><span class="p">,</span> <span class="s1">&#39;WORKER&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0                      WATER RATE TAKER
+1                         POLICE WORKER
+2                         POLICE WORKER
+3              CHIEF CONTRACT EXPEDITER
+4                     CIVIL ENGINEER IV
+                      ...              
+32057    FRM OF MACHINISTS - AUTOMOTIVE
+32058                     POLICE WORKER
+32059                     POLICE WORKER
+32060                     POLICE WORKER
+32061           CHIEF DATA BASE ANALYST
+Name: Position Title, Length: 32062, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;OFFICER&#39;</span><span class="p">,</span> <span class="s1">&#39;WORKER&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Position Title</th>
+      <th>Department</th>
+      <th>Employee Annual Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <th>0</th>
       <td>AARON,  ELVIA J</td>
       <td>WATER RATE TAKER</td>
@@ -13181,14 +13729,14 @@ div#notebook {
     <tr>
       <th>1</th>
       <td>AARON,  JEFFERY M</td>
-      <td>POLICE OFFICER</td>
+      <td>POLICE WORKER</td>
       <td>POLICE</td>
       <td>$84450.00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>AARON,  KARINA</td>
-      <td>POLICE OFFICER</td>
+      <td>POLICE WORKER</td>
       <td>POLICE</td>
       <td>$84450.00</td>
     </tr>
@@ -13206,146 +13754,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>info를 보면 데이터가 32,063개이고 메모리가 1,002kb이다.</p>
+<p>다음은 $을 없애고 계산할 수 있게 float로 바꾼다.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype 
----  ------                  --------------  ----- 
- 0   Name                    32062 non-null  object
- 1   Position Title          32062 non-null  object
- 2   Department              32062 non-null  object
- 3   Employee Annual Salary  32062 non-null  object
-dtypes: object(4)
-memory usage: 1002.1+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>메모리를 줄이기 위해 카테고리로 변환할 컬럼을 찾아보면 Department가 35종류 밖에 없어 눈에 띈다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Name                      31776
-Position Title             1093
-Department                   35
-Employee Annual Salary     1156
-dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Department를 카테고리 타입으로 변환하고 메모리를 보니 784로 감소되었다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype   
----  ------                  --------------  -----   
- 0   Name                    32062 non-null  object  
- 1   Position Title          32062 non-null  object  
- 2   Department              32062 non-null  category
- 3   Employee Annual Salary  32062 non-null  object  
-dtypes: category(1), object(3)
-memory usage: 784.2+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

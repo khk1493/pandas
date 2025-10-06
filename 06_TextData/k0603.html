@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_Working with text data</title>
+<title>03_Use the .str.replace() Method</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,13 +13105,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">0601. &#48276;&#51452;&#54805;&#51004;&#47196; &#47700;&#47784;&#47532; &#52629;&#49548;<a class="anchor-link" href="#0601.-&#48276;&#51452;&#54805;&#51004;&#47196;-&#47700;&#47784;&#47532;-&#52629;&#49548;">&#182;</a></h1>
+<h1 id="0603.-&#44544;&#51088;&#47484;-&#45824;&#52404;&#54616;&#44592;:-.str.replace()">0603. &#44544;&#51088;&#47484; &#45824;&#52404;&#54616;&#44592;: .str.replace()<a class="anchor-link" href="#0603.-&#44544;&#51088;&#47484;-&#45824;&#52404;&#54616;&#44592;:-.str.replace()">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13122,12 +13122,21 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>아래에서 .dropna(how='all')은 df의 행에서 모든 값이 결측치일 때 제거한다는 뜻이다. 그리고 'Department' 컬럼의 타입을 범주형으로 바꾸었다.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/city/chicago.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 <span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -13141,7 +13150,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13206,17 +13215,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>info를 보면 데이터가 32,063개이고 메모리가 1,002kb이다.</p>
+<h3 id="&#45824;&#52404;&#54616;&#44592;">&#45824;&#52404;&#54616;&#44592;<a class="anchor-link" href="#&#45824;&#52404;&#54616;&#44592;">&#182;</a></h3><p>.replace(A, B)는 A를 B로 바꾸는 것이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Hello World&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13229,23 +13238,15 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype 
----  ------                  --------------  ----- 
- 0   Name                    32062 non-null  object
- 1   Position Title          32062 non-null  object
- 2   Department              32062 non-null  object
- 3   Employee Annual Salary  32062 non-null  object
-dtypes: object(4)
-memory usage: 1002.1+ KB
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;HeLLo WorLd&#39;</pre>
 </div>
+
 </div>
 
 </div>
@@ -13255,7 +13256,241 @@ memory usage: 1002.1+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>메모리를 줄이기 위해 카테고리로 변환할 컬럼을 찾아보면 Department가 35종류 밖에 없어 눈에 띈다.</p>
+<h3 id="df&#50640;-&#51201;&#50857;">df&#50640; &#51201;&#50857;<a class="anchor-link" href="#df&#50640;-&#51201;&#50857;">&#182;</a></h3><p>df에서는 .replace() 메소드를 쓰기 전에 .str을 먼저 쓴다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;OFFICER&#39;</span><span class="p">,</span> <span class="s1">&#39;WORKER&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0                WATER RATE TAKER
+1                   POLICE WORKER
+2                   POLICE WORKER
+3        CHIEF CONTRACT EXPEDITER
+4               CIVIL ENGINEER IV
+                   ...           
+32058               POLICE WORKER
+32059               POLICE WORKER
+32060               POLICE WORKER
+32061     CHIEF DATA BASE ANALYST
+32062                         NaN
+Name: Position Title, Length: 32063, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44592;&#51316;-&#44163;&#51012;-&#48320;&#54872;">&#44592;&#51316; &#44163;&#51012; &#48320;&#54872;<a class="anchor-link" href="#&#44592;&#51316;-&#44163;&#51012;-&#48320;&#54872;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Position Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;OFFICER&#39;</span><span class="p">,</span> <span class="s1">&#39;WORKER&#39;</span><span class="p">)</span>
+<span class="n">chicago</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Position Title</th>
+      <th>Department</th>
+      <th>Employee Annual Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AARON,  ELVIA J</td>
+      <td>WATER RATE TAKER</td>
+      <td>WATER MGMNT</td>
+      <td>$90744.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AARON,  JEFFERY M</td>
+      <td>POLICE WORKER</td>
+      <td>POLICE</td>
+      <td>$84450.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AARON,  KARINA</td>
+      <td>POLICE WORKER</td>
+      <td>POLICE</td>
+      <td>$84450.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50672;&#49328;-&#44032;&#45733;&#53664;&#47197;-&#51204;&#52376;&#47532;">&#50672;&#49328; &#44032;&#45733;&#53664;&#47197; &#51204;&#52376;&#47532;<a class="anchor-link" href="#&#50672;&#49328;-&#44032;&#45733;&#53664;&#47197;-&#51204;&#52376;&#47532;">&#182;</a></h3><p>다음은 $을 없애고 계산할 수 있게 float로 바꾼다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0         90744.0
+1         84450.0
+2         84450.0
+3         89880.0
+4        106836.0
+           ...   
+32057     99528.0
+32058     87384.0
+32059     84450.0
+32060     87384.0
+32061    113664.0
+Name: Employee Annual Salary, Length: 32062, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>원본을 바꿔서 여러가지 연산을 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2571506375.36</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>컬럼 전체 값의 평균을 구한다.</p>
 
 </div>
 </div>
@@ -13265,7 +13500,7 @@ memory usage: 1002.1+ KB
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13284,11 +13519,7 @@ memory usage: 1002.1+ KB
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Name                      31776
-Position Title             1093
-Department                   35
-Employee Annual Salary     1156
-dtype: int64</pre>
+<pre>80204.17863389682</pre>
 </div>
 
 </div>
@@ -13300,7 +13531,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Department를 카테고리 타입으로 변환하고 메모리를 보니 784로 감소되었다.</p>
+<p>컬럼 전체 값의 평균을 구한다. 여기서 .std(&nbsp;)는 표본 표준편차로 괄호 안에 ddof=1 이 생략된 것이다. 만약 모집단 표준편차를 구하려면 괄호 안에 ddof=0을 넣으면 된다.</p>
 
 </div>
 </div>
@@ -13310,8 +13541,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Department&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-<span class="n">chicago</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13324,23 +13554,67 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 32063 entries, 0 to 32062
-Data columns (total 4 columns):
- #   Column                  Non-Null Count  Dtype   
----  ------                  --------------  -----   
- 0   Name                    32062 non-null  object  
- 1   Position Title          32062 non-null  object  
- 2   Department              32062 non-null  category
- 3   Employee Annual Salary  32062 non-null  object  
-dtypes: category(1), object(3)
-memory usage: 784.2+ KB
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25098.329867510587</pre>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.nlargest(10)는 컬럼에 붙여서 컬럼 값을 큰 순서로 정렬했을 때 상위 10개를 보여주는 것이다. 만약 같은 값이 있다면 어떻게 될까? 여기서는 keep='first'가 default로 생략되었기 때문에 첫째 값만 나온다. 만약 keep='all'이라고 쓰면 상위 10개 안에 값은 값이 있다면 모두 나온다. 따라서 10개보다 중복된 만큼 더 많이 나올 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chicago</span><span class="p">[</span><span class="s1">&#39;Employee Annual Salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># 왼쪽의 8184, 7954, ... 는 index position 이다.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8184     300000.0
+7954     216210.0
+25532    202728.0
+8924     197736.0
+8042     197724.0
+19208    195000.0
+3706     187680.0
+18556    187680.0
+29466    187680.0
+13754    185364.0
+Name: Employee Annual Salary, dtype: float64</pre>
+</div>
+
 </div>
 
 </div>
