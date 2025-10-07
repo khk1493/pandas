@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_groupby</title>
+<title>02_groupby-object.nunique()_.size()_.first()_.last()</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,7 +13105,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0801.-&#44536;&#47353;&#48324;-&#49548;&#44228;-&#48124;&#46308;&#44592;-:-groupby()">0801. &#44536;&#47353;&#48324; &#49548;&#44228; &#48124;&#46308;&#44592; : groupby()<a class="anchor-link" href="#0801.-&#44536;&#47353;&#48324;-&#49548;&#44228;-&#48124;&#46308;&#44592;-:-groupby()">&#182;</a></h1>
+<h1 id="0802.-groupby-object.nunique(),-.size(),-.first(),-.last()">0802. groupby-object.nunique(), .size(), .first(), .last()<a class="anchor-link" href="#0802.-groupby-object.nunique(),-.size(),-.first(),-.last()">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13116,8 +13116,8 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">fortune</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Fortune/fortune1000_2024.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
-
-<span class="n">fortune</span>
+<span class="n">sectors</span> <span class="o">=</span> <span class="n">fortune</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sector&#39;</span><span class="p">)</span>
+<span class="n">fortune</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13273,78 +13273,647 @@ div#notebook {
       <td>3594309.0</td>
       <td>2024-08-05</td>
     </tr>
+  </tbody>
+</table>
+<p>3 rows × 30 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="dfgroupby-object-&#53356;&#44592;-&#52404;&#53356;">dfgroupby object &#53356;&#44592; &#52404;&#53356;<a class="anchor-link" href="#dfgroupby-object-&#53356;&#44592;-&#52404;&#53356;">&#182;</a></h3><p>sectors의 dfgroupby object의 크기는 21, 이는 fortune df의 Sector 컬럼에서 unique value의 갯수와 정확히 일치</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;len(sectors) =&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sectors</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fortune[&#39;Sector&#39;].nunique() =&quot;</span><span class="p">,</span> <span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>len(sectors) = 21
+fortune[&#39;Sector&#39;].nunique() = 21
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id=".size()">.size()<a class="anchor-link" href="#.size()">&#182;</a></h3><p>다시 .size() Method로 sectors를 구성하고 있는 산업은 아래와 같이 21개로 구성되어 있음</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense              20
+Apparel                          15
+Business Services                51
+Chemicals                        30
+Energy                          122
+Engineering &amp; Construction       26
+Financials                      139
+Food and Drug Stores             15
+Food, Beverages &amp; Tobacco        43
+Health Care                      75
+Hotels, Resturants &amp; Leisure     25
+Household Products               28
+Industrials                      46
+Materials                        43
+Media                            25
+Motor Vehicles &amp; Parts           24
+Retailing                        80
+Technology                      102
+Telecommunications               15
+Transportation                   36
+Wholesalers                      40
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>이는 원 df fortune['Sector']에 .value_counts()를 적용한 것과 유사한데<br></h3>
+<p>같은 점은 그 산업군에 속한 모두 기업의 갯수가 나타난다는 것이고, 차이점은 .size()는 index 순으로 .value_counts()는 내림차순으로 정렬된다는 것임</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Financials                      139
+Energy                          122
+Technology                      102
+Retailing                        80
+Health Care                      75
+Business Services                51
+Industrials                      46
+Materials                        43
+Food, Beverages &amp; Tobacco        43
+Wholesalers                      40
+Transportation                   36
+Chemicals                        30
+Household Products               28
+Engineering &amp; Construction       26
+Media                            25
+Hotels, Resturants &amp; Leisure     25
+Motor Vehicles &amp; Parts           24
+Aerospace &amp; Defense              20
+Apparel                          15
+Telecommunications               15
+Food and Drug Stores             15
+Name: Sector, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>sectors 자체는 아무 것도 나타나지 않음</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000015E4DE60248&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>Sector</th>
+      <th>Industry</th>
+      <th>Location</th>
+      <th>Revenue</th>
+      <th>Profits</th>
+      <th>Employees</th>
+    </tr>
     <tr>
-      <th>4</th>
-      <td>UnitedHealth Group</td>
-      <td>UNH</td>
-      <td>Health Care</td>
-      <td>Health Care: Insurance and Managed Care</td>
-      <td>yes</td>
+      <th>Rank</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Walmart</td>
+      <td>Retailing</td>
+      <td>General Merchandisers</td>
+      <td>Bentonville, AR</td>
+      <td>482130</td>
+      <td>14694</td>
+      <td>2300000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Exxon Mobil</td>
+      <td>Energy</td>
+      <td>Petroleum Refining</td>
+      <td>Irving, TX</td>
+      <td>246204</td>
+      <td>16150</td>
+      <td>75600</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Apple</td>
+      <td>Technology</td>
+      <td>Computers, Office Equipment</td>
+      <td>Cupertino, CA</td>
+      <td>233715</td>
+      <td>53394</td>
+      <td>110000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id=".first()">.first()<a class="anchor-link" href="#.first()">&#182;</a></h3><p>fortune의 dfgroupby object인 sectors에 .first()를 적용하면 각 그룹의 맨처음 기업이 나타남<br>
+이는 바로 위에 Energy에서 Exxon Mobil이 가장 먼저 나타났듯이 아래에서도 Energy 그룹에서 Exxon Mobil이 보임</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Industry</th>
+      <th>Profitable</th>
+      <th>Founder_is_CEO</th>
+      <th>FemaleCEO</th>
+      <th>Growth_in_Jobs</th>
+      <th>Change_in_Rank</th>
+      <th>Gained_in_Rank</th>
+      <th>Dropped_in_Rank</th>
+      <th>...</th>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>CEO</th>
+      <th>Country</th>
+      <th>HeadquartersCity</th>
+      <th>HeadquartersState</th>
+      <th>Website</th>
+      <th>CompanyType</th>
+      <th>MarketCap_Updated_M</th>
+      <th>Updated</th>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aerospace &amp; Defense</th>
+      <td>Boeing</td>
+      <td>BA</td>
+      <td>Aerospace &amp; Defense</td>
       <td>no</td>
       <td>no</td>
+      <td>no</td>
       <td>yes</td>
-      <td>1</td>
+      <td>6</td>
       <td>yes</td>
+      <td>no</td>
       <td>...</td>
-      <td>11.2</td>
-      <td>273720.0</td>
-      <td>Andrew P. Witty</td>
+      <td>-38.5</td>
+      <td>137012.0</td>
+      <td>Kelly K. Ortberg</td>
       <td>U.S.</td>
-      <td>Minnetonka</td>
-      <td>Minnesota</td>
-      <td>https://www.unitedhealthgroup.com</td>
+      <td>Arlington</td>
+      <td>Virginia</td>
+      <td>https://www.boeing.com</td>
       <td>Public</td>
-      <td>474339.0</td>
+      <td>109953.0</td>
       <td>2024-08-05</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Berkshire Hathaway</td>
-      <td>BRKA</td>
-      <td>Financials</td>
-      <td>Insurance: Property and Casualty (Stock)</td>
+      <th>Apparel</th>
+      <td>Nike</td>
+      <td>NKE</td>
+      <td>Apparel</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>5</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>...</td>
+      <td>-16.1</td>
+      <td>37531.0</td>
+      <td>John J. Donahoe II</td>
+      <td>U.S.</td>
+      <td>Beaverton</td>
+      <td>Oregon</td>
+      <td>https://investors.nike.com</td>
+      <td>Public</td>
+      <td>107632.0</td>
+      <td>2024-08-05</td>
+    </tr>
+    <tr>
+      <th>Business Services</th>
+      <td>Visa</td>
+      <td>V</td>
+      <td>Financial Data Services</td>
       <td>yes</td>
       <td>no</td>
       <td>no</td>
       <td>yes</td>
       <td>2</td>
       <td>yes</td>
+      <td>no</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>1069978.0</td>
-      <td>Warren E. Buffett</td>
+      <td>15.5</td>
+      <td>90499.0</td>
+      <td>Ryan McInerney</td>
       <td>U.S.</td>
-      <td>Omaha</td>
-      <td>Nebraska</td>
-      <td>https://www.berkshirehathaway.com</td>
+      <td>San Francisco</td>
+      <td>California</td>
+      <td>https://www.visa.com</td>
       <td>Public</td>
-      <td>937028.0</td>
+      <td>551134.0</td>
       <td>2024-08-05</td>
     </tr>
     <tr>
-      <th>...</th>
+      <th>Chemicals</th>
+      <td>Dow</td>
+      <td>DOW</td>
+      <td>Chemicals</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>-24</td>
+      <td>no</td>
+      <td>yes</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <td>-87.1</td>
+      <td>57967.0</td>
+      <td>James R. Fitterling</td>
+      <td>U.S.</td>
+      <td>Midland</td>
+      <td>Michigan</td>
+      <td>https://www.dow.com</td>
+      <td>Public</td>
+      <td>37463.0</td>
+      <td>2024-08-05</td>
     </tr>
+    <tr>
+      <th>Energy</th>
+      <td>Exxon Mobil</td>
+      <td>XOM</td>
+      <td>Petroleum Refining</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>-4</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>-35.4</td>
+      <td>376317.0</td>
+      <td>Darren W. Woods</td>
+      <td>U.S.</td>
+      <td>Spring</td>
+      <td>Texas</td>
+      <td>https://www.exxonmobil.com</td>
+      <td>Public</td>
+      <td>516824.0</td>
+      <td>2024-08-05</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Sector</th>
+      <th>Industry</th>
+      <th>Profitable</th>
+      <th>Founder_is_CEO</th>
+      <th>FemaleCEO</th>
+      <th>Growth_in_Jobs</th>
+      <th>Change_in_Rank</th>
+      <th>Gained_in_Rank</th>
+      <th>...</th>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>CEO</th>
+      <th>Country</th>
+      <th>HeadquartersCity</th>
+      <th>HeadquartersState</th>
+      <th>Website</th>
+      <th>CompanyType</th>
+      <th>MarketCap_Updated_M</th>
+      <th>Updated</th>
+    </tr>
+    <tr>
+      <th>Rank</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <th>996</th>
       <td>Allegiant Travel</td>
@@ -13467,7 +14036,7 @@ div#notebook {
     </tr>
   </tbody>
 </table>
-<p>1000 rows × 30 columns</p>
+<p>5 rows × 30 columns</p>
 </div>
 </div>
 
@@ -13480,17 +14049,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#51648;-&#50506;&#45716;-&#44256;&#50976;-&#44050;">&#52972;&#47100;&#48324; &#51473;&#48373;&#46104;&#51648; &#50506;&#45716; &#44256;&#50976; &#44050;<a class="anchor-link" href="#&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#51648;-&#50506;&#45716;-&#44256;&#50976;-&#44050;">&#182;</a></h3><p>Company는 중복되지 않고 모두 고유값을 갖음. 그러나 Ticker는 958개가 고유값을 갖고, Sector는 21개가 고유값을 갖음</p>
+<h3 id=".last()">.last()<a class="anchor-link" href="#.last()">&#182;</a></h3><p>fortune의 dfgroupby object인 sectors에 .last()를 적용하면 각 그룹의 맨 나중 기업이 나타남<br>
+이는 바로 위에 Aerospace &amp; Defense에서 PBWX Technologies가 가장 마지막에 나타났듯이 <br>아래에서도 Aerospace &amp; Defense 그룹에서 BWX Technologies가 보임</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">last</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13503,43 +14073,264 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Industry</th>
+      <th>Profitable</th>
+      <th>Founder_is_CEO</th>
+      <th>FemaleCEO</th>
+      <th>Growth_in_Jobs</th>
+      <th>Change_in_Rank</th>
+      <th>Gained_in_Rank</th>
+      <th>Dropped_in_Rank</th>
+      <th>...</th>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>CEO</th>
+      <th>Country</th>
+      <th>HeadquartersCity</th>
+      <th>HeadquartersState</th>
+      <th>Website</th>
+      <th>CompanyType</th>
+      <th>MarketCap_Updated_M</th>
+      <th>Updated</th>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aerospace &amp; Defense</th>
+      <td>BWX Technologies</td>
+      <td>BWXT</td>
+      <td>Aerospace &amp; Defense</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>0</td>
+      <td>no</td>
+      <td>no</td>
+      <td>...</td>
+      <td>3.2</td>
+      <td>2747.1</td>
+      <td>Rex D. Geveden</td>
+      <td>U.S.</td>
+      <td>Lynchburg</td>
+      <td>Virginia</td>
+      <td>https://www.bwxt.com</td>
+      <td>Public</td>
+      <td>9380.0</td>
+      <td>2024-06-04</td>
+    </tr>
+    <tr>
+      <th>Apparel</th>
+      <td>Kontoor Brands</td>
+      <td>KTB</td>
+      <td>Apparel</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>-19</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>-5.9</td>
+      <td>1645.4</td>
+      <td>Scott H. Baxter</td>
+      <td>U.S.</td>
+      <td>Greensboro</td>
+      <td>North Carolina</td>
+      <td>https://www.kontoorbrands.com</td>
+      <td>Public</td>
+      <td>3360.0</td>
+      <td>2024-06-04</td>
+    </tr>
+    <tr>
+      <th>Business Services</th>
+      <td>Clear Channel Outdoor Hldgs.</td>
+      <td>CCO</td>
+      <td>Advertising, marketing</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>-10</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>...</td>
+      <td>-99.5</td>
+      <td>4722.5</td>
+      <td>Scott R. Wells</td>
+      <td>U.S.</td>
+      <td>San Antonio</td>
+      <td>Texas</td>
+      <td>https://www.clearchanneloutdoor.com</td>
+      <td>Public</td>
+      <td>798.0</td>
+      <td>2024-06-04</td>
+    </tr>
+    <tr>
+      <th>Chemicals</th>
+      <td>Mativ Holdings</td>
+      <td>MATV</td>
+      <td>Chemicals</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>0</td>
+      <td>no</td>
+      <td>no</td>
+      <td>...</td>
+      <td>234.6</td>
+      <td>2642.4</td>
+      <td>Julie A. Schertell</td>
+      <td>U.S.</td>
+      <td>Alpharetta</td>
+      <td>Georgia</td>
+      <td>https://mativ.com</td>
+      <td>Public</td>
+      <td>1018.0</td>
+      <td>2024-06-04</td>
+    </tr>
+    <tr>
+      <th>Energy</th>
+      <td>Talen Energy</td>
+      <td>TLNE</td>
+      <td>Energy</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>0</td>
+      <td>no</td>
+      <td>no</td>
+      <td>...</td>
+      <td>7.5</td>
+      <td>7121.0</td>
+      <td>Mark  McFarland</td>
+      <td>U.S.</td>
+      <td>Houston</td>
+      <td>Texas</td>
+      <td>https://www.talenenergy.com</td>
+      <td>Public</td>
+      <td>5569.0</td>
+      <td>2024-06-04</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Company                          1000
-Ticker                            958
-Sector                             21
-Industry                           75
-Profitable                          2
-Founder_is_CEO                      2
-FemaleCEO                           2
-Growth_in_Jobs                      2
-Change_in_Rank                    251
-Gained_in_Rank                      2
-Dropped_in_Rank                     2
-Newcomer_to_the_Fortune500          2
-Global500                           2
-Worlds_Most_Admired_Companies       2
-Best_Companies_to_Work_For          2
-Number_of_employees               752
-MarketCap_March28_M               959
-Revenues_M                        997
-RevenuePercentChange              484
-Profits_M                         966
-ProfitsPercentChange              687
-Assets_M                          995
-CEO                              1000
-Country                             1
-HeadquartersCity                  392
-HeadquartersState                  47
-Website                          1000
-CompanyType                         2
-MarketCap_Updated_M               952
-Updated                             2
-dtype: int64</pre>
+<pre>Company                                          Boeing
+Ticker                                               BA
+Sector                              Aerospace &amp; Defense
+Industry                            Aerospace &amp; Defense
+Profitable                                           no
+Founder_is_CEO                                       no
+FemaleCEO                                            no
+Growth_in_Jobs                                      yes
+Change_in_Rank                                        6
+Gained_in_Rank                                      yes
+Dropped_in_Rank                                      no
+Newcomer_to_the_Fortune500                           no
+Global500                                           yes
+Worlds_Most_Admired_Companies                       yes
+Best_Companies_to_Work_For                           no
+Number_of_employees                              171000
+MarketCap_March28_M                            117750.0
+Revenues_M                                      77794.0
+RevenuePercentChange                               16.8
+Profits_M                                       -2222.0
+ProfitsPercentChange                                NaN
+Assets_M                                       137012.0
+CEO                                    Kelly K. Ortberg
+Country                                            U.S.
+HeadquartersCity                              Arlington
+HeadquartersState                              Virginia
+Website                          https://www.boeing.com
+CompanyType                                      Public
+MarketCap_Updated_M                            109953.0
+Updated                                      2024-08-05
+Name: 52, dtype: object</pre>
 </div>
 
 </div>
@@ -13551,17 +14342,18 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#45716;-&#44050;-&#52286;&#44592;">&#52972;&#47100;&#48324; &#51473;&#48373;&#46104;&#45716; &#44050; &#52286;&#44592;<a class="anchor-link" href="#&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#45716;-&#44050;-&#52286;&#44592;">&#182;</a></h3><p>위에서 Ticker의 고유값이 958개로 표시되었는데, 아래에서 Ticker의 중복 값은 PFE로 이 값이 2개이고 나머지는 빈칸일 가능성이 높음</p>
+<p>sectors dfgroupby object에 .group attribute를 적용하면 각 그룹에 속한 기업의 인덱스가 보임<br>
+이는 아래의 'Aerospace &amp; Defense'에서 보이는 인덱스 24를 바로 위에서와 같이 원 df인 fortune의 .loc에 넣었을 때 동일한 Aerospace &amp; Defense가 나타나는 것으로 알 수가 있음</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">groups</span>
 </pre></div>
 
     </div>
@@ -13574,152 +14366,13 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Ticker
-PFE     2
-WMT     1
-SNAP    1
-BIG     1
-WMK     1
-       ..
-W       1
-MTZ     1
-ES      1
-NEM     1
-CCO     1
-Name: count, Length: 958, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#48712;&#52856;-&#44079;&#49688;-&#44396;&#54616;&#44592;-:-.isnull.sum()">&#48712;&#52856; &#44079;&#49688; &#44396;&#54616;&#44592; : .isnull.sum()<a class="anchor-link" href="#&#48712;&#52856;-&#44079;&#49688;-&#44396;&#54616;&#44592;-:-.isnull.sum()">&#182;</a></h3><p>Ticker의 빈칸 갯수가 41개, PFE에서 중복된 것 1개, 그리고 고유값 958개를 모두 합하면 1,000개</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>41</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>PFE를 사용하는 회사는 Pfizer, Public Super Markets로 나타나는데  Public Super Markets의 티커가 PFE로 나타나는 것은 잘못된 것으로 추청됨</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PFE&#39;</span><span class="p">][</span><span class="s1">&#39;Company&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Rank
-69                  Pfizer
-72    Publix Super Markets
-Name: Company, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="groupby-&#49324;&#50857;&#54616;&#44592;">groupby &#49324;&#50857;&#54616;&#44592;<a class="anchor-link" href="#groupby-&#49324;&#50857;&#54616;&#44592;">&#182;</a></h3><p>.groupby()의 괄호 안에 그룹화 하고 싶은 컬럼 제목을 넣으면 dfgroupby object가 만들어지며 특별한 결과가 나오는 것은 아님<br>
-    아래의 0x0000026CA3D0FC10는 메모리 내 이 DataFrameGroupBy object가 저장된 위치를 나타냄&lt;/p&gt;</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sector&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000026CA3D0FC10&gt;</pre>
+<pre>{&#39;Aerospace &amp; Defense&#39;: [52, 55, 57, 104, 109, 209, 308, 357, 533, 537, 565, 592, 608, 752, 842, 893, 907, 919, 999], &#39;Apparel&#39;: [88, 355, 425, 465, 531, 544, 557, 577, 590, 753, 801, 819, 873, 901, 975], &#39;Business Services&#39;: [135, 145, 164, 186, 199, 215, 219, 220, 228, 249, 276, 287, 288, 298, 329, 372, 410, 437, 461, 541, 547, 564, 568, 574, 604, 612, 625, 631, 641, 651, 655, 656, 691, 694, 702, 717, 723, 735, 766, 769, 781, 789, 796, 817, 835, 849, 878, 880, 917, 926, 950, 960, 961, 967, 985, 988, 992, 993, 1000], &#39;Chemicals&#39;: [99, 134, 176, 226, 269, 307, 322, 326, 327, 356, 369, 412, 426, 492, 521, 535, 555, 567, 688, 759, 810, 814, 863, 956, 974, 994], &#39;Energy&#39;: [7, 15, 24, 26, 29, 51, 68, 90, 92, 93, 112, 137, 148, 149, 150, 152, 161, 163, 165, 167, 169, 177, 178, 187, 200, 212, 217, 230, 232, 244, 246, 250, 256, 268, 271, 283, 289, 302, 318, 319, 331, 339, 348, 349, 359, 371, 373, 378, 434, 435, 439, 440, 441, 442, 444, 449, 451, 454, 455, 478, 494, 510, 511, 527, 539, 575, 597, 599, 610, 646, 658, 663, 668, 670, 672, 710, 714, 724, 730, 736, 743, 761, 780, 797, 821, 823, 825, 829, 837, 843, 845, 857, 858, 862, 868, 871, 906, 916, 930, 933, ...], &#39;Engineering &amp; Construction&#39;: [120, 126, 192, 239, 255, 265, 291, 324, 347, 394, 406, 483, 509, 545, 560, 587, 629, 630, 673, 684, 725, 741, 764, 784, 791, 794, 800, 815, 936, 945, 976], &#39;Financials&#39;: [5, 12, 18, 21, 27, 34, 35, 36, 39, 41, 58, 60, 62, 66, 73, 75, 78, 81, 87, 91, 94, 96, 102, 103, 105, 107, 110, 130, 132, 136, 138, 139, 160, 166, 180, 182, 188, 191, 193, 194, 222, 223, 225, 231, 243, 252, 254, 257, 260, 262, 273, 282, 284, 303, 306, 310, 312, 314, 317, 321, 332, 337, 340, 342, 351, 354, 363, 365, 374, 375, 376, 381, 386, 391, 392, 393, 397, 405, 418, 428, 456, 457, 462, 463, 464, 468, 470, 473, 477, 480, 487, 491, 505, 534, 543, 563, 570, 571, 589, 591, ...], &#39;Food &amp; Drug Stores&#39;: [25, 28, 53, 72, 171, 520, 578, 667, 750], &#39;Food, Beverages &amp; Tobacco&#39;: [43, 44, 85, 95, 97, 115, 121, 156, 196, 203, 238, 245, 272, 279, 285, 336, 343, 352, 361, 414, 415, 419, 446, 459, 496, 504, 523, 530, 532, 616, 639, 716, 809, 861, 979], &#39;Health Care&#39;: [4, 6, 9, 10, 14, 16, 20, 22, 38, 42, 61, 67, 69, 77, 98, 108, 127, 128, 151, 153, 154, 195, 197, 206, 211, 267, 270, 275, 299, 300, 309, 311, 330, 333, 341, 388, 400, 401, 423, 436, 445, 484, 497, 518, 529, 542, 550, 569, 582, 660, 681, 693, 705, 711, 718, 732, 742, 751, 767, 774, 787, 793, 799, 802, 805, 856, 864, 869, 889, 890, 892, 900, 902, 904, 905, 944, 948, 977, 984, 998], &#39;Hotels, Restaurants &amp; Leisure&#39;: [116, 162, 173, 251, 353, 368, 383, 387, 389, 399, 501, 528, 538, 548, 664, 671, 674, 690, 707, 731, 749, 783, 785, 798, 827, 828, 910, 911, 934], &#39;Household Products&#39;: [50, 198, 207, 259, 263, 364, 460, 466, 485, 579, 595, 609, 642, 650, 665, 738, 754, 844, 854, 896], &#39;Industrials&#39;: [56, 59, 64, 114, 129, 184, 208, 216, 224, 253, 295, 301, 323, 407, 409, 430, 448, 486, 514, 517, 552, 562, 614, 636, 638, 645, 662, 680, 682, 703, 722, 733, 740, 744, 756, 768, 792, 813, 831, 832, 834, 848, 851, 886, 939, 972, 981, 995], &#39;Materials&#39;: [124, 185, 202, 218, 221, 227, 240, 280, 304, 320, 344, 380, 407, 416, 438, 450, 471, 472, 476, 493, 500, 502, 516, 524, 553, 572, 588, 603, 613, 628, 637, 652, 676, 678, 726, 727, 790, 818, 877, 881, 912, 924, 951, 959, 973, 978, 987], &#39;Media&#39;: [47, 106, 131, 142, 179, 277, 328, 398, 482, 566, 573, 617, 648, 649, 659, 782, 820, 850, 866, 882, 897, 908, 935, 953, 966, 982], &#39;Motor Vehicles &amp; Parts&#39;: [17, 19, 40, 122, 174, 204, 258, 366, 379, 384, 561, 692, 755, 763, 777, 816, 824, 887, 927, 970, 991], &#39;Retailing&#39;: [1, 2, 11, 23, 37, 49, 80, 100, 111, 140, 141, 143, 146, 155, 168, 172, 201, 205, 214, 229, 235, 236, 261, 274, 278, 281, 286, 293, 296, 313, 315, 345, 346, 358, 360, 362, 370, 377, 404, 411, 417, 453, 458, 467, 469, 474, 481, 515, 551, 554, 556, 559, 624, 626, 635, 666, 695, 697, 709, 747, 765, 788, 808, 860, 879, 885, 888, 909, 925, 938, 943, 946], &#39;Technology&#39;: [3, 8, 13, 30, 48, 63, 65, 74, 79, 82, 89, 101, 113, 117, 118, 123, 125, 147, 158, 181, 189, 190, 210, 213, 234, 237, 241, 264, 266, 294, 297, 325, 334, 335, 382, 390, 395, 396, 422, 427, 432, 433, 443, 447, 452, 479, 490, 498, 499, 503, 506, 507, 508, 512, 513, 521, 525, 536, 540, 549, 558, 576, 583, 584, 594, 598, 600, 602, 606, 622, 632, 653, 654, 661, 669, 679, 683, 686, 698, 699, 700, 713, 719, 720, 728, 737, 770, 771, 772, 775, 779, 803, 807, 811, 812, 836, 839, 840, 847, 853, ...], &#39;Telecommunications&#39;: [31, 32, 33, 76, 242, 292, 424, 586, 633], &#39;Transportation&#39;: [45, 46, 70, 83, 86, 159, 170, 233, 290, 316, 338, 350, 385, 402, 413, 420, 431, 475, 495, 546, 580, 581, 585, 601, 615, 620, 689, 721, 757, 760, 806, 846, 875, 876, 891, 903, 914, 952, 996], &#39;Wholesalers&#39;: [54, 71, 84, 119, 133, 144, 157, 175, 183, 247, 248, 305, 367, 403, 421, 429, 488, 489, 519, 526, 596, 618, 696, 706, 745, 776, 830, 833, 865, 918]}</pre>
 </div>
 
 </div>

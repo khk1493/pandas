@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>01_groupby</title>
+<title>04_Methods on Groupby Object and DataFrame Columns</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13105,7 +13105,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="0801.-&#44536;&#47353;&#48324;-&#49548;&#44228;-&#48124;&#46308;&#44592;-:-groupby()">0801. &#44536;&#47353;&#48324; &#49548;&#44228; &#48124;&#46308;&#44592; : groupby()<a class="anchor-link" href="#0801.-&#44536;&#47353;&#48324;-&#49548;&#44228;-&#48124;&#46308;&#44592;-:-groupby()">&#182;</a></h1>
+<h1 id="0804.-Groupby-&#44061;&#52404;&#50640;-&#51201;&#50857;-&#54632;&#49688;">0804. Groupby &#44061;&#52404;&#50640; &#51201;&#50857; &#54632;&#49688;<a class="anchor-link" href="#0804.-Groupby-&#44061;&#52404;&#50640;-&#51201;&#50857;-&#54632;&#49688;">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52280;&#44256;.-&#49440;-&#44555;&#44592;">&#52280;&#44256;. &#49440; &#44555;&#44592;<a class="anchor-link" href="#&#52280;&#44256;.-&#49440;-&#44555;&#44592;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13114,10 +13121,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">fortune</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Fortune/fortune1000_2024.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
-
-<span class="n">fortune</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+<span class="nt">table</span><span class="p">.</span><span class="nc">dataframe</span> <span class="nt">td</span><span class="o">,</span> <span class="nt">table</span><span class="p">.</span><span class="nc">dataframe</span> <span class="nt">th</span> <span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span>  <span class="kc">black</span> <span class="kc">solid</span> <span class="cp">!important</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="kc">black</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></div>
 
     </div>
@@ -13130,7 +13140,56 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style type="text/css">
+table.dataframe td, table.dataframe th {
+    border: 1px  black solid !important;
+  color: black !important;
+}
+</style>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="groupby-&#44061;&#52404;-&#47564;&#46308;&#44592;">groupby &#44061;&#52404; &#47564;&#46308;&#44592;<a class="anchor-link" href="#groupby-&#44061;&#52404;-&#47564;&#46308;&#44592;">&#182;</a></h3><p>컬럼명 Sector의 값을 기준으로 전체 데이터를 그룹화하여 sectors에 담는다. sectors는 Retailing, Technology, Health cars 등으로 그룹화 되어 있지만 sectors 단독으로는 아무 것도 나타나지 않는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">fortune</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Fortune/fortune1000_2024.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
+<span class="n">sectors</span> <span class="o">=</span> <span class="n">fortune</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sector&#39;</span><span class="p">)</span>
+<span class="n">fortune</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13158,12 +13217,11 @@ div#notebook {
       <th>Sector</th>
       <th>Industry</th>
       <th>Profitable</th>
-      <th>Founder_is_CEO</th>
-      <th>FemaleCEO</th>
-      <th>Growth_in_Jobs</th>
-      <th>Change_in_Rank</th>
-      <th>Gained_in_Rank</th>
-      <th>...</th>
+      <th>Number_of_employees</th>
+      <th>MarketCap_March28_M</th>
+      <th>Revenues_M</th>
+      <th>RevenuePercentChange</th>
+      <th>Profits_M</th>
       <th>ProfitsPercentChange</th>
       <th>Assets_M</th>
       <th>CEO</th>
@@ -13197,7 +13255,6 @@ div#notebook {
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13208,12 +13265,11 @@ div#notebook {
       <td>Retailing</td>
       <td>General Merchandisers</td>
       <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
+      <td>2100000</td>
+      <td>484852.8</td>
+      <td>648125.0</td>
+      <td>6.0</td>
+      <td>15511.0</td>
       <td>32.8</td>
       <td>252399.0</td>
       <td>C. Douglas McMillon</td>
@@ -13232,12 +13288,11 @@ div#notebook {
       <td>Retailing</td>
       <td>Internet Services and Retailing</td>
       <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
+      <td>1525000</td>
+      <td>1873675.8</td>
+      <td>574785.0</td>
+      <td>11.8</td>
+      <td>30425.0</td>
       <td>NaN</td>
       <td>527854.0</td>
       <td>Andrew R. Jassy</td>
@@ -13256,12 +13311,11 @@ div#notebook {
       <td>Technology</td>
       <td>Computers, Office Equipment</td>
       <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>...</td>
+      <td>161000</td>
+      <td>2647973.8</td>
+      <td>383285.0</td>
+      <td>-2.8</td>
+      <td>96995.0</td>
       <td>-2.8</td>
       <td>352583.0</td>
       <td>Timothy D. Cook</td>
@@ -13273,201 +13327,8 @@ div#notebook {
       <td>3594309.0</td>
       <td>2024-08-05</td>
     </tr>
-    <tr>
-      <th>4</th>
-      <td>UnitedHealth Group</td>
-      <td>UNH</td>
-      <td>Health Care</td>
-      <td>Health Care: Insurance and Managed Care</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>1</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>11.2</td>
-      <td>273720.0</td>
-      <td>Andrew P. Witty</td>
-      <td>U.S.</td>
-      <td>Minnetonka</td>
-      <td>Minnesota</td>
-      <td>https://www.unitedhealthgroup.com</td>
-      <td>Public</td>
-      <td>474339.0</td>
-      <td>2024-08-05</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Berkshire Hathaway</td>
-      <td>BRKA</td>
-      <td>Financials</td>
-      <td>Insurance: Property and Casualty (Stock)</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>2</td>
-      <td>yes</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>1069978.0</td>
-      <td>Warren E. Buffett</td>
-      <td>U.S.</td>
-      <td>Omaha</td>
-      <td>Nebraska</td>
-      <td>https://www.berkshirehathaway.com</td>
-      <td>Public</td>
-      <td>937028.0</td>
-      <td>2024-08-05</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>996</th>
-      <td>Allegiant Travel</td>
-      <td>ALGT</td>
-      <td>Transportation</td>
-      <td>Airlines</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
-      <td>4617.0</td>
-      <td>4869.4</td>
-      <td>Maurice J. Gallagher Jr.</td>
-      <td>U.S.</td>
-      <td>Las Vegas</td>
-      <td>Nevada</td>
-      <td>https://www.allegiant.com</td>
-      <td>Public</td>
-      <td>1375.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>997</th>
-      <td>Dropbox</td>
-      <td>DBX</td>
-      <td>Technology</td>
-      <td>Computer Software</td>
-      <td>yes</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
-      <td>-18.0</td>
-      <td>2983.5</td>
-      <td>Andrew W. Houston</td>
-      <td>U.S.</td>
-      <td>San Francisco</td>
-      <td>California</td>
-      <td>https://www.dropbox.com</td>
-      <td>Public</td>
-      <td>8359.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>Exact Sciences</td>
-      <td>EXAS</td>
-      <td>Health Care</td>
-      <td>Pharmaceuticals</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>6471.3</td>
-      <td>Kevin T. Conroy</td>
-      <td>U.S.</td>
-      <td>Madison</td>
-      <td>Wisconsin</td>
-      <td>https://www.exactsciences.com</td>
-      <td>Public</td>
-      <td>12537.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>BWX Technologies</td>
-      <td>BWXT</td>
-      <td>Aerospace &amp; Defense</td>
-      <td>Aerospace &amp; Defense</td>
-      <td>yes</td>
-      <td>no</td>
-      <td>no</td>
-      <td>yes</td>
-      <td>0</td>
-      <td>no</td>
-      <td>...</td>
-      <td>3.2</td>
-      <td>2747.1</td>
-      <td>Rex D. Geveden</td>
-      <td>U.S.</td>
-      <td>Lynchburg</td>
-      <td>Virginia</td>
-      <td>https://www.bwxt.com</td>
-      <td>Public</td>
-      <td>9380.0</td>
-      <td>2024-06-04</td>
-    </tr>
-    <tr>
-      <th>1000</th>
-      <td>Clear Channel Outdoor Hldgs.</td>
-      <td>CCO</td>
-      <td>Business Services</td>
-      <td>Advertising, marketing</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>no</td>
-      <td>-10</td>
-      <td>no</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>4722.5</td>
-      <td>Scott R. Wells</td>
-      <td>U.S.</td>
-      <td>San Antonio</td>
-      <td>Texas</td>
-      <td>https://www.clearchanneloutdoor.com</td>
-      <td>Public</td>
-      <td>798.0</td>
-      <td>2024-06-04</td>
-    </tr>
   </tbody>
 </table>
-<p>1000 rows × 30 columns</p>
 </div>
 </div>
 
@@ -13480,17 +13341,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#51648;-&#50506;&#45716;-&#44256;&#50976;-&#44050;">&#52972;&#47100;&#48324; &#51473;&#48373;&#46104;&#51648; &#50506;&#45716; &#44256;&#50976; &#44050;<a class="anchor-link" href="#&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#51648;-&#50506;&#45716;-&#44256;&#50976;-&#44050;">&#182;</a></h3><p>Company는 중복되지 않고 모두 고유값을 갖음. 그러나 Ticker는 958개가 고유값을 갖고, Sector는 21개가 고유값을 갖음</p>
+<h3 id="&#44033;-&#44536;&#47353;-&#51473;&#50640;&#49436;-&#44032;&#51109;-&#53360;-&#44163;-&#48152;&#54872;-:-groupby-&#44061;&#52404;['&#52972;&#47100;&#47749;'].max(),">&#44033; &#44536;&#47353; &#51473;&#50640;&#49436; &#44032;&#51109; &#53360; &#44163; &#48152;&#54872; : groupby &#44061;&#52404;['&#52972;&#47100;&#47749;'].max(),<a class="anchor-link" href="#&#44033;-&#44536;&#47353;-&#51473;&#50640;&#49436;-&#44032;&#51109;-&#53360;-&#44163;-&#48152;&#54872;-:-groupby-&#44061;&#52404;['&#52972;&#47100;&#47749;'].max(),">&#182;</a></h3><p>groupby object에 .max()를 적용하면 각 컬럼별로 문자는 알파벳순으로 마지막, 숫자는 가장 큰 것이 나타난다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Company&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13503,180 +13364,16 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Company                          1000
-Ticker                            958
-Sector                             21
-Industry                           75
-Profitable                          2
-Founder_is_CEO                      2
-FemaleCEO                           2
-Growth_in_Jobs                      2
-Change_in_Rank                    251
-Gained_in_Rank                      2
-Dropped_in_Rank                     2
-Newcomer_to_the_Fortune500          2
-Global500                           2
-Worlds_Most_Admired_Companies       2
-Best_Companies_to_Work_For          2
-Number_of_employees               752
-MarketCap_March28_M               959
-Revenues_M                        997
-RevenuePercentChange              484
-Profits_M                         966
-ProfitsPercentChange              687
-Assets_M                          995
-CEO                              1000
-Country                             1
-HeadquartersCity                  392
-HeadquartersState                  47
-Website                          1000
-CompanyType                         2
-MarketCap_Updated_M               952
-Updated                             2
-dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#45716;-&#44050;-&#52286;&#44592;">&#52972;&#47100;&#48324; &#51473;&#48373;&#46104;&#45716; &#44050; &#52286;&#44592;<a class="anchor-link" href="#&#52972;&#47100;&#48324;-&#51473;&#48373;&#46104;&#45716;-&#44050;-&#52286;&#44592;">&#182;</a></h3><p>위에서 Ticker의 고유값이 958개로 표시되었는데, 아래에서 Ticker의 중복 값은 PFE로 이 값이 2개이고 나머지는 빈칸일 가능성이 높음</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Ticker
-PFE     2
-WMT     1
-SNAP    1
-BIG     1
-WMK     1
-       ..
-W       1
-MTZ     1
-ES      1
-NEM     1
-CCO     1
-Name: count, Length: 958, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#48712;&#52856;-&#44079;&#49688;-&#44396;&#54616;&#44592;-:-.isnull.sum()">&#48712;&#52856; &#44079;&#49688; &#44396;&#54616;&#44592; : .isnull.sum()<a class="anchor-link" href="#&#48712;&#52856;-&#44079;&#49688;-&#44396;&#54616;&#44592;-:-.isnull.sum()">&#182;</a></h3><p>Ticker의 빈칸 갯수가 41개, PFE에서 중복된 것 1개, 그리고 고유값 958개를 모두 합하면 1,000개</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>41</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>PFE를 사용하는 회사는 Pfizer, Public Super Markets로 나타나는데  Public Super Markets의 티커가 PFE로 나타나는 것은 잘못된 것으로 추청됨</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="p">[</span><span class="n">fortune</span><span class="p">[</span><span class="s1">&#39;Ticker&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PFE&#39;</span><span class="p">][</span><span class="s1">&#39;Company&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Rank
-69                  Pfizer
-72    Publix Super Markets
+<pre>Sector
+Aerospace &amp; Defense         Woodward
+Apparel                           VF
+Business Services      Western Union
 Name: Company, dtype: object</pre>
 </div>
 
@@ -13686,21 +13383,12 @@ Name: Company, dtype: object</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="groupby-&#49324;&#50857;&#54616;&#44592;">groupby &#49324;&#50857;&#54616;&#44592;<a class="anchor-link" href="#groupby-&#49324;&#50857;&#54616;&#44592;">&#182;</a></h3><p>.groupby()의 괄호 안에 그룹화 하고 싶은 컬럼 제목을 넣으면 dfgroupby object가 만들어지며 특별한 결과가 나오는 것은 아님<br>
-    아래의 0x0000026CA3D0FC10는 메모리 내 이 DataFrameGroupBy object가 저장된 위치를 나타냄&lt;/p&gt;</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fortune</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sector&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Number_of_employees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13713,13 +13401,17 @@ Name: Company, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000026CA3D0FC10&gt;</pre>
+<pre>Sector
+Aerospace &amp; Defense    185000
+Apparel                 83700
+Business Services      262550
+Name: Number_of_employees, dtype: int64</pre>
 </div>
 
 </div>
@@ -13730,13 +13422,751 @@ Name: Company, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    77794.0
+Apparel                51217.0
+Business Services      32653.0
+Name: Revenues_M, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44033;-&#44536;&#47353;-&#51473;&#50640;&#49436;-&#44032;&#51109;-&#51089;&#51008;-&#44163;-&#48152;&#54872;-:-groupby-&#44061;&#52404;['&#52972;&#47100;&#47749;'].min(),">&#44033; &#44536;&#47353; &#51473;&#50640;&#49436; &#44032;&#51109; &#51089;&#51008; &#44163; &#48152;&#54872; : groupby &#44061;&#52404;['&#52972;&#47100;&#47749;'].min(),<a class="anchor-link" href="#&#44033;-&#44536;&#47353;-&#51473;&#50640;&#49436;-&#44032;&#51109;-&#51089;&#51008;-&#44163;-&#48152;&#54872;-:-groupby-&#44061;&#52404;['&#52972;&#47100;&#47749;'].min(),">&#182;</a></h3><p>groupby object에 .min()를 적용하면 각 컬럼별로 문자는 알파벳순으로 처음, 숫자는 가장 작은 것이 나타난다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Company&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    BWX Technologies
+Apparel                        Carter&#39;s
+Business Services        ABM Industries
+Name: Company, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Number_of_employees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    7800
+Apparel                4050
+Business Services       163
+Name: Number_of_employees, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    2496.3
+Apparel                2607.5
+Business Services      2489.0
+Name: Revenues_M, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44033;-&#52972;&#47100;&#48324;-&#54633;,-&#54217;&#44512;&#51060;-&#45208;&#50728;&#45796;-:-.sum(),-.mean()">&#44033; &#52972;&#47100;&#48324; &#54633;, &#54217;&#44512;&#51060; &#45208;&#50728;&#45796; : .sum(), .mean()<a class="anchor-link" href="#&#44033;-&#52972;&#47100;&#48324;-&#54633;,-&#54217;&#44512;&#51060;-&#45208;&#50728;&#45796;-:-.sum(),-.mean()">&#182;</a></h3><p>(&nbsp;) 안에 numeric_only = True 을 넣으면 숫자만 나온다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numeric_only</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Number_of_employees</th>
+      <th>MarketCap_March28_M</th>
+      <th>Revenues_M</th>
+      <th>RevenuePercentChange</th>
+      <th>Profits_M</th>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>MarketCap_Updated_M</th>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aerospace &amp; Defense</th>
+      <td>976655</td>
+      <td>764255.3</td>
+      <td>389260.7</td>
+      <td>281.9</td>
+      <td>19971.3</td>
+      <td>238.0</td>
+      <td>604592.4</td>
+      <td>757605.0</td>
+    </tr>
+    <tr>
+      <th>Apparel</th>
+      <td>313278</td>
+      <td>247657.6</td>
+      <td>130599.2</td>
+      <td>26.9</td>
+      <td>10675.9</td>
+      <td>212.7</td>
+      <td>117543.3</td>
+      <td>212900.0</td>
+    </tr>
+    <tr>
+      <th>Business Services</th>
+      <td>1710555</td>
+      <td>2350956.1</td>
+      <td>491570.8</td>
+      <td>419.8</td>
+      <td>60770.1</td>
+      <td>1030.9</td>
+      <td>1064968.1</td>
+      <td>2341242.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Number_of_employees</th>
+      <th>MarketCap_March28_M</th>
+      <th>Revenues_M</th>
+      <th>RevenuePercentChange</th>
+      <th>Profits_M</th>
+      <th>ProfitsPercentChange</th>
+      <th>Assets_M</th>
+      <th>MarketCap_Updated_M</th>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aerospace &amp; Defense</th>
+      <td>51402.894737</td>
+      <td>40223.963158</td>
+      <td>20487.405263</td>
+      <td>14.836842</td>
+      <td>1051.121053</td>
+      <td>14.875000</td>
+      <td>31820.652632</td>
+      <td>39873.947368</td>
+    </tr>
+    <tr>
+      <th>Apparel</th>
+      <td>20885.200000</td>
+      <td>16510.506667</td>
+      <td>8706.613333</td>
+      <td>1.793333</td>
+      <td>711.726667</td>
+      <td>16.361538</td>
+      <td>7836.220000</td>
+      <td>14193.333333</td>
+    </tr>
+    <tr>
+      <th>Business Services</th>
+      <td>28992.457627</td>
+      <td>40533.725862</td>
+      <td>8331.708475</td>
+      <td>7.237931</td>
+      <td>1030.001695</td>
+      <td>21.038776</td>
+      <td>18050.306780</td>
+      <td>40366.241379</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51025;&#50857;">&#51025;&#50857;<a class="anchor-link" href="#&#51025;&#50857;">&#182;</a></h3><p>약간의 가공을 하면 각 산업의 종업원 1인당 이익이 나온다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sectors</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">a</span><span class="p">[</span><span class="s1">&#39;Profits_per_Employees&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;Profits_M&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;Number_of_employees&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">a</span><span class="p">[</span><span class="s1">&#39;Profits_per_Employees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense               20
+Apparel                           34
+Business Services                 35
+Chemicals                         20
+Energy                           247
+Engineering &amp; Construction        51
+Financials                       108
+Food &amp; Drug Stores                 3
+Food, Beverages &amp; Tobacco         57
+Health Care                       46
+Hotels, Restaurants &amp; Leisure     11
+Household Products                43
+Industrials                       54
+Materials                         32
+Media                              7
+Motor Vehicles &amp; Parts            29
+Retailing                         14
+Technology                        96
+Telecommunications                54
+Transportation                    20
+Wholesalers                       30
+Name: Profits_per_Employees, dtype: int32</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="sectors['Revenues_M']&#45716;-&#50500;&#47924;&#44163;&#46020;-&#45208;&#50724;&#51648;-&#50506;&#51004;&#45208;-&#50668;&#44592;&#50640;-.sum()&#51012;-&#51201;&#50857;&#54616;&#47732;-&#44033;-&#49328;&#50629;&#51032;-&#47588;&#52636;&#50529;-&#54633;&#51060;-&#45208;&#50728;&#45796;.">sectors['Revenues_M']&#45716; &#50500;&#47924;&#44163;&#46020; &#45208;&#50724;&#51648; &#50506;&#51004;&#45208; &#50668;&#44592;&#50640; .sum()&#51012; &#51201;&#50857;&#54616;&#47732; &#44033; &#49328;&#50629;&#51032; &#47588;&#52636;&#50529; &#54633;&#51060; &#45208;&#50728;&#45796;.<a class="anchor-link" href="#sectors['Revenues_M']&#45716;-&#50500;&#47924;&#44163;&#46020;-&#45208;&#50724;&#51648;-&#50506;&#51004;&#45208;-&#50668;&#44592;&#50640;-.sum()&#51012;-&#51201;&#50857;&#54616;&#47732;-&#44033;-&#49328;&#50629;&#51032;-&#47588;&#52636;&#50529;-&#54633;&#51060;-&#45208;&#50728;&#45796;.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x000001C04075F610&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    389260.7
+Apparel                130599.2
+Business Services      491570.8
+Name: Revenues_M, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Number_of_employees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense     976655
+Apparel                 313278
+Business Services      1710555
+Chemicals               509204
+Energy                  968525
+Name: Number_of_employees, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Profits_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense     6920.0
+Apparel                 5070.0
+Business Services      17273.0
+Name: Profits_M, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Profits_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense   -2222.0
+Apparel                 -17.7
+Business Services     -6654.0
+Chemicals             -6995.0
+Energy                -2494.0
+Name: Profits_M, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[</span><span class="s1">&#39;Number_of_employees&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Sector
+Aerospace &amp; Defense    51402.894737
+Apparel                20885.200000
+Business Services      28992.457627
+Chemicals              19584.769231
+Energy                  9051.635514
+Name: Number_of_employees, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span><span class="p">[[</span><span class="s1">&#39;Revenues_M&#39;</span><span class="p">,</span> <span class="s1">&#39;Profits_M&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Revenues_M</th>
+      <th>Profits_M</th>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aerospace &amp; Defense</th>
+      <td>389260.7</td>
+      <td>19971.3</td>
+    </tr>
+    <tr>
+      <th>Apparel</th>
+      <td>130599.2</td>
+      <td>10675.9</td>
+    </tr>
+    <tr>
+      <th>Business Services</th>
+      <td>491570.8</td>
+      <td>60770.1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
